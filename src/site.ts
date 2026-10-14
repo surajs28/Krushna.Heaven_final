@@ -234,8 +234,8 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
   const dnaCopy = dnaSection.querySelector<HTMLElement>("[data-dna-copy]");
   const dnaLink = dnaSection.querySelector<HTMLAnchorElement>("[data-dna-link]");
   const dnaLinkLabel = dnaSection.querySelector<HTMLElement>("[data-dna-link-label]");
-  const dnaPrevious = dnaSection.querySelector<HTMLButtonElement>("[data-dna-prev]");
-  const dnaNext = dnaSection.querySelector<HTMLButtonElement>("[data-dna-next]");
+  const dnaMotion = dnaSection.querySelector<HTMLButtonElement>("[data-dna-motion]");
+  const dnaMotionLabel = dnaSection.querySelector<HTMLElement>("[data-dna-motion-label]");
   const dnaSteps = Array.from(dnaSection.querySelectorAll<HTMLButtonElement>("[data-dna-step]"));
   const dnaHeader = dnaSection.querySelector<HTMLElement>(".dna-experience__header");
   const dnaItems = dnaCards.map((card) => ({
@@ -248,6 +248,7 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
   const total = dnaCards.length;
   const wrapIndex = (value: number) => ((value % total) + total) % total;
   const dnaDesktop = window.matchMedia("(min-width: 56.25rem)");
+  let rotationPaused = false;
   let teardown = () => {};
 
   const setupDna = () => {
@@ -268,7 +269,6 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
     let activeIndex = -1;
     let positionTween: ReturnType<typeof gsap.to> | null = null;
     let metaTimeline: ReturnType<typeof gsap.timeline> | null = null;
-    let offsetTween: ReturnType<typeof gsap.to> | null = null;
     let scrollTrigger: ReturnType<typeof ScrollTrigger.create> | null = null;
     let scrollTween: ReturnType<typeof gsap.to> | null = null;
     let headerTween: ReturnType<typeof gsap.from> | null = null;
@@ -285,8 +285,54 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
     let suppressClick = false;
     let sectionVisible = false;
     let menuOpen = false;
+    let autoTimer = 0;
+    let scrollIdleTimer = 0;
+    let scrolling = false;
+    let keyboardFocus = false;
+    let readingCopy = false;
+    let automaticTransition = false;
     let resizeFrame = 0;
     const layoutHeight = window.innerHeight;
+    const cancelAuto = (interrupt = false) => {
+      window.clearTimeout(autoTimer);
+      autoTimer = 0;
+      if (!interrupt || !automaticTransition) return;
+      positionTween?.kill();
+      positionTween = null;
+      automaticTransition = false;
+      manualOffset = state.position - scrollPosition;
+      dnaStage.classList.remove("is-moving");
+    };
+    const canRotate = () => sectionVisible && !rotationPaused && !document.hidden &&
+      !menuOpen && !dragging && activePointer === null && !scrolling && !keyboardFocus && !readingCopy;
+    const scheduleAuto = () => {
+      cancelAuto();
+      if (!canRotate() || positionTween) return;
+      autoTimer = window.setTimeout(() => {
+        autoTimer = 0;
+        if (canRotate()) animateTo(Math.round(state.position) + 1, true, 1.15, true);
+      }, 3800);
+    };
+    const deferAutoAfterScroll = () => {
+      cancelAuto(true);
+      scrolling = true;
+      window.clearTimeout(scrollIdleTimer);
+      scrollIdleTimer = window.setTimeout(() => {
+        scrolling = false;
+        scheduleAuto();
+      }, 700);
+    };
+    const syncMotion = () => {
+      syncVideos();
+      if (canRotate()) scheduleAuto();
+      else cancelAuto(true);
+    };
+    const syncMotionLabel = () => {
+      dnaMotion?.setAttribute("aria-pressed", String(rotationPaused));
+      dnaMotion?.setAttribute("aria-label", rotationPaused
+        ? "Resume automatic carousel rotation" : "Pause automatic carousel rotation");
+      if (dnaMotionLabel) dnaMotionLabel.textContent = rotationPaused ? "Resume" : "Pause";
+    };
     const syncVideos = () => {
       dnaItems.forEach((item, index) => {
         if (!item.video) return;
@@ -393,10 +439,10 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
       updateActive(wrapIndex(Math.round(state.position)), animateMeta);
     };
 
-    const animateTo = (target: number, fromDirectInput = true, duration = 0.58) => {
+    const animateTo = (target: number, fromDirectInput = true, duration = 0.58, automatic = false) => {
+      cancelAuto();
       positionTween?.kill();
-      offsetTween?.kill();
-      offsetTween = null;
+      automaticTransition = automatic;
       if (fromDirectInput) manualOffset = target - scrollPosition;
       dnaStage.classList.add("is-moving");
       positionTween = gsap.to(state, {
@@ -404,16 +450,15 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
         duration,
         ease: "power3.out",
         overwrite: true,
-        onUpdate: () => render(true),
+        onUpdate: () => render(duration > 0),
         onComplete: () => {
           dnaStage.classList.remove("is-moving");
           positionTween = null;
+          automaticTransition = false;
+          manualOffset = state.position - scrollPosition;
+          scheduleAuto();
         },
       });
-    };
-
-    const moveBy = (amount: number) => {
-      animateTo(Math.round(state.position) + amount);
     };
 
     const moveToIndex = (index: number) => {
@@ -433,6 +478,7 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
       dnaStage.classList.remove("is-dragging");
       if (!dragging) {
         dnaStage.classList.remove("is-moving");
+        scheduleAuto();
         return;
       }
 
@@ -449,11 +495,11 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
       "pointerdown",
       (event) => {
         if (event.button !== 0) return;
+        cancelAuto(true);
         if ((event.target as Element).closest(".dna-carousel__navigation, .dna-carousel__copy")) return;
         positionTween?.kill();
         positionTween = null;
-        offsetTween?.kill();
-        offsetTween = null;
+        automaticTransition = false;
         dnaStage.classList.remove("is-moving");
         activePointer = event.pointerId;
         startX = event.clientX;
@@ -477,6 +523,7 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
           if (Math.abs(deltaX) < 6) return;
           if (event.pointerType === "touch" && Math.abs(deltaY) > Math.abs(deltaX) * 0.9) {
             activePointer = null;
+            scheduleAuto();
             return;
           }
           dragging = true;
@@ -523,8 +570,13 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
       );
     });
 
-    dnaPrevious?.addEventListener("click", () => moveBy(-1), { signal });
-    dnaNext?.addEventListener("click", () => moveBy(1), { signal });
+    dnaMotion?.addEventListener("click", () => {
+      rotationPaused = !rotationPaused;
+      // Explicit Resume is allowed to restart even while its button has focus.
+      if (!rotationPaused) keyboardFocus = false;
+      syncMotionLabel();
+      syncMotion();
+    }, { signal });
     dnaSteps.forEach((step, index) => {
       step.addEventListener("click", () => moveToIndex(index), { signal });
     });
@@ -532,44 +584,69 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
     dnaStage.addEventListener(
       "keydown",
       (event) => {
+        keyboardFocus = true;
+        cancelAuto(true);
         if (event.key === "ArrowLeft") {
           event.preventDefault();
-          animateTo(Math.round(state.position) - 1, true, 0.24);
+          animateTo(Math.round(state.position) - 1, true, 0);
         } else if (event.key === "ArrowRight") {
           event.preventDefault();
-          animateTo(Math.round(state.position) + 1, true, 0.24);
+          animateTo(Math.round(state.position) + 1, true, 0);
         } else if (event.key === "Home") {
           event.preventDefault();
           const rounded = Math.round(state.position);
-          animateTo(rounded - wrapIndex(rounded), true, 0.24);
+          animateTo(rounded - wrapIndex(rounded), true, 0);
         } else if (event.key === "End") {
           event.preventDefault();
           const rounded = Math.round(state.position);
-          animateTo(rounded + (total - 1 - wrapIndex(rounded)), true, 0.24);
+          animateTo(rounded + (total - 1 - wrapIndex(rounded)), true, 0);
         }
       },
       { signal },
     );
 
+    dnaStage.addEventListener("focusin", (event) => {
+      if ((event.target as Element).matches(":focus-visible")) {
+        keyboardFocus = true;
+        cancelAuto(true);
+      }
+    }, { signal });
+    dnaStage.addEventListener("focusout", (event) => {
+      if (dnaStage.contains(event.relatedTarget as Node | null)) return;
+      keyboardFocus = false;
+      scheduleAuto();
+    }, { signal });
+    const copyPanel = dnaSection.querySelector<HTMLElement>(".dna-carousel__copy");
+    copyPanel?.addEventListener("pointerenter", (event) => {
+      if (event.pointerType !== "mouse" || !window.matchMedia("(hover: hover)").matches) return;
+      readingCopy = true;
+      cancelAuto(true);
+    }, { signal });
+    copyPanel?.addEventListener("pointerleave", () => {
+      readingCopy = false;
+      scheduleAuto();
+    }, { signal });
+
     const visibilityObserver = new IntersectionObserver(
       ([entry]) => {
-        sectionVisible = entry.isIntersecting && entry.intersectionRatio > 0.08;
-        syncVideos();
+        sectionVisible = entry.isIntersecting && entry.intersectionRatio >= 0.25;
+        syncMotion();
       },
-      { threshold: [0, 0.08, 0.25] },
+      { threshold: [0, 0.25, 0.5] },
     );
-    visibilityObserver.observe(dnaSection);
-    document.addEventListener("visibilitychange", syncVideos, { signal });
+    visibilityObserver.observe(dnaStage);
+    document.addEventListener("visibilitychange", syncMotion, { signal });
     document.addEventListener(
       "site-menu-toggle",
       (event) => {
         menuOpen = Boolean((event as CustomEvent<{ open: boolean }>).detail.open);
-        syncVideos();
+        syncMotion();
       },
       { signal },
     );
 
-    const resetManualOffset = () => {
+    const takeScrollControl = () => {
+      cancelAuto(true);
       if (dragging) return;
       if (positionTween) {
         positionTween.kill();
@@ -577,39 +654,27 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
         dnaStage.classList.remove("is-moving");
         manualOffset = state.position - scrollPosition;
       }
-      if (Math.abs(manualOffset) < 0.001) return;
-      const offset = { value: manualOffset };
-      offsetTween?.kill();
-      offsetTween = gsap.to(offset, {
-        value: 0,
-        duration: 0.36,
-        ease: "power3.out",
-        overwrite: true,
-        onUpdate: () => {
-          manualOffset = offset.value;
-          state.position = scrollPosition + manualOffset;
-          render(true);
-        },
-        onComplete: () => { offsetTween = null; },
-      });
+      deferAutoAfterScroll();
     };
 
-    if (dnaDesktop.matches) {
+    {
       const scrollState = { position: 0 };
       // Numeric scrub smooths an attached animation, not raw onUpdate writes.
       // Keep shorter laptop windows in document flow so every control is reachable.
-      const pinFits = dnaPin.scrollHeight <= window.innerHeight + 1;
+      const pinFits = dnaDesktop.matches && dnaPin.scrollHeight <= window.innerHeight + 1;
       scrollTween = gsap.to(scrollState, {
         position: total - 1,
         ease: "none",
         onUpdate: () => {
+          if (Math.abs(scrollState.position - scrollPosition) < 0.0001) return;
+          deferAutoAfterScroll();
           scrollPosition = scrollState.position;
           if (dragging || positionTween) return;
           state.position = scrollPosition + manualOffset;
           render(true);
         },
         scrollTrigger: {
-          trigger: dnaSection,
+          trigger: pinFits ? dnaSection : dnaStage,
           start: pinFits ? "top top" : "top 75%",
           end: pinFits ? () => `+=${Math.round(window.innerHeight * 1.9)}` : "bottom 25%",
           pin: pinFits ? dnaPin : false,
@@ -620,7 +685,10 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
         },
       });
       scrollTrigger = scrollTween.scrollTrigger ?? null;
-      window.addEventListener("wheel", resetManualOffset, { passive: true, signal });
+      window.addEventListener("wheel", takeScrollControl, { passive: true, signal });
+      window.addEventListener("scroll", () => {
+        if (sectionVisible) deferAutoAfterScroll();
+      }, { passive: true, signal });
     }
 
     window.addEventListener("resize", () => {
@@ -635,6 +703,7 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
     }, { passive: true, signal });
     dnaStage.classList.add("is-ready");
     render(false);
+    syncMotionLabel();
 
     if (dnaHeader) {
       headerTween = gsap.from(dnaHeader.children, {
@@ -653,6 +722,8 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
 
     return () => {
       controller.abort();
+      cancelAuto(true);
+      window.clearTimeout(scrollIdleTimer);
       window.cancelAnimationFrame(resizeFrame);
       visibilityObserver.disconnect();
       scrollTrigger?.kill();
@@ -661,7 +732,6 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
       headerTween?.kill();
       positionTween?.kill();
       metaTimeline?.kill();
-      offsetTween?.kill();
       gsap.killTweensOf(state);
       gsap.killTweensOf([dnaCount, dnaTitle, dnaCopy, dnaLink]);
       dnaItems.forEach((item) => item.video?.pause());

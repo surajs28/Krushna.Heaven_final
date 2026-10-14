@@ -1072,22 +1072,25 @@ html.menu-is-open .page-home .site-header .brand {
   pointer-events: auto;
 }
 
-.dna-carousel__navigation > button {
+.dna-carousel__motion {
   display: grid;
-  width: 3.15rem;
-  height: 3.15rem;
+  min-width: 4.5rem;
+  min-height: 2.75rem;
   place-items: center;
-  border: 1px solid rgba(255, 248, 237, 0.42);
-  border-radius: 50%;
-  background: rgba(31, 8, 13, 0.46);
-  color: var(--ivory);
+  padding: 0.5rem 0.65rem;
+  border: 0;
+  border-radius: 0.35rem;
+  background: transparent;
+  color: #d9bec1;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   cursor: pointer;
-  -webkit-backdrop-filter: blur(0.8rem);
-  backdrop-filter: blur(0.8rem);
-  transition: transform 140ms var(--ease-out), border-color 180ms var(--ease-out), background-color 180ms var(--ease-out);
+  transition: transform 140ms var(--ease-out), color 180ms var(--ease-out), background-color 180ms var(--ease-out);
 }
 
-.dna-carousel__navigation > button:active {
+.dna-carousel__motion:active {
   transform: scale(0.96);
 }
 
@@ -1101,7 +1104,7 @@ html.menu-is-open .page-home .site-header .brand {
   position: relative;
   display: grid;
   width: 2.2rem;
-  height: 2.65rem;
+  height: 2.75rem;
   place-items: center;
   padding: 0;
   border: 0;
@@ -2850,9 +2853,9 @@ body.gallery-viewer-open {
     border-color: rgba(255, 248, 237, 0.64);
   }
 
-  .dna-carousel__navigation > button:hover {
-    border-color: var(--ivory);
-    background: rgba(207, 21, 84, 0.3);
+  .dna-carousel__motion:hover {
+    color: var(--ivory);
+    background: rgba(255, 248, 237, 0.07);
   }
 
   .dna-carousel__link:hover svg {
@@ -2994,9 +2997,7 @@ body.gallery-viewer-open {
     justify-content: space-between;
   }
 
-  .dna-carousel__navigation > button {
-    width: 2.9rem;
-    height: 2.9rem;
+  .dna-carousel__motion {
     flex-shrink: 0;
   }
 

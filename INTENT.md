@@ -695,6 +695,15 @@ Each phase ends with a reviewable local result. Work proceeds on a dedicated Kru
 
 ### Phase 3 — Five-signature DNA carousel and gallery journal
 
+**Hands-free carousel direction — 15 October 2026:** The user wants the DNA stage to advance automatically and react to scroll/movement, without requiring the two previous/next arrow buttons. Remove those arrows and retain restrained numbered category selectors plus a compact Pause/Resume control. Preserve the ordered cycle Gelato → Woodfire → Brews → Waffles → Savoury, rather than random category jumps.
+
+- While at least 25% of the media stage is visible, wait 3.8 seconds between automatic 1.15-second GSAP orbit transitions. Pause automatic motion when offscreen, the document is hidden, the site menu is open, the user is reading the copy with a mouse, keyboard focus is active, or the Pause control is selected.
+- Native vertical scrolling now drives the same shared orbit on desktop and mobile. Desktop may pin only when its full content fits; phones remain unpinned. Scroll input interrupts automatic movement at its current position instead of resetting to an earlier category. Resume automatic cycling after scroll settles and the next reading interval.
+- Horizontal drag/swipe, side-card selection and numbered positions remain available. Keyboard Arrow/Home/End selections update immediately. Reduced motion keeps the ordered static rail and does not create autoplay timers.
+- This implementation belongs only to the new `Krushna.Heaven_final` working copy; do not modify or merge into `Icec_ream`.
+- Validation: desktop categories advanced without navigation input; Pause held the selected category; native scrolling changed the active category and its menu link; the 391px phone view advanced automatically once the media stage was visible, with no horizontal overflow and approximately 50px of card/copy clearance in the initial view. Keyboard End selected Savoury immediately. Build and strict TypeScript pass with no browser errors/warnings. Reduced-motion timer exclusion was verified from the setup gate; actual touch feel still requires a real phone review. Publish this refinement only to the approved new repository's Pages preview.
+
+
 **Carousel scale and scroll refinement — 15 October 2026:** Keep the active category's "Explore…" menu destination as a restrained text link. Side-card selection and dragging browse categories; the explicit link opens the menu at that category, without requiring visitors to infer card-tap behaviour. Expose this live link to keyboard and screen-reader users rather than hiding it with the decorative copy.
 
 - Increase desktop cards from 19vw (224–304px) to 21.5vw (248–344px), phone cards from 46vw to 52vw (160–320px), and tablet cards from 38vw to 42vw. Expand the media stage alongside the cards to preserve neighbouring portraits and copy clearance. This supersedes the preceding 46vw mobile sizing.
