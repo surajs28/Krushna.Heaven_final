@@ -1,0 +1,56 @@
+/* Approved berry hero, measured from outputs/homepage-b.png. */
+:root{--berry:#a50e36;--berry-dark:#7f0d2c;--berry-light:#f7dce2}
+body[data-page="index.html"] .site-header{position:absolute;inset:0 0 auto;background:transparent;border:0;color:var(--cream);z-index:50;backdrop-filter:none;-webkit-backdrop-filter:none}
+body[data-page="index.html"] .site-header .brand-mascot{display:none}
+body[data-page="index.html"] .brand{font-size:clamp(26px,2.7vw,38px);line-height:1}
+body[data-page="index.html"] .brand small{color:var(--cream);font-size:10px;letter-spacing:.13em;margin-top:5px}
+body[data-page="index.html"] .site-header nav a{color:var(--cream)}
+body[data-page="index.html"] .site-header nav a[aria-current="page"]:after{background:var(--cream)}
+.nav-menu{display:inline-flex;justify-content:center;align-items:center;min-height:42px;padding:10px 22px;background:var(--berry);color:var(--cream);border-radius:100px;font-size:13px;font-weight:700;transition:transform 160ms var(--ease-out),background 160ms ease}
+body[data-page="index.html"] .nav-menu{background:var(--cream);color:var(--berry-dark)}
+.nav-shell{min-height:80px}.nav-actions{gap:14px}
+.berry-hero{position:relative;isolation:isolate;overflow:hidden;background:var(--berry);color:var(--cream);min-height:440px;height:clamp(440px,32.1vw,620px);padding:0}
+.berry-hero-image{position:absolute;inset:0;z-index:-2;overflow:hidden;background:var(--berry)}
+.berry-hero-photo,.berry-hero-image>img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;max-width:none}
+.berry-hero:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(92,4,30,.18),transparent 58%)}
+.berry-hero .hero-grid{display:flex;align-items:center;height:100%;min-height:0;padding-top:70px;padding-bottom:35px;position:relative}
+.berry-hero .hero-copy{width:48%;padding:0;margin:0}
+.berry-hero h1{font-family:Jakarta,Arial,sans-serif;font-size:clamp(52px,6.1vw,96px);font-weight:800;letter-spacing:-.04em;line-height:1.01;color:var(--cream);margin:0;text-wrap:balance}
+.hero-line-mask{display:block;overflow:clip;padding-bottom:.08em;margin-bottom:-.08em}.hero-line{display:block;will-change:transform}
+.berry-hero .hero-copy>p{font-size:clamp(16px,1.55vw,23px);line-height:1.4;max-width:34ch;margin:22px 0 0;color:var(--cream)}
+.berry-hero .hero-actions{margin-top:28px;gap:18px;flex-wrap:wrap}
+.berry-hero .btn{min-height:52px;font-size:14px;padding:14px 24px;gap:14px}
+.berry-hero .btn.primary{background:var(--cream);color:var(--cocoa)}
+.berry-hero .btn.outline{background:transparent;border:1px solid var(--cream);color:var(--cream)}
+.berry-hero .btn svg{height:18px;width:18px}
+.homepage-collection-link{display:flex;justify-content:center;background:var(--midnight);padding:0 20px 38px;color:var(--cream)}
+.homepage-collection-link .btn{color:var(--cream);border-color:rgba(255,249,239,.5)}
+.coverflow{padding-top:54px;padding-bottom:26px;margin-top:0}.coverflow-heading{font-size:clamp(30px,3.5vw,48px)}
+.section{padding-block:clamp(64px,6.5vw,100px)}
+.story-text p{font-size:16px;line-height:1.75;max-width:60ch}.story-text p.lead{font-size:19px}
+.story-bento{gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.story-bento>div{border-radius:0;background:transparent;padding:28px}.story-bento>div+div{border-left:1px solid var(--line)}
+.story-bento p,.story-bento span{font-size:13px}.story-bento .bento-wide{background:transparent}
+.pint-controls legend{font-size:16px}.control-hint{font-size:13px}.layer-control label{font-size:14px}.layer-control select{font-size:14px}
+.flavour-card>p{font-size:14px;line-height:1.55;min-height:44px}.flavour-monogram{font-size:clamp(27px,3.2vw,48px);padding:20px;overflow-wrap:anywhere}
+.nutrition{font-size:11px}.section-head p{font-size:16px}.footer-top p{font-size:14px}.footer-top .tiny{font-size:12px}
+.newsletter-section{background:var(--berry);color:var(--cream)}.newsletter-section p,.newsletter-section input{color:var(--cream)}.newsletter-section input::placeholder{color:var(--berry-light)}.newsletter-section .email-row{border-color:var(--berry-light)}
+.newsletter-section .icon-btn{color:var(--cream)}
+@media(hover:hover) and (pointer:fine){.nav-menu:hover{transform:translateY(-2px);background:var(--berry-dark)}body[data-page="index.html"] .nav-menu:hover{background:#f7e8d7}.berry-hero .btn.primary:hover{background:#f4e6d4}.berry-hero .btn.outline:hover{background:rgba(255,249,239,.12)}}
+@media(max-width:800px){
+ .nav-shell{min-height:72px}.nav-menu{padding:9px 16px;font-size:12px;min-height:40px}
+ body[data-page="index.html"] #main-nav{background:var(--berry-dark);border-color:rgba(255,249,239,.3)}body[data-page="index.html"] .menu-toggle{color:var(--cream)}
+ .berry-hero{height:auto;min-height:650px;display:flex;flex-direction:column;padding-top:72px}
+ .berry-hero:after{display:none}.berry-hero .hero-grid{padding-top:34px;padding-bottom:24px;display:block;height:auto;width:calc(100% - 40px)}
+ .berry-hero .hero-copy{width:100%;max-width:560px}.berry-hero h1{font-size:clamp(44px,9.7vw,72px);max-width:13ch;line-height:1.04}
+ .berry-hero .hero-copy>p{font-size:17px;margin-top:18px;max-width:31ch}.berry-hero .hero-actions{margin-top:24px;gap:12px}.berry-hero .btn{font-size:13px;min-height:48px;padding:12px 20px}
+ .berry-hero-image{position:relative;inset:auto;order:2;height:330px;width:100%;z-index:0;margin-top:auto}.berry-hero-photo,.berry-hero-image>img{object-position:76% center;object-fit:cover}
+ .story-bento{grid-template-columns:1fr 1fr}.story-bento .bento-wide{grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}
+ .coverflow{padding-top:42px}.homepage-collection-link{padding-bottom:32px}
+}
+@media(max-width:400px){.berry-hero h1{font-size:44px}.berry-hero .btn{padding-inline:16px}.berry-hero-image{height:290px}.berry-hero{min-height:630px}.nav-shell{gap:8px}body[data-page="index.html"] .brand{font-size:26px}}
+@media(prefers-reduced-motion:reduce){.berry-hero-photo,.berry-hero-image,.hero-copy,.hero-line{transform:none!important}.berry-hero-image,.hero-copy,.hero-line{opacity:1!important;clip-path:none!important;filter:none!important}.nav-menu{transition:none}}
+html.motion-paused .berry-hero-photo{transform:none!important}
+html.motion-paused .berry-hero-image,html.motion-paused .hero-copy,html.motion-paused .hero-line{transform:none!important;opacity:1!important;clip-path:none!important;filter:none!important}
+
+

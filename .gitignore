@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+hero-film/out/
+hero-film/dist/
+public/assets/krushna/hero/*.webm
+public/assets/krushna/hero/*.mp4

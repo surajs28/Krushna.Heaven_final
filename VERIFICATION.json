@@ -1,0 +1,15 @@
+{
+  "kind": "DOM/source tests, not rendered browser tests",
+  "checks": [
+    "index.html: landmarks, image alt, icon rendering and menu Escape focus pass",
+    "flavours.html: landmarks, image alt, icon rendering and menu Escape focus pass",
+    "story.html: landmarks, image alt, icon rendering and menu Escape focus pass",
+    "outlets.html: landmarks, image alt, icon rendering and menu Escape focus pass",
+    "contact.html: landmarks, image alt, icon rendering and menu Escape focus pass",
+    "Home: filters, honest vegan empty state, safe search, pint colours/size/toppings, download, focus handoff, motion preference, non-submitting newsletter and bounded map zoom pass",
+    "Full collection contains all 24 flavour entries",
+    "OS reduced motion respected",
+    "Flavour URL query works",
+    "Contact event deep link and safe email encoding pass"
+  ]
+}

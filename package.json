@@ -1,0 +1,30 @@
+{
+  "name": "krushnas-heaven",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run typecheck && node build.cjs && tailwindcss -i src/gelato.css -o public/gelato.css --minify && tailwindcss -i src/krushna.css -o public/krushna.css --minify && tailwindcss -i src/site.css -o public/site.css --minify",
+    "preview": "node preview-4190.cjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "clsx": "^2.1.1",
+    "gsap": "^3.15.0",
+    "lucide": "^1.54.0",
+    "lucide-react": "^1.54.0",
+    "motion": "^14.1.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwind-merge": "^3.7.0",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "esbuild": "^0.28.2",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^7.0.2"
+  }
+}

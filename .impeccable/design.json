@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-13T00:00:00Z",
+  "title": "Design System: Krushna's Heaven",
+  "extensions": {
+    "colorMeta": {
+      "ivory": { "role": "neutral", "displayName": "warm ivory", "value": "#fff8ed" },
+      "paper": { "role": "neutral", "displayName": "paper", "value": "#f7eee2" },
+      "paper-deep": { "role": "neutral", "displayName": "deep paper", "value": "#eadbc9" },
+      "raspberry": { "role": "primary", "displayName": "Krushna raspberry", "value": "#cf1554" },
+      "raspberry-deep": { "role": "primary", "displayName": "deep raspberry", "value": "#a40e3f" },
+      "wine": { "role": "neutral", "displayName": "cinematic wine", "value": "#4b121c" },
+      "wine-soft": { "role": "neutral", "displayName": "soft wine", "value": "#6f2632" },
+      "espresso": { "role": "neutral", "displayName": "espresso", "value": "#2a1713" },
+      "cocoa": { "role": "neutral", "displayName": "cocoa", "value": "#4c332a" },
+      "amber": { "role": "accent", "displayName": "warm amber", "value": "#d5a35d" },
+      "line": { "role": "neutral", "displayName": "light rule", "value": "#ddcbb8" },
+      "line-dark": { "role": "neutral", "displayName": "dark rule", "value": "#7e4e4f" },
+      "muted": { "role": "neutral", "displayName": "muted text", "value": "#765e52" },
+      "white": { "role": "neutral", "displayName": "soft white", "value": "#fffdfa" },
+      "focus": { "role": "accent", "displayName": "keyboard focus", "value": "#157b78" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Fraunces", "purpose": "Hero, page and editorial headings" },
+      "body": { "displayName": "Karla", "purpose": "Body copy, navigation, labels and menu data" }
+    },
+    "shadows": [
+      { "name": "chapter-active", "value": "0 0.55rem 1.5rem rgba(29,5,12,.28)", "purpose": "Active hero chapter separation" },
+      { "name": "map-pin", "value": "0 1rem 2.5rem rgba(91,18,39,.28)", "purpose": "Provisional map marker" }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(.23,1,.32,1)", "purpose": "Controls, menu and hover feedback" },
+      { "name": "ease-in-out", "value": "cubic-bezier(.77,0,.175,1)", "purpose": "Deliberate masks and section transitions" },
+      { "name": "menu", "value": "180–240ms", "purpose": "Full-screen menu opacity and translate transition" },
+      { "name": "reduced-motion", "value": "0.01ms", "purpose": "Collapse non-essential transitions when requested" }
+    ],
+    "breakpoints": [
+      { "name": "wide-tablet", "value": "68rem" },
+      { "name": "stack", "value": "56.25rem" },
+      { "name": "phone", "value": "40rem" }
+    ]
+  },
+  "components": [
+    { "name": "site-header", "description": "Transparent home header, sticky ivory inner header and full-screen mobile navigation" },
+    { "name": "button", "description": "Raspberry, ivory and outline pill actions with focus and active states" },
+    { "name": "hero", "description": "Poster-first homepage hero with live copy, actions and five-category rail" },
+    { "name": "page-hero", "description": "Editorial split hero for Menu, Story and Visit" },
+    { "name": "chapter-link", "description": "Image-backed category destination with active state" },
+    { "name": "menu-row", "description": "Editorial item, description, label and price row" },
+    { "name": "fact", "description": "Icon, label and provisional visit fact" },
+    { "name": "phase-note", "description": "Small factual-status disclosure for illustrative or provisional content" }
+  ],
+  "narrative": {
+    "northStar": "Five cravings. One address.",
+    "overview": "A bright premium café identity grounded in Krushna raspberry and ivory, with wine-dark cinematic moments, warm food photography and an editorial serif voice. The interface stays welcoming for families while using disciplined spacing, restrained controls and large storytelling images.",
+    "keyCharacteristics": [
+      "Krushna's Heaven remains the unmistakable parent brand.",
+      "Five experiences share one ordered visual and navigation system.",
+      "Fraunces headlines bring editorial character; Karla keeps practical content clear.",
+      "Dark cinematic fields are reserved for story moments, not every section.",
+      "Mobile is a deliberate stacked and swipeable experience."
+    ],
+    "rules": [
+      { "name": "Parent brand first", "body": "Mr Gelato appears only inside the Premium Gelatos context.", "section": "brand" },
+      { "name": "Photography carries appetite", "body": "Use large warm crops and avoid decorative card clutter.", "section": "imagery" },
+      { "name": "Facts before conversion", "body": "Do not activate contact or directions actions until their details are verified.", "section": "content" },
+      { "name": "Motion serves sequence", "body": "Keep routine feedback short and reserve cinematic pacing for hero and chapter storytelling.", "section": "motion" }
+    ],
+    "dos": [
+      "Use raspberry, wine and ivory as one connected brand world.",
+      "Keep live headings and actions independent from image or video media.",
+      "Preserve focus, keyboard, reduced-motion and touch behavior.",
+      "Identify illustrative photography and provisional business facts."
+    ],
+    "donts": [
+      "Do not reintroduce the Mr Gelato-first identity or pint builder.",
+      "Do not invent contact details, claims, ratings, facilities or preparation facts.",
+      "Do not compress the five desktop panels into unreadable mobile columns.",
+      "Do not use glassmorphism, neon gradients or decorative dashboard cards."
+    ]
+  }
+}

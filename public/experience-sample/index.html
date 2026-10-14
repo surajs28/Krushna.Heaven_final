@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#40101d" />
+    <meta name="description" content="Krushna's Heaven cinematic website direction — visual prototype." />
+    <title>Krushna's Heaven — Cinematic Concept</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="concept-note" role="note">
+      <span>Visual prototype</span>
+      <p>Temporary food media · final copy, facts and video pending client approval</p>
+      <button class="concept-note__close" type="button" aria-label="Dismiss prototype notice">Close</button>
+    </div>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Krushna's Heaven home">
+        <img src="../concept/assets/logo.png" alt="Krushna's Heaven" />
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a class="is-active" href="#top">Home</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#signatures">Menu</a>
+        <a href="#story">Our story</a>
+      </nav>
+
+      <a class="header-visit" href="#visit">
+        <span>Plan your visit</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+      </a>
+
+      <button class="menu-trigger" type="button" aria-expanded="false" aria-controls="site-menu">
+        <span class="menu-trigger__label">Menu</span>
+        <span class="menu-trigger__icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </header>
+
+    <div class="menu-panel" id="site-menu" aria-hidden="true">
+      <div class="menu-panel__wash" aria-hidden="true"></div>
+      <div class="menu-panel__inner">
+        <div class="menu-panel__lead">
+          <span>Krushna's Heaven</span>
+          <p>Five cravings, gathered under one roof in Pune.</p>
+        </div>
+        <nav class="menu-panel__links" aria-label="Expanded navigation">
+          <a href="#top"><small>01</small><span>Home</span></a>
+          <a href="#experiences"><small>02</small><span>Five experiences</span></a>
+          <a href="#signatures"><small>03</small><span>Signature menu</span></a>
+          <a href="#story"><small>04</small><span>Our story</span></a>
+          <a href="#visit"><small>05</small><span>Visit us</span></a>
+        </nav>
+        <div class="menu-panel__details">
+          <p><span>Location</span>Wanwadi / Wanowrie, Pune<br /><em>Final public wording pending</em></p>
+          <p><span>Contact</span>Details will be verified before launch</p>
+        </div>
+      </div>
+    </div>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <div class="hero-shot hero-shot--exterior is-current"></div>
+          <div class="hero-shot hero-shot--gelato"></div>
+          <div class="hero-shot hero-shot--pizza"></div>
+          <div class="hero-shot hero-shot--interior"></div>
+          <div class="hero-media__shade"></div>
+        </div>
+
+        <div class="hero-content">
+          <p class="hero-note">Gelato · woodfire · brews · waffles · savoury</p>
+          <h1 id="hero-title">Five cravings.<br />One address.</h1>
+          <p class="hero-copy">A bright café made for slow evenings, happy children and tables where everyone gets their favourite.</p>
+          <div class="hero-actions">
+            <a class="button button--pink" href="#experiences">
+              <span>Explore the five</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+            <a class="button button--glass" href="#visit">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11Z" /><circle cx="12" cy="10" r="2" /></svg>
+              <span>Plan your visit</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-status" aria-hidden="true">
+          <span data-shot-current>01</span>
+          <div class="hero-status__line"><i data-shot-progress></i></div>
+          <span>04</span>
+        </div>
+
+        <button class="motion-toggle" type="button" aria-pressed="false">
+          <svg class="motion-toggle__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14" /></svg>
+          <svg class="motion-toggle__play" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 9 6-9 6V6Z" /></svg>
+          <span>Pause motion</span>
+        </button>
+
+        <a class="scroll-cue" href="#welcome">
+          <span>Begin the story</span>
+          <i aria-hidden="true"></i>
+        </a>
+      </section>
+
+      <section class="welcome" id="welcome" aria-labelledby="welcome-title">
+        <div class="welcome-copy" data-reveal="copy">
+          <p class="chapter-mark">One café, many favourites</p>
+          <h2 id="welcome-title">A sweeter place for happier days.</h2>
+          <p>Krushna's Heaven brings five different moods to one table—from a cold scoop after school to a woodfire dinner that turns into coffee and dessert.</p>
+          <p class="welcome-quote">Made for families who never agree on one craving—and should never have to.</p>
+          <a class="text-link" href="#story">Discover the café story <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <figure class="welcome-visual" data-reveal="image">
+          <img src="../assets/krushna/interior.png" alt="The real gelato counter inside Krushna's Heaven" />
+          <figcaption>Inside Krushna's Heaven · real café photograph</figcaption>
+          <span class="hand-note" aria-hidden="true">come as you are,<br />stay for dessert</span>
+        </figure>
+      </section>
+
+      <section class="experiences" id="experiences" aria-labelledby="experience-title">
+        <div class="experience-stage">
+          <div class="experience-intro">
+            <p class="chapter-mark">The five experiences</p>
+            <h2 id="experience-title">Every craving gets its moment.</h2>
+            <p>Scroll through the five worlds that make Krushna's Heaven more than a single-category café.</p>
+          </div>
+
+          <div class="experience-track" data-experience-track>
+            <article class="experience-card experience-card--gelato" data-index="0">
+              <div class="experience-card__media media-gelato" role="img" aria-label="Temporary gelato photography"></div>
+              <div class="experience-card__shade"></div>
+              <div class="experience-card__copy">
+                <span class="experience-card__number">01</span>
+                <p>Mr Gelato at Krushna's Heaven</p>
+                <h3>Premium<br />Gelatos</h3>
+                <span class="experience-card__line">Dense, creamy scoops and fruit-forward sorbets.</span>
+                <a href="#signatures">Meet the gelato menu <span aria-hidden="true">↗</span></a>
+              </div>
+              <span class="media-label">Temporary product media</span>
+            </article>
+
+            <article class="experience-card experience-card--pizza" data-index="1">
+              <div class="experience-card__media media-pizza" role="img" aria-label="Temporary pizza photography"></div>
+              <div class="experience-card__shade"></div>
+              <div class="experience-card__copy">
+                <span class="experience-card__number">02</span>
+                <p>Flame, blister and comfort</p>
+                <h3>Woodfire<br />Pizza</h3>
+                <span class="experience-card__line">A warm centrepiece designed for sharing.</span>
+                <a href="#signatures">Explore savoury favourites <span aria-hidden="true">↗</span></a>
+              </div>
+              <span class="media-label">Process wording pending verification</span>
+            </article>
+
+            <article class="experience-card experience-card--brews" data-index="2">
+              <div class="experience-card__media media-brews" role="img" aria-label="Temporary latte photography"></div>
+              <div class="experience-card__shade"></div>
+              <div class="experience-card__copy">
+                <span class="experience-card__number">03</span>
+                <p>A pause between stories</p>
+                <h3>Brews</h3>
+                <span class="experience-card__line">Hot, iced and made to stretch the evening.</span>
+                <a href="#signatures">Find your cup <span aria-hidden="true">↗</span></a>
+              </div>
+              <span class="media-label">Temporary product media</span>
+            </article>
+
+            <article class="experience-card experience-card--waffles" data-index="3">
+              <div class="experience-card__media media-waffles" role="img" aria-label="Temporary waffle photography"></div>
+              <div class="experience-card__shade"></div>
+              <div class="experience-card__copy">
+                <span class="experience-card__number">04</span>
+                <p>Crisp edges, generous finishes</p>
+                <h3>Waffles</h3>
+                <span class="experience-card__line">Warm from the iron and made for the middle of the table.</span>
+                <a href="#signatures">See sweet favourites <span aria-hidden="true">↗</span></a>
+              </div>
+              <span class="media-label">Temporary product media</span>
+            </article>
+
+            <article class="experience-card experience-card--savoury" data-index="4">
+              <div class="experience-card__media media-savoury" role="img" aria-label="Temporary savoury food photography"></div>
+              <div class="experience-card__shade"></div>
+              <div class="experience-card__copy">
+                <span class="experience-card__number">05</span>
+                <p>For every appetite at the table</p>
+                <h3>Savoury<br />Bites</h3>
+                <span class="experience-card__line">Comforting plates for the craving that wants more than sweet.</span>
+                <a href="#signatures">Browse the full menu <span aria-hidden="true">↗</span></a>
+              </div>
+              <span class="media-label">Temporary product media</span>
+            </article>
+          </div>
+
+          <div class="experience-progress" aria-hidden="true">
+            <span data-experience-number>01</span>
+            <div><i data-experience-progress></i></div>
+            <span>05</span>
+          </div>
+
+          <a class="experience-skip" href="#signatures">Skip the chapter</a>
+        </div>
+      </section>
+
+      <div class="word-ribbon" aria-hidden="true">
+        <div>
+          <span>Churned</span><i></i><span>Fired</span><i></i><span>Brewed</span><i></i><span>Pressed</span><i></i><span>Shared</span><i></i>
+          <span>Churned</span><i></i><span>Fired</span><i></i><span>Brewed</span><i></i><span>Pressed</span><i></i><span>Shared</span><i></i>
+        </div>
+      </div>
+
+      <section class="signatures" id="signatures" aria-labelledby="signatures-title">
+        <div class="signatures-head" data-reveal="copy">
+          <h2 id="signatures-title">The table everyone talks about.</h2>
+          <div>
+            <p>A first edit of verified menu names, paired with illustrative photography until the final shoot.</p>
+            <a class="text-link" href="../flavours.html">Explore the current menu <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="signature-grid">
+          <article class="signature signature--hero" data-reveal="card">
+            <img src="../assets/krushna/brownie.png" alt="Illustrative brownie served with gelato" />
+            <div class="signature__overlay">
+              <span>Must try · illustrative image</span>
+              <h3>Chocolate Brownie<br />with Gelato</h3>
+              <p>Warm, cold, fudgy and creamy in one spoonful.</p>
+            </div>
+          </article>
+
+          <article class="signature signature--pizza" data-reveal="card">
+            <div class="atlas atlas--pizza" role="img" aria-label="Illustrative pizza"></div>
+            <div class="signature__caption">
+              <span>Pizza favourite</span>
+              <h3>Amritsar to Krushna Heaven</h3>
+              <p>Makhani sauce, paneer tikka and fior di latte.</p>
+            </div>
+          </article>
+
+          <article class="signature signature--coffee" data-reveal="card">
+            <div class="atlas atlas--coffee" role="img" aria-label="Illustrative café latte"></div>
+            <div class="signature__caption">
+              <span>Café favourite</span>
+              <h3>A cup worth staying for</h3>
+              <p>Final signature brew selection pending the owner.</p>
+            </div>
+          </article>
+
+          <article class="signature signature--waffle" data-reveal="card">
+            <div class="atlas atlas--waffle" role="img" aria-label="Illustrative waffle with gelato and fruit"></div>
+            <div class="signature__caption">
+              <span>Sweet favourite</span>
+              <h3>Waffle, fruit & gelato</h3>
+              <p>Final menu name and recommendation label pending.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="story" id="story" aria-labelledby="story-title">
+        <div class="story-media" data-reveal="image">
+          <img src="../assets/krushna/exterior.png" alt="Krushna's Heaven illuminated exterior at night" />
+          <span>Real café photograph</span>
+        </div>
+        <div class="story-copy" data-reveal="copy">
+          <p class="chapter-mark">Good food brings people closer</p>
+          <h2 id="story-title">One bright place.<br />Five ways to belong.</h2>
+          <p>The finished story will introduce the people, purpose and moments behind Krushna's Heaven. For now, this sample shows how the café becomes the hero—not only the food.</p>
+          <dl class="story-facts">
+            <div><dt>01</dt><dd>A real place, shown honestly</dd></div>
+            <div><dt>02</dt><dd>Family warmth with premium restraint</dd></div>
+            <div><dt>03</dt><dd>Mr Gelato featured within the gelato story</dd></div>
+          </dl>
+          <a class="button button--dark" href="#visit"><span>Come say hello</span><span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="proof" aria-labelledby="proof-title">
+        <div class="proof-top">
+          <h2 id="proof-title">The stories come from the people at the table.</h2>
+          <p>Verified customer reviews will replace this preview before launch.</p>
+        </div>
+        <div class="proof-card">
+          <div class="proof-card__visual">
+            <img src="../assets/krushna/interior.png" alt="The real Krushna's Heaven gelato counter" />
+          </div>
+          <blockquote>
+            <span>Customer story placeholder</span>
+            <p>“A real customer quote will sit here—short, specific and linked to its source.”</p>
+            <footer>Pending verified review and attribution</footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="visit" id="visit" aria-labelledby="visit-title">
+        <div class="visit-photo">
+          <img src="../assets/krushna/exterior.png" alt="Krushna's Heaven exterior and illuminated sign" />
+        </div>
+        <div class="visit-panel">
+          <p class="chapter-mark">Your next evening starts here</p>
+          <h2 id="visit-title">Come hungry.<br />Leave happier.</h2>
+          <p>Visit details shown below are intentionally provisional until the owner approves one public address, number and set of opening hours.</p>
+          <div class="visit-details">
+            <div><span>Area</span><strong>Wanwadi / Wanowrie, Pune</strong><small>Exact public wording pending</small></div>
+            <div><span>Hours</span><strong>Open daily</strong><small>Final hours pending confirmation</small></div>
+          </div>
+          <div class="visit-actions">
+            <span class="button button--ivory" aria-label="Directions link will be connected after the final café address is confirmed"><span>Directions preview</span><span aria-hidden="true">↗</span></span>
+            <a class="text-link text-link--light" href="#top">Back to the beginning ↑</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <img src="../concept/assets/logo.png" alt="Krushna's Heaven" />
+        <p>Five cravings, one welcoming café.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="#experiences">Five experiences</a>
+        <a href="#signatures">Menu preview</a>
+        <a href="#story">Our story</a>
+        <a href="#visit">Visit us</a>
+      </nav>
+      <div class="footer-note">
+        <span>Concept build</span>
+        <p>Temporary media and provisional details are clearly marked throughout this sample.</p>
+      </div>
+      <div class="footer-word" aria-hidden="true">HEAVEN</div>
+    </footer>
+
+    <a class="mobile-visit" href="#visit">Plan your visit <span aria-hidden="true">↗</span></a>
+
+    <script src="app.js"></script>
+  </body>
+</html>

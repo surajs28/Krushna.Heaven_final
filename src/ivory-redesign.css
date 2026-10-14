@@ -1,0 +1,58 @@
+/* User-approved ivory/chocolate/berry system; green stays in food photography. */
+:root{--berry:#941b3b;--berry-dark:#75172f;--berry-light:#f3dce0;--herb:var(--berry);--focus:var(--berry);--midnight:#38251f}
+body{background:var(--cream);color:var(--cocoa)}
+.brand-mascot{display:none}.brand>span:last-child{font-size:27px}.site-header{background:var(--cream);backdrop-filter:none;-webkit-backdrop-filter:none}
+.berry-hero:after{background:linear-gradient(90deg,rgba(54,5,20,.78) 0%,rgba(73,7,28,.62) 38%,rgba(91,8,34,.22) 60%,transparent 76%)}
+.berry-hero .hero-copy>p{font-size:20px;max-width:38ch;line-height:1.5}.berry-hero .hero-actions{gap:18px}
+.story-section,.cafe-menu-section,.cafe-experience-section,.visit-section,.newsletter-section,.flavours-section,.builder-section{background:var(--cream);color:var(--cocoa)}
+.section{padding-block:76px}.section h2{font-size:clamp(32px,3.4vw,48px);line-height:1.12;letter-spacing:-.04em}
+.story-section{border-top:1px solid var(--line)}.story-grid{grid-template-columns:1fr 1fr;gap:72px}.story-visual{min-height:0;height:430px}.story-text h2 span,.page-intro h1 span{color:var(--cocoa)}
+.btn.primary{background:var(--berry);color:var(--cream)}.btn.outline{border-color:var(--cocoa);color:var(--cocoa)}.form-status{color:var(--berry)}
+.cafe-menu-section{border-top:1px solid var(--line)}.cafe-category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.cafe-category a{display:block}.category-photo{aspect-ratio:1;overflow:hidden;border-radius:12px;background-image:url('assets/menu-atlas.png');background-size:200% 200%;background-repeat:no-repeat;background-color:#ede1d0}
+.cafe-category h3{font:700 22px/1.25 Jakarta;margin-top:20px;letter-spacing:-.03em}.cafe-category p{font-size:15px;line-height:1.6;margin-top:8px;color:var(--muted);max-width:30ch}.category-link{display:flex;align-items:center;gap:10px;min-height:44px;font-size:14px;color:var(--berry);margin-top:12px}.category-link svg{width:17px;height:17px}
+.sample-caption{font-size:12px;color:var(--muted);margin-top:26px;line-height:1.6}.cafe-experience-section{border-top:1px solid var(--line)}.cafe-experience-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:72px;align-items:center}
+.cafe-experience-grid figure{margin:0}.cafe-experience-grid img{width:100%;height:430px;object-fit:cover;border-radius:12px}.cafe-experience-grid figcaption{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.5}.cafe-experience-grid p{font-size:17px;line-height:1.75;color:var(--muted);margin:20px 0;max-width:44ch}.cafe-experience-grid .btn{margin-top:12px}
+.visit-section{border-top:1px solid var(--line)}.map-preview{background:#eee7dc;border:1px solid var(--line)}.map-pin{background:var(--berry)}.map-label{background:var(--cream);color:var(--cocoa)}
+.newsletter-section{border-top:1px solid var(--line)}.newsletter-section p,.newsletter-section input,.newsletter-section .icon-btn{color:var(--cocoa)}.newsletter-section input::placeholder{color:var(--muted)}.newsletter-section .email-row{border-color:var(--line)}
+.footer{background:var(--cocoa);color:var(--cream)}.footer a,.footer h3,.footer p,.footer-brand{color:var(--cream)}.footer .icon-btn{border-color:#fff9ef66;color:var(--cream)}.footer-bottom{border-top-color:#fff9ef44;color:#e5d9cc}.motion-toggle{color:var(--cream)}
+.signature-menu-photo{position:absolute;inset:0;background-image:url('assets/signature-atlas.png');background-size:300% 200%;background-repeat:no-repeat}.flavour-image{background:#efe7dc}.flavour-image img{transform:none;width:100%;height:100%;object-fit:cover}.flavour-pill{background:var(--cream)}.nutrition{font-size:12px}.pint-halo{background:#f0e3d1}.pint-stage{background:#f5eddf}.pint-cup{background:var(--berry);color:var(--cream)}.pint-controls{background:var(--cream);border:1px solid var(--line)}
+.page-intro h1{font-size:clamp(42px,5vw,72px)}.contact-form,.occasion-panel{background:#f3ecdf}.photo-caption{background:var(--cream)}
+@media(hover:hover) and (pointer:fine){.btn.primary:hover{background:var(--berry-dark)}.cafe-category a:hover .category-link{text-decoration:underline;text-underline-offset:4px}}
+@media(max-width:800px){.section{padding-block:54px}.story-grid,.cafe-experience-grid{grid-template-columns:1fr;gap:30px}.story-visual{height:330px}.cafe-experience-grid img{height:330px}.cafe-category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 16px}.cafe-category h3{font-size:19px;margin-top:15px}.cafe-category p{font-size:14px}.cafe-experience-grid p{font-size:16px}.berry-hero .hero-copy>p{font-size:17px}.category-link{font-size:13px}.coverflow-heading{font-size:inherit}.footer-top{gap:30px}.footer-bottom{font-size:11px}}
+@media(max-width:400px){.cafe-category h3{font-size:18px}.cafe-category p{font-size:13px}.cafe-experience-grid img{height:280px}}
+/* Match the approved desktop inset and hero proportions. */
+.shell,.nav-shell{max-width:1160px}
+.coverflow-heading{max-width:1160px;margin-inline:auto}
+.berry-hero{height:clamp(440px,34.2vw,620px)}
+.berry-hero h1{font-size:clamp(52px,6.6vw,96px)}
+.berry-hero .hero-copy{width:50%}
+.berry-hero .hero-copy>p{max-width:50ch;font-size:clamp(16px,1.48vw,22px)}
+.brand small,.brand-tagline,.motion-toggle,.footer .tiny{font-size:12px}
+.coverflow{padding:48px 0 40px}
+@media(max-width:760px){.berry-hero{height:auto}.berry-hero .hero-copy{width:100%}.berry-hero h1{font-size:clamp(44px,9.7vw,72px)}.berry-hero .hero-copy>p{font-size:17px;max-width:31ch}.coverflow{padding-top:42px}}
+html{scrollbar-color:#aa536a var(--cream)}
+::-webkit-scrollbar-thumb{background:#aa536a}
+:focus-visible{outline-color:var(--berry)}
+.choice-row input:checked+span,.topping-choices input:checked+span{border-color:var(--berry);background:#f5e6e9}
+.choice-row input:focus-visible+span,.topping-choices input:focus-visible+span{outline-color:var(--berry)}
+.pint-cup small,.choice-row small,.mix-summary>span,.mix-summary small,.control-hint{font-size:12px}
+/* Keep feedback on controls and photographs rather than moving reading layouts. */
+.flavour-card{transition:none;transform-style:flat}
+.signature-menu-photo{transition:transform 250ms var(--ease-out)}
+.coverflow-stage{cursor:grab;user-select:none}
+.coverflow-stage.is-dragging,.coverflow-stage.is-dragging button{cursor:grabbing}
+.coverflow-card{user-select:none}
+.coverflow-cta svg,.category-link svg,.btn svg{transition:transform 160ms var(--ease-out)}
+.site-header nav{transform-origin:top right}
+.filter-group button:active{transform:scale(.97)}
+@media(hover:hover) and (pointer:fine){
+ .flavour-card:hover .signature-menu-photo{transform:scale(1.035)}
+ .flavour-card:hover .flavour-image img{transform:scale(1.035)}
+ .cafe-category .category-photo{transition:transform 250ms var(--ease-out)}
+ .cafe-category a:hover .category-photo{transform:translateY(-4px) scale(1.015)}
+ .coverflow-cta:hover svg,.cafe-category a:hover .category-link svg,.btn:hover svg{transform:translateX(3px)}
+}
+.page-transition{position:fixed;inset:0;z-index:9999;background:var(--berry);pointer-events:none;transform:scaleY(1);transform-origin:top;will-change:transform}
+@media(prefers-reduced-motion:reduce){.page-transition{display:none}.story-visual,.story-text>*,.cafe-category,.cafe-experience-grid figure,.cafe-experience-grid>div>*,.visit-copy>*,.map-preview,.page-intro>*,.builder-section .section-head>*,.pint-stage,.pint-controls,.footer-top>div{transform:none!important;opacity:1!important;clip-path:none!important}}
+html.motion-paused .story-visual,html.motion-paused .story-text>*,html.motion-paused .cafe-category,html.motion-paused .cafe-experience-grid figure,html.motion-paused .cafe-experience-grid>div>*,html.motion-paused .visit-copy>*,html.motion-paused .map-preview,html.motion-paused .page-intro>*,html.motion-paused .builder-section .section-head>*,html.motion-paused .pint-stage,html.motion-paused .pint-controls,html.motion-paused .footer-top>div{transform:none!important;opacity:1!important;clip-path:none!important}

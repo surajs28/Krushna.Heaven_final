@@ -1,0 +1,1279 @@
+{
+  "source": "https://krushnasheaven.com/menu",
+  "extractedAt": "2026-10-11T18:50:41.398Z",
+  "note": "Literal data extracted from the previous website bundle. Preserve spelling and prices as evidence; use the client-approved final menu as the production source of truth.",
+  "counts": {
+    "savoury": 35,
+    "brews": 22,
+    "mocktails": 12,
+    "proteinJuiceTea": 13,
+    "scoopTreats": 31,
+    "desserts": 17,
+    "gelatoChocolate": 8,
+    "gelatoFruit": 12,
+    "gelatoCreamy": 15,
+    "gelatoPremium": 12,
+    "addons": 9,
+    "totalListedLines": 186
+  },
+  "groups": {
+    "savoury": [
+      {
+        "title": "Pasta",
+        "icon": null,
+        "items": [
+          {
+            "name": "Pasta Aglio Olio",
+            "desc": "(Classic Italian Spaghetti pasta tossed in olive oil, garlic, herbs & chilli flakes)",
+            "price": "₹390"
+          },
+          {
+            "name": "Pasta Marinara",
+            "desc": "(Pasta tossed in a rich tomato marinara sauce with herbs, garlic & Seasoning)",
+            "price": "₹420"
+          },
+          {
+            "name": "Pasta Arabiata",
+            "desc": "(Pasta tossed in spicy Arrabbiata sauce with garlic, Vegetables & chilli flakes and basil)",
+            "price": "₹430"
+          },
+          {
+            "name": "Pasta Alfredo",
+            "desc": "(Pasta tossed in a rich and creamy Alfredo sauce with herbs, Vegetables and Cheese)",
+            "price": "₹440",
+            "bestseller": true
+          },
+          {
+            "name": "Pasta Pesto",
+            "desc": "(Spaghetti tossed in fresh basil pesto sauce with garlic, Vegetables, olive oil & parmesan)",
+            "price": "₹460"
+          },
+          {
+            "name": "Pasta Au Gratin",
+            "desc": "(AKA Alferno, baked Pink sauce pasta with vegetables, herbs and cheese finished with a golden gratin crust)",
+            "price": "₹470"
+          },
+          {
+            "name": "Pasta With Ratatouille",
+            "desc": "(Pasta tossed with slow-cooked ratatouille vegetables in a rich herbed tomato sauce)",
+            "price": "₹450"
+          }
+        ]
+      },
+      {
+        "title": "Fries",
+        "icon": null,
+        "items": [
+          {
+            "name": "Classic Salted Fries",
+            "desc": "(Crispy French fries seasoned lightly and served hot)",
+            "price": "₹210"
+          },
+          {
+            "name": "Masala Fries",
+            "desc": "(Crispy French fries tossed in homemade masala seasoning)",
+            "price": "₹230",
+            "bestseller": true
+          },
+          {
+            "name": "Chilli Lime Fries",
+            "desc": "(Crispy fries tossed with zesty chilli and tangy lime seasoning)",
+            "price": "₹250"
+          },
+          {
+            "name": "Peri Peri French Fries",
+            "desc": "(Crispy French fries tossed in spicy and smoky peri peri seasoning)",
+            "price": "₹270"
+          },
+          {
+            "name": "Truffle Parmesan French Fries",
+            "desc": "(Crispy fries tossed in truffle oil & topped with parmesan cheese and herbs)",
+            "price": "₹290",
+            "bestseller": true
+          }
+        ]
+      },
+      {
+        "title": "Croissant Sandwich",
+        "icon": null,
+        "items": [
+          {
+            "name": "Mushroom Royale Croissant Sandwich",
+            "desc": "(Mushroom Duxelle, Mixed Greens, Sautéed Mushroom, Boconchinni)",
+            "price": "₹420",
+            "bestseller": true
+          },
+          {
+            "name": "Paneer Tikka Delight Croissant Sandwich",
+            "desc": "(Mint Chutney, Mixed Greens, Lacha Onion, Tomato, Paneer Tikka)",
+            "price": "₹380"
+          },
+          {
+            "name": "Bombay Masala Cheese Croissant Sandwich",
+            "desc": "(Mint Chutney, Mixed Greens, Lacha Onion, Tomato, Homemade Mixed Vegetable Patty)",
+            "price": "₹410"
+          },
+          {
+            "name": "Mediterranean Delight Croissant Sandwich",
+            "desc": "(Hummus, Mixed Greens, Coleslaw, Onion, Tomato, Falafel, Garlic Sauce)",
+            "price": "₹390"
+          },
+          {
+            "name": "Burrata Caprese Croissant Sandwich",
+            "desc": "Pesto, Mixed Green, Tomato Compote, Burrata Cheese",
+            "price": "₹480"
+          },
+          {
+            "name": "Ratatouille Crunch Croissant Sandwich",
+            "desc": "(Marinara Sauce, Mixed Green, Ratatouille, Cheese)",
+            "price": "₹430"
+          }
+        ]
+      },
+      {
+        "title": "Burger",
+        "icon": null,
+        "items": [
+          {
+            "name": "Crispy Paneer Supreme Burger",
+            "desc": "(Crispy homemade paneer patty layered with caramelised onions, cheese & signature sauces in a soft bun)",
+            "price": "₹380"
+          },
+          {
+            "name": "Soya Stack Burger",
+            "desc": "(Juicy soya patty stacked with greens, cheese & flavorful sauces in a soft bun)",
+            "price": "₹360"
+          },
+          {
+            "name": "Desi Aloo Crunch Burger",
+            "desc": "(Crispy desi aloo patty loaded with fresh greens and homemade sauces in a soft bun)",
+            "price": "₹370"
+          },
+          {
+            "name": "Falafel Burger",
+            "desc": "(Crispy falafel patty layered with hummus and garlic sauce with coleslaw in homemade made sauces with a soft bun)",
+            "price": "₹390"
+          }
+        ]
+      },
+      {
+        "title": "Nachos",
+        "icon": null,
+        "items": [
+          {
+            "name": "Nachos With Salsa And Cheese Sauce",
+            "desc": "(Crispy nachos served with tangy salsa and creamy cheese sauce)",
+            "price": "₹350",
+            "bestseller": true
+          }
+        ]
+      },
+      {
+        "title": "Sourdough Pizzas",
+        "icon": null,
+        "items": [
+          {
+            "name": "Marinara Pizza",
+            "desc": "Ingredients: Homemade Marinara Sauce, Confit Sliced Garlic, Olive Oil. Garnish: Fresh Basil, Spicy Olive Oil infused with Herbs",
+            "price": "₹459"
+          },
+          {
+            "name": "Neapolitan Margherita Pizza",
+            "desc": "Ingredients: Homemade Pomodoro Sauce, Fresh Buffalo Mozzarella, Olive Oil. Garnish: Fresh Basil, Parmesan Cheese",
+            "price": "₹499"
+          },
+          {
+            "name": "Three Cheese Pizza",
+            "desc": "Ingredients: Herb Garlic Butter, Fresh Buffalo Mozzarella, Fior Di Latte, Parmesan Cheese. Garnish: Parsley, Black Pepper, Fresh Basil",
+            "price": "₹579"
+          },
+          {
+            "name": "Four Cheese Pizza",
+            "desc": "Ingredients: Homemade Cream Cheese Sauce, Ricotta Cheese, Yellow Cheddar Cheese, Emmental Cheese, Homemade Confit Garlic, Confit Cherry Tomatoes, Jalapeño Salsa. Garnish: Parmesan Cheese, Fresh Parsley",
+            "price": "₹679"
+          },
+          {
+            "name": "Truffle Shrum Pizza",
+            "desc": "Ingredients: Homemade Mushroom Sauce, Fresh Buffalo Cheese, Button Mushroom, Oyster Mushroom, Homemade Jalapeño Salsa, Confit Tomato, Truffle Oil. Garnish: Parmesan Cheese, Fresh Parsley",
+            "price": "₹689"
+          },
+          {
+            "name": "Buffalo Verdure Pizza",
+            "desc": "Ingredients: Homemade Buffalo Sauce, Fior Di Latte, Yellow Zucchini, Green Zucchini, Red Bell Pepper, Yellow Bell Pepper, Green Bell Pepper, Baby Corn, Broccoli, Button Mushrooms. Garnish: Parmesan Cheese, Fresh Parsley",
+            "price": "₹699"
+          },
+          {
+            "name": "Amritsar to Krushna Heaven",
+            "desc": "Ingredients: Homemade Makhani Sauce, Fior Di Latte, Cottage Cheese (Paneer) Tikka, Sliced Onions, Red, Yellow & Green Bell Peppers, Jalapeños, Homemade Confit Tomatoes. Garnish: Parmesan Cheese, Laccha Onion, Pickled Onion, Fresh Coriander",
+            "price": "₹649"
+          },
+          {
+            "name": "Pesto Inferno",
+            "desc": "Ingredients: Homemade Basil Pesto, Fior Di Latte, Sundried Tomatoes, Saute Veggies, Homemade Confit Tomatoes, Jalapeños, Homemade Confit Garlic. Garnish: Rocket Leaves, Burrata Cheese, Parmesan Cheese",
+            "price": "₹699"
+          }
+        ]
+      },
+      {
+        "title": "Calzone",
+        "icon": null,
+        "items": [
+          {
+            "name": "Eggplant & Cheese Calzone",
+            "desc": "Ingredients: Fried Eggplant, Cow Mozzarella Cheese, Homemade Basil Pesto, Homemade Spicy Sauce. Garnish: Parmesan Cheese, Parsley, Rocket Leaves",
+            "price": "₹399"
+          },
+          {
+            "name": "Garlic Cheese Calzone",
+            "desc": "Ingredients: Ricotta Cheese, Fior Di Latte Cheese, Buffalo Cheese, Homemade Confit Garlic Butter. Garnish: Parmesan Cheese",
+            "price": "₹290"
+          }
+        ]
+      },
+      {
+        "title": "Artisanal Panuozzo",
+        "icon": null,
+        "items": [
+          {
+            "name": "Eggplant Panuozzo",
+            "desc": "Ingredients: Eggplant Baked with Cheese, Fior Di Latte Cheese, Homemade Basil Pesto, Homemade Spicy Sauce. Garnish: Parmesan Cheese, Rocket Leaves, Homemade Sumac Yogurt Dip, Parsley",
+            "price": "₹399"
+          },
+          {
+            "name": "Caponata",
+            "desc": "Ingredients: Homemade Basil Pesto, Sautéed Veggies, Fior Di Latte. Garnish: Parmesan Cheese, Parsley, Rocket Leaves",
+            "price": "₹349"
+          }
+        ]
+      }
+    ],
+    "brews": [
+      {
+        "title": "Hot Classic",
+        "icon": null,
+        "items": [
+          {
+            "name": "Espresso",
+            "desc": "(Strong Coffee Shot)",
+            "price": "₹149"
+          },
+          {
+            "name": "Caffe Americano",
+            "desc": "(Espresso + Hot Water)",
+            "price": "₹159"
+          },
+          {
+            "name": "Cappuccino",
+            "desc": "(Espresso + Steamed milk + Thick Milk Foam)",
+            "price": "₹179"
+          },
+          {
+            "name": "Caffe latte",
+            "desc": "(Espresso + Steamed Milk + Thin Layer of Milk Foam)",
+            "price": "₹199"
+          },
+          {
+            "name": "Flat White",
+            "desc": "(Espresso + Velvety Milk Foam)",
+            "price": "₹219"
+          },
+          {
+            "name": "Caffe Mocha",
+            "desc": "(Espresso + Chocolate + Steamed Milk)",
+            "price": "₹219"
+          },
+          {
+            "name": "Cortado",
+            "desc": "(Equal Espresso and Steam Milk Foam)",
+            "price": "₹179"
+          },
+          {
+            "name": "Affogato",
+            "desc": "(Hot Espresso Poured Over Gelto)",
+            "price": "₹239"
+          },
+          {
+            "name": "Hot chocolate",
+            "desc": "(A Smooth, Comforting Blend of Premium Cocoa Powder)",
+            "price": "₹219"
+          }
+        ]
+      },
+      {
+        "title": "Cold Classic",
+        "icon": null,
+        "items": [
+          {
+            "name": "Classic Cold Coffee",
+            "desc": "(Double Espresso + Geltos + Milk)",
+            "price": "₹249"
+          },
+          {
+            "name": "Browine Frappe",
+            "desc": "(Double Espresso + Geltos + Browine + Milk)",
+            "price": "₹299"
+          },
+          {
+            "name": "Heaven's Signature",
+            "desc": "(Double Espresso + Geltos + Milk + Whip Cream)",
+            "price": "₹289"
+          },
+          {
+            "name": "Caramel Frappe",
+            "desc": "(Double Espresso + Geltos + Milk + Caramel Sauce)",
+            "price": "₹279"
+          },
+          {
+            "name": "Vanilla Frappe",
+            "desc": "(Double Espresso + Geltos + Milk + Vanilla)",
+            "price": "₹279"
+          }
+        ]
+      },
+      {
+        "title": "Iced Tea",
+        "icon": null,
+        "items": [
+          {
+            "name": "Lemon Iced Tea",
+            "desc": "(Water + Black Tea + Sugar + Fresh Lemon Juice)",
+            "price": "₹179"
+          },
+          {
+            "name": "Peach Iced Tea",
+            "desc": "(Water + Black Tea + Sugar + Ripe Peaches)",
+            "price": "₹189"
+          },
+          {
+            "name": "Hibiscus Mint Tea",
+            "desc": "(Water + Hibiscus + Mint)",
+            "price": "₹199"
+          }
+        ]
+      },
+      {
+        "title": "Iced Coffee",
+        "icon": null,
+        "items": [
+          {
+            "name": "Iced Latte",
+            "desc": "(Double Espresso + Ice + Milk + Foam)",
+            "price": "₹199"
+          },
+          {
+            "name": "Iced Mocha",
+            "desc": "(Double Espresso + Ice + Milk + Foam + Chocolate Sauce)",
+            "price": "₹219"
+          },
+          {
+            "name": "Iced Americano",
+            "desc": "(Double Espresso + Water + Ice)",
+            "price": "₹179"
+          },
+          {
+            "name": "Iced Blue Latte",
+            "desc": "(Double espresso + Ice + Milk + Blue Curacao)",
+            "price": "₹249"
+          },
+          {
+            "name": "Iced Red Latte",
+            "desc": "(Double Espresso + Ice + Milk + Red Rose)",
+            "price": "₹239"
+          }
+        ]
+      }
+    ],
+    "mocktails": [
+      {
+        "title": "Mocktails",
+        "icon": null,
+        "items": [
+          {
+            "name": "Classic Virgin Mojito",
+            "desc": "",
+            "price": "₹199"
+          },
+          {
+            "name": "Shahi Gulab Paan",
+            "desc": "",
+            "price": "₹209"
+          },
+          {
+            "name": "Apple Mint Splash",
+            "desc": "",
+            "price": "₹199"
+          },
+          {
+            "name": "Watermelon Mimosa",
+            "desc": "",
+            "price": "₹209"
+          },
+          {
+            "name": "Blue Paradise",
+            "desc": "",
+            "price": "₹219"
+          },
+          {
+            "name": "Chilli Guava Mary",
+            "desc": "",
+            "price": "₹239"
+          },
+          {
+            "name": "Malt & Magic",
+            "desc": "",
+            "price": "₹199"
+          },
+          {
+            "name": "Mango Passion",
+            "desc": "",
+            "price": "₹219"
+          },
+          {
+            "name": "Tropical Orange",
+            "desc": "",
+            "price": "₹219"
+          },
+          {
+            "name": "Shikanji",
+            "desc": "",
+            "price": "₹179"
+          },
+          {
+            "name": "Aam Ka Panna",
+            "desc": "",
+            "price": "₹179"
+          },
+          {
+            "name": "Island Cooler",
+            "desc": "",
+            "price": "₹229"
+          }
+        ]
+      }
+    ],
+    "proteinJuiceTea": [
+      {
+        "title": "Signature Protein Smoothies",
+        "icon": null,
+        "items": [
+          {
+            "name": "Pre Caffeine Smoothie",
+            "desc": "(Espresso + Whey Protein + Oats + Peanut Butter + Cocoa Powder + Milk + Honey)",
+            "price": "₹270"
+          },
+          {
+            "name": "Berry Slim Shake",
+            "desc": "(Whey Protein + Strawberries + Almond Milk + Honey)",
+            "price": "₹250"
+          },
+          {
+            "name": "Banana Peanut PowerUp",
+            "desc": "Whey Protein + Banana + Peanut Butter + Milk",
+            "price": "₹230"
+          },
+          {
+            "name": "Post Workout Muscle Gainer",
+            "desc": "(Whey Protein + Oats + Banana + Dry Fruits + Milk + Peanut Butter + Dates )",
+            "price": "₹280"
+          },
+          {
+            "name": "Desi Sattu Fuel",
+            "desc": "",
+            "price": "₹220"
+          }
+        ]
+      },
+      {
+        "title": "Fresh Juices",
+        "icon": null,
+        "items": [
+          {
+            "name": "ABC Juice",
+            "desc": "(Apple + Beetroot + Carrot)",
+            "price": "₹179"
+          },
+          {
+            "name": "Red Healthy Juice",
+            "desc": "(Orange + Beetroot + Ginger + Mint)",
+            "price": "₹179"
+          },
+          {
+            "name": "Amla Ginger Shot",
+            "desc": "(Amla + Ginger + Kiwi)",
+            "price": "₹159"
+          },
+          {
+            "name": "Liver Detox Juice",
+            "desc": "(Spinach + Celery + Mint + Ginger + Green Apple)",
+            "price": "₹199"
+          }
+        ]
+      },
+      {
+        "title": "Heaven's Special Tea",
+        "icon": null,
+        "items": [
+          {
+            "name": "Krushna's Special Herbal Tea",
+            "desc": "(Ashwagandha + ArjunSal + Ginger + Sabja+Tulsi)",
+            "price": "₹50"
+          },
+          {
+            "name": "Lemon Tea",
+            "desc": "",
+            "price": "₹40"
+          },
+          {
+            "name": "Black Tea",
+            "desc": "",
+            "price": "₹40"
+          },
+          {
+            "name": "Ginger Honey Tea",
+            "desc": "",
+            "price": "₹50"
+          }
+        ]
+      }
+    ],
+    "scoopTreats": [
+      {
+        "title": "Shakes (With Softy)",
+        "icon": null,
+        "items": [
+          {
+            "name": "Brownie Shake",
+            "desc": "",
+            "price": "₹220"
+          },
+          {
+            "name": "Caramel Shake",
+            "desc": "",
+            "price": "₹200"
+          },
+          {
+            "name": "Cookie & Blast Shake",
+            "desc": "",
+            "price": "₹230"
+          },
+          {
+            "name": "Hazelnut Shake",
+            "desc": "",
+            "price": "₹240"
+          },
+          {
+            "name": "Kesar Pista Shake",
+            "desc": "",
+            "price": "₹230"
+          },
+          {
+            "name": "Kunafa Shake",
+            "desc": "",
+            "price": "₹220"
+          },
+          {
+            "name": "Choco Crumble Shake",
+            "desc": "",
+            "price": "₹190"
+          }
+        ]
+      },
+      {
+        "title": "Falooda (One Scoop Ice Cream with Rabadi)",
+        "icon": null,
+        "items": [
+          {
+            "name": "Kesar Pista Falooda",
+            "desc": "(Vanilla Ice Cream)",
+            "price": "₹230"
+          },
+          {
+            "name": "Golden Crunch Falooda",
+            "desc": "(Butterscotch Ice Cream)",
+            "price": "₹200"
+          },
+          {
+            "name": "Dry Fruit falooda",
+            "desc": "(Fruit & Nut Ice Cream)",
+            "price": "₹240"
+          },
+          {
+            "name": "Shahi Rose Falooda",
+            "desc": "(Rose Melody)",
+            "price": "₹210"
+          },
+          {
+            "name": "Mango Falooda",
+            "desc": "",
+            "price": "₹190"
+          },
+          {
+            "name": "Royal Chocolate Falooda",
+            "desc": "",
+            "price": "₹220"
+          }
+        ]
+      },
+      {
+        "title": "Smoothies (With Softy)",
+        "icon": null,
+        "items": [
+          {
+            "name": "Custard Apple Smoothie",
+            "desc": "",
+            "price": "₹220"
+          },
+          {
+            "name": "Mango Smoothie",
+            "desc": "",
+            "price": "₹200"
+          },
+          {
+            "name": "Chikoo Smoothie",
+            "desc": "",
+            "price": "₹190"
+          },
+          {
+            "name": "Strawberry Smoothie",
+            "desc": "",
+            "price": "₹180"
+          },
+          {
+            "name": "Blueberry Smoothie",
+            "desc": "",
+            "price": "₹230"
+          },
+          {
+            "name": "Black Current Smoothie",
+            "desc": "",
+            "price": "₹220"
+          }
+        ]
+      },
+      {
+        "title": "Mastani",
+        "icon": null,
+        "items": [
+          {
+            "name": "Aamchi Mastani",
+            "desc": "",
+            "price": "₹230"
+          },
+          {
+            "name": "Chocolate Mastani",
+            "desc": "",
+            "price": "₹220"
+          },
+          {
+            "name": "Rasmalai Mastani",
+            "desc": "",
+            "price": "₹210"
+          },
+          {
+            "name": "Sitaphal Mastani",
+            "desc": "",
+            "price": "₹220"
+          },
+          {
+            "name": "Butterscotch Mastani",
+            "desc": "",
+            "price": "₹240"
+          },
+          {
+            "name": "Gulkand Mastani",
+            "desc": "",
+            "price": "₹190"
+          }
+        ]
+      },
+      {
+        "title": "Sundae",
+        "icon": null,
+        "items": [
+          {
+            "name": "Choco Brownie Sundae",
+            "desc": "",
+            "price": "₹190"
+          },
+          {
+            "name": "Belgian Choco Sundae",
+            "desc": "",
+            "price": "₹220"
+          },
+          {
+            "name": "Mocha Madness",
+            "desc": "",
+            "price": "₹210"
+          },
+          {
+            "name": "Cookie Madness Sundae",
+            "desc": "",
+            "price": "₹230"
+          },
+          {
+            "name": "Fruit Twist Sundae",
+            "desc": "(Strawberry, Blueberry, Blackcurrant)",
+            "price": "₹220"
+          },
+          {
+            "name": "Pisatchio Kulfi Sundae",
+            "desc": "",
+            "price": "₹240"
+          }
+        ]
+      }
+    ],
+    "desserts": [
+      {
+        "title": "Waffles",
+        "icon": null,
+        "items": [
+          {
+            "name": "Black Current Waffle",
+            "desc": "",
+            "price": "₹210"
+          },
+          {
+            "name": "Butter Scotch Waffle",
+            "desc": "",
+            "price": "₹200"
+          },
+          {
+            "name": "White Chocolate Waffle",
+            "desc": "",
+            "price": "₹180"
+          },
+          {
+            "name": "Caramel N Crunch",
+            "desc": "",
+            "price": "₹220"
+          },
+          {
+            "name": "Passion Fruit Waffle",
+            "desc": "",
+            "price": "₹230"
+          },
+          {
+            "name": "Toffee Caramel",
+            "desc": "",
+            "price": "₹190"
+          }
+        ]
+      },
+      {
+        "title": "Pancakes (mini)",
+        "icon": null,
+        "items": [
+          {
+            "name": "Classic Pancake",
+            "desc": "(with Honey)",
+            "price": "₹179"
+          },
+          {
+            "name": "Choco Crunch Pancake",
+            "desc": "",
+            "price": "₹189"
+          },
+          {
+            "name": "Caramel Scotch Pancake",
+            "desc": "",
+            "price": "₹199"
+          }
+        ]
+      },
+      {
+        "title": "Stick Waffles",
+        "icon": null,
+        "items": [
+          {
+            "name": "Choco Stick Waffle",
+            "desc": "",
+            "price": "₹230"
+          },
+          {
+            "name": "Caramel Stick Waffle",
+            "desc": "",
+            "price": "₹230"
+          }
+        ]
+      },
+      {
+        "title": "Make Your Own Waffle",
+        "icon": null,
+        "items": [
+          {
+            "name": "Chocolate Waffle",
+            "desc": "(Hazelnut, Dark, Choco Crunch) Choose Any One Item",
+            "price": "₹230"
+          },
+          {
+            "name": "Berry Waffle",
+            "desc": "(Raspberry, Strawberry, Blueberry) Choose Any One Item",
+            "price": "₹230"
+          }
+        ]
+      },
+      {
+        "title": "Special Desserts",
+        "icon": null,
+        "items": [
+          {
+            "name": "Classic Tiramisu",
+            "desc": "The ultimate Italian comfort dessert. Ingredients: Espresso-soaked savoiardi (Ladyfingers), Whipped mascarpone cream, premium cocoa powder dusting.",
+            "price": "₹395"
+          },
+          {
+            "name": "Blueberry Panna Cotta",
+            "desc": "A silky-smooth cream custard. Ingredients: Vanilla bean Infused sweet cream, Fresh blueberry coulis compote, Fresh mint.",
+            "price": "₹299"
+          },
+          {
+            "name": "Chocolate Brownie with Ice-cream",
+            "desc": "A crowd-favorite classic. Ingredients: Fudgy homemade dark walnut chocolate brownie, hot chocolate fudge sauce, served with a scoop of creamy vanilla gelato.",
+            "price": "₹245"
+          },
+          {
+            "name": "The Gourd-Gee Tiramisu",
+            "desc": "A dramatic and modern reimagining of the classic Italian dessert. Served in an elegant, clear glass tumbler.",
+            "price": "₹245"
+          }
+        ]
+      }
+    ],
+    "gelatoChocolate": [
+      {
+        "category": "Classics",
+        "items": [
+          {
+            "name": "Swiss Chocolate",
+            "single": "100",
+            "double": "190",
+            "family": "300",
+            "large": "550"
+          },
+          {
+            "name": "Vanilla Choco Chips",
+            "single": "100",
+            "double": "190",
+            "family": "300",
+            "large": "550"
+          },
+          {
+            "name": "Chocolate Crunch",
+            "single": "110",
+            "double": "210",
+            "family": "350",
+            "large": "650"
+          }
+        ]
+      },
+      {
+        "category": "Most Loved",
+        "items": [
+          {
+            "name": "Vanilla Fudge Brownie",
+            "single": "110",
+            "double": "210",
+            "family": "350",
+            "large": "650"
+          },
+          {
+            "name": "Choco Chips Royal",
+            "single": "110",
+            "double": "210",
+            "family": "350",
+            "large": "650"
+          },
+          {
+            "name": "Chocolate Hazelnut",
+            "single": "130",
+            "double": "230",
+            "family": "400",
+            "large": "800"
+          }
+        ]
+      },
+      {
+        "category": "Premium Picks",
+        "items": [
+          {
+            "name": "Dark Italian Chocolate",
+            "single": "110",
+            "double": "210",
+            "family": "100",
+            "large": "650"
+          },
+          {
+            "name": "Belgium Chocolate",
+            "single": "140",
+            "double": "250",
+            "family": "100",
+            "large": "900"
+          }
+        ]
+      }
+    ],
+    "gelatoFruit": [
+      {
+        "category": "Classics",
+        "items": [
+          {
+            "name": "Black Current",
+            "single": "100",
+            "double": "190",
+            "family": "300",
+            "large": "550"
+          },
+          {
+            "name": "Chikoo",
+            "single": "100",
+            "double": "190",
+            "family": "300",
+            "large": "550"
+          },
+          {
+            "name": "Orange Cheese Cake",
+            "single": "100",
+            "double": "190",
+            "family": "300",
+            "large": "550"
+          },
+          {
+            "name": "Strawberry Cream",
+            "single": "100",
+            "double": "190",
+            "family": "300",
+            "large": "550"
+          }
+        ]
+      },
+      {
+        "category": "Most Loved",
+        "items": [
+          {
+            "name": "Sitafal",
+            "single": "110",
+            "double": "210",
+            "family": "350",
+            "large": "650"
+          },
+          {
+            "name": "Fruit N Nuts Overload",
+            "single": "110",
+            "double": "210",
+            "family": "350",
+            "large": "650"
+          },
+          {
+            "name": "Pink Guava",
+            "single": "110",
+            "double": "210",
+            "family": "300",
+            "large": "650"
+          },
+          {
+            "name": "Rose Melody",
+            "single": "100",
+            "double": "190",
+            "family": "400",
+            "large": "550"
+          }
+        ]
+      },
+      {
+        "category": "Premium Picks",
+        "items": [
+          {
+            "name": "Blueberry Cheesecake",
+            "single": "130",
+            "double": "230",
+            "family": "400",
+            "large": "650"
+          },
+          {
+            "name": "Raspberry Cheesecake",
+            "single": "130",
+            "double": "230",
+            "family": "400",
+            "large": "650"
+          },
+          {
+            "name": "Strawberry Cheese Cake",
+            "single": "140",
+            "double": "250",
+            "family": "450",
+            "large": "900"
+          },
+          {
+            "name": "Mango Alphonso",
+            "single": "130",
+            "double": "230",
+            "family": "400",
+            "large": "650"
+          }
+        ]
+      }
+    ],
+    "gelatoCreamy": [
+      {
+        "category": "Classics",
+        "items": [
+          {
+            "name": "Vanilla Oreo Twist",
+            "single": "100",
+            "double": "190",
+            "family": "300",
+            "large": "550"
+          },
+          {
+            "name": "Butterscotch",
+            "single": "100",
+            "double": "190",
+            "family": "300",
+            "large": "550"
+          },
+          {
+            "name": "Caramel Crunch",
+            "single": "130",
+            "double": "230",
+            "family": "400",
+            "large": "800"
+          },
+          {
+            "name": "Coconut",
+            "single": "130",
+            "double": "190",
+            "family": "300",
+            "large": "550"
+          },
+          {
+            "name": "Kiwi",
+            "single": "100",
+            "double": "190",
+            "family": "300",
+            "large": "550"
+          }
+        ]
+      },
+      {
+        "category": "Most Loved",
+        "items": [
+          {
+            "name": "Cookies N Cream",
+            "single": "130",
+            "double": "230",
+            "family": "400",
+            "large": "800"
+          },
+          {
+            "name": "Royal Kulfi",
+            "single": "130",
+            "double": "230",
+            "family": "400",
+            "large": "800"
+          },
+          {
+            "name": "Blue Sky",
+            "single": "130",
+            "double": "230",
+            "family": "400",
+            "large": "800"
+          },
+          {
+            "name": "Vanilla Madagascar",
+            "single": "130",
+            "double": "230",
+            "family": "400",
+            "large": "800"
+          },
+          {
+            "name": "Lichi",
+            "single": "100",
+            "double": "190",
+            "family": "300",
+            "large": "550"
+          }
+        ]
+      },
+      {
+        "category": "Premium Picks",
+        "items": [
+          {
+            "name": "New York Cheese Cake",
+            "single": "130",
+            "double": "230",
+            "family": "400",
+            "large": "800"
+          },
+          {
+            "name": "Black Forest Cheese Cake",
+            "single": "130",
+            "double": "230",
+            "family": "400",
+            "large": "800"
+          },
+          {
+            "name": "Cappuccino",
+            "single": "130",
+            "double": "230",
+            "family": "400",
+            "large": "800"
+          },
+          {
+            "name": "Mint After 9",
+            "single": "110",
+            "double": "210",
+            "family": "350",
+            "large": "650"
+          },
+          {
+            "name": "Bubble Gum",
+            "single": "110",
+            "double": "210",
+            "family": "350",
+            "large": "650"
+          }
+        ]
+      }
+    ],
+    "gelatoPremium": [
+      {
+        "category": "Classics",
+        "items": [
+          {
+            "name": "Belgian Chocolate",
+            "single": "140",
+            "double": "250",
+            "family": "450",
+            "large": "900"
+          },
+          {
+            "name": "Ferrero Rocher",
+            "single": "140",
+            "double": "250",
+            "family": "450",
+            "large": "900"
+          },
+          {
+            "name": "Dark Italian Chocolate",
+            "single": "110",
+            "double": "210",
+            "family": "350",
+            "large": "650"
+          },
+          {
+            "name": "Choco Fudge Walnut Brownie",
+            "single": "130",
+            "double": "230",
+            "family": "400",
+            "large": "800"
+          }
+        ]
+      },
+      {
+        "category": "Most Loved",
+        "items": [
+          {
+            "name": "Tiramisu",
+            "single": "140",
+            "double": "250",
+            "family": "450",
+            "large": "900"
+          },
+          {
+            "name": "Diet Lite Vanilla (Sugar Free)",
+            "single": "130",
+            "double": "230",
+            "family": "400",
+            "large": "800"
+          },
+          {
+            "name": "Diet Lite Chocolate (Sugar Free)",
+            "single": "140",
+            "double": "250",
+            "family": "450",
+            "large": "900"
+          },
+          {
+            "name": "Lemon Ice (Sorbet)",
+            "single": "110",
+            "double": "210",
+            "family": "350",
+            "large": "650"
+          }
+        ]
+      },
+      {
+        "category": "Premium Picks",
+        "items": [
+          {
+            "name": "Pistachio",
+            "single": "140",
+            "double": "250",
+            "family": "100",
+            "large": "900"
+          },
+          {
+            "name": "Madagascar Fine Chocolate",
+            "single": "140",
+            "double": "250",
+            "family": "100",
+            "large": "900"
+          },
+          {
+            "name": "Whisky N Cream",
+            "single": "140",
+            "double": "250",
+            "family": "100",
+            "large": "900"
+          },
+          {
+            "name": "Yohgurt Wild Berry",
+            "single": "140",
+            "double": "250",
+            "family": "100",
+            "large": "900"
+          }
+        ]
+      }
+    ],
+    "addons": [
+      {
+        "name": "Hazelnut Flavour",
+        "price": "₹50"
+      },
+      {
+        "name": "Vanilla Flavour",
+        "price": "₹50"
+      },
+      {
+        "name": "Caramel Flavour",
+        "price": "₹50"
+      },
+      {
+        "name": "Irish Flavour",
+        "price": "₹50"
+      },
+      {
+        "name": "Whipped Cream",
+        "price": "₹50"
+      },
+      {
+        "name": "Chocolate Sauce",
+        "price": "₹50"
+      },
+      {
+        "name": "Espresso Shot",
+        "price": "₹80"
+      },
+      {
+        "name": "Almond Milk",
+        "price": "₹80"
+      },
+      {
+        "name": "Oats Milk",
+        "price": "₹80"
+      }
+    ]
+  }
+}

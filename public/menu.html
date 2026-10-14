@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff8ed" />
+  <meta name="description" content="Explore the Krushna's Heaven menu: gelato, woodfire pizza, brews, waffles, desserts and savoury bites." />
+  <title>Menu | Krushna's Heaven</title>
+  <link rel="icon" href="assets/krushna/logo.png" />
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-site-header>
+    <a class="brand" href="index.html" aria-label="Krushna's Heaven home"><img src="assets/krushna/logo.png" alt="Krushna's Heaven" /></a>
+    <nav class="primary-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="menu.html" aria-current="page">Menu</a><a href="story.html">Our story</a><a href="visit.html">Visit us</a></nav>
+    <div class="header-actions"><a class="button button--small" href="visit.html">Plan your visit <i data-lucide="arrow-right"></i></a><button class="menu-trigger" type="button" data-menu-trigger aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation"><i data-lucide="menu"></i></button></div>
+  </header>
+  <div class="site-menu" id="site-menu" data-menu-overlay aria-hidden="true" inert><nav class="site-menu__nav" aria-label="Mobile navigation"><a href="index.html"><span>01</span>Home</a><a href="menu.html"><span>02</span>Menu</a><a href="story.html"><span>03</span>Our story</a><a href="visit.html"><span>04</span>Visit us</a></nav><div class="site-menu__aside"><strong>Five cravings. One address.</strong><p>Find something for everyone at the table.</p></div></div>
+  <main id="main">
+    <section class="page-hero" aria-labelledby="menu-title">
+      <div class="page-hero__copy"><p class="section-index">Five cravings, one menu</p><h1 id="menu-title">Choose your craving.</h1><p>Premium gelato, live-fire comfort, warm brews and café favourites for every kind of visit.</p><span class="phase-note">Product photography is illustrative</span></div>
+      <div class="page-hero__media"><img src="assets/krushna/brownie.png" alt="Chocolate brownie served with a scoop of gelato" /><span class="page-hero__seal">Made for<br />sharing</span></div>
+    </section>
+    <nav class="menu-toolbar" aria-label="Menu categories">
+      <div class="category-rail"><a href="#gelato" aria-current="true">Gelato</a><a href="#woodfire">Woodfire</a><a href="#brews">Brews</a><a href="#waffles">Waffles</a><a href="#savoury">Savoury</a><a href="#desserts">Desserts</a></div>
+    </nav>
+    <section class="menu-showcase container" id="gelato" aria-labelledby="gelato-title">
+      <div class="menu-introduction">
+        <figure class="menu-introduction__media"><img src="assets/krushna/gelato.jpeg" alt="A bowl of premium gelato scoops" loading="lazy" /></figure>
+        <div class="menu-groups">
+          <header><p class="section-index">Premium Gelatos</p><h2 id="gelato-title">The cool heart of the café.</h2><p>Mr Gelato is the premium gelato franchise served inside Krushna's Heaven. Exact flavour availability will follow the approved final menu.</p></header>
+          <section class="menu-group" aria-labelledby="featured-flavours"><div class="menu-group__title"><h3 id="featured-flavours">Featured flavours</h3><span>Selection may vary</span></div>
+            <article class="menu-row"><div><h4>Jamun Sorbe <span class="label">Featured</span></h4><p>A vivid fruit sorbet highlighted by the client.</p></div><strong>See menu</strong></article>
+            <article class="menu-row"><div><h4>Strawberry Cheese Cake</h4><p>A creamy fruit-led favourite for a bright finish.</p></div><strong>See menu</strong></article>
+            <article class="menu-row"><div><h4>Madagascar Fine Chocolate</h4><p>A deep chocolate scoop with a premium profile.</p></div><strong>See menu</strong></article>
+            <article class="menu-row"><div><h4>Yoghurt Wild Berry</h4><p>Tangy yoghurt and berry notes.</p></div><strong>See menu</strong></article>
+            <article class="menu-row"><div><h4>Blue Sky</h4><p>A colourful family favourite.</p></div><strong>See menu</strong></article>
+            <article class="menu-row"><div><h4>Lemon Cello Ice</h4><p>A fresh citrus finish.</p></div><strong>See menu</strong></article>
+          </section>
+          <section class="menu-group" id="desserts" aria-labelledby="dessert-picks"><div class="menu-group__title"><h3 id="dessert-picks">Dessert signatures</h3><span>From the final menu</span></div>
+            <article class="menu-row"><div><h4>Choco Brownie Sundae <span class="label">Must try</span></h4><p>Brownie and gelato made for one more spoonful.</p></div><strong>₹169</strong></article>
+            <article class="menu-row"><div><h4>Belgian Choco Sundae <span class="label">Best seller</span></h4><p>Chocolate-forward and richly layered.</p></div><strong>₹179</strong></article>
+            <article class="menu-row"><div><h4>Pistachio Kulfi Sundae <span class="label">Chef special</span></h4><p>A nutty, nostalgic sundae.</p></div><strong>₹179</strong></article>
+          </section>
+        </div>
+      </div>
+      <div class="category-preview-grid" aria-label="Explore more categories">
+        <article class="category-preview" id="woodfire"><div class="category-preview__media" style="background-image:url('assets/krushna/pizza.jpeg')"></div><h3>Woodfire Pizza</h3><p>Live-fire favourites and shareable comfort.</p></article>
+        <article class="category-preview" id="brews"><div class="category-preview__media" style="background-image:url('assets/krushna/menu-atlas.png');background-position:left top"></div><h3>Brews</h3><p>Hot coffee, cold coffee and café drinks.</p></article>
+        <article class="category-preview" id="waffles"><div class="category-preview__media" style="background-image:url('assets/krushna/waffle-savoury-atlas.png');background-position:left center"></div><h3>Waffles</h3><p>Fresh, crisp and ready for generous toppings.</p></article>
+        <article class="category-preview" id="savoury"><div class="category-preview__media" style="background-image:url('assets/krushna/waffle-savoury-atlas.png');background-position:right center"></div><h3>Savoury Bites</h3><p>Comforting café plates beyond the sweet menu.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="site-footer__grid container"><div class="footer-brand"><img src="assets/krushna/logo.png" alt="Krushna's Heaven" /><p>Five cravings, one welcoming café.</p></div><div class="footer-column"><h2>Explore</h2><a href="index.html">Home</a><a href="story.html">Our story</a><a href="visit.html">Visit us</a></div><div class="footer-column"><h2>Menu status</h2><span>Prices follow the supplied final menu</span><span>Availability to be confirmed</span></div><div class="footer-column"><h2>Follow</h2><a href="https://www.instagram.com/krushnasheaven/" target="_blank" rel="noreferrer"><i data-lucide="camera"></i> Instagram</a></div></div><div class="site-footer__base container"><span>© <span data-current-year></span> Krushna's Heaven</span><span>Good food brings people closer.</span></div></footer>
+  <script src="site.js" defer></script>
+</body>
+</html>
