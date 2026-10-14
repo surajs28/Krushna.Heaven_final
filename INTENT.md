@@ -4,6 +4,14 @@
 
 ## One approved target
 
+### Mobile DNA swipe correction — 15 October 2026
+
+- The user confirmed horizontal swiping across the photos fails on their phone. Manual touch exploration must work alongside automatic rotation.
+- On mobile, vertical page scrolling must not change the chosen card. Keep the same 3D orbit, use a clear horizontal gesture threshold, and advance on a deliberate short swipe rather than snapping it back. Desktop retains scroll choreography and drag.
+- Interrupt automatic movement immediately on touch; wait at least eight seconds after manual selection before resuming. Retain the existing explicit Pause/Resume control.
+- Preserve native vertical scrolling and pinch zoom; cancelled gestures settle without momentum. Prevent the delayed click after a swipe from opening the menu by accident. Reduced motion uses a native horizontal rail with both axes allowed.
+- Validate gesture intent, short swipes, reversals, cancellation, looping, browser dragging and page scrolling. Real phone touch validation remains necessary; a desktop viewport check is not equivalent to hardware testing.
+
 ### Standalone final repository — 15 October 2026
 
 **Publication authorization:** The user subsequently approved GitHub Pages publication and explicitly approved making `Krushna.Heaven_final` public after GitHub rejected Pages for the private repository on the current plan. The repository is now public; Pages uses the existing manual workflow to publish only `public/` at `https://surajs28.github.io/Krushna.Heaven_final/`. This supersedes the initial private default below. The source, assets and documents are publicly visible with the user's approval. The existing `Icec_ream` repository remains untouched. Current illustrative media and provisional content remain subject to final client approval; this deployment exposes the current reviewable build.

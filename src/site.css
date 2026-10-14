@@ -865,7 +865,7 @@ html.menu-is-open .page-home .site-header .brand {
   perspective-origin: 50% 44%;
   cursor: grab;
   outline: none;
-  touch-action: pan-y;
+  touch-action: pan-y pinch-zoom;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -1165,6 +1165,7 @@ html.menu-is-open .page-home .site-header .brand {
   min-height: auto;
   padding-block: 3rem 5rem;
   cursor: auto;
+  touch-action: auto;
 }
 
 .dna-carousel.is-static .dna-carousel__ambient,
@@ -1184,7 +1185,8 @@ html.menu-is-open .page-home .site-header .brand {
   transform: none;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  touch-action: pan-y;
+  touch-action: auto;
+  pointer-events: auto;
 }
 
 .dna-carousel.is-static .dna-carousel__orbit::-webkit-scrollbar {
