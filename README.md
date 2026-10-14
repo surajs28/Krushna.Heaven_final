@@ -1,5 +1,7 @@
 # Krushna.Heaven_final
 
+Live website: https://surajs28.github.io/Krushna.Heaven_final/
+
 Production source for the Krushna's Heaven café website. Krushna's Heaven is
 the parent brand; Mr Gelato appears only inside the Premium Gelatos offering.
 
@@ -65,6 +67,8 @@ approved local snapshot on 15 October 2026. It has no merge relationship with
 `surajs28/Icec_ream`. The owner authorized the initial upload to this separate
 repository. Further pushes or website publication require an explicit request.
 
-GitHub Pages deployment is manual-only through workflow dispatch. Uploading
-source does not publish the site. Temporary footage, disputed prices and
+The owner approved making this repository public and publishing the current
+website through GitHub Pages on 15 October 2026. Future deployment remains
+manual-only through workflow dispatch. Uploading source does not automatically
+publish changes. Temporary footage, disputed prices and
 provisional business details must be resolved before the client release.

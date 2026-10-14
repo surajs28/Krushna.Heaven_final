@@ -6,6 +6,8 @@
 
 ### Standalone final repository — 15 October 2026
 
+**Publication authorization:** The user subsequently approved GitHub Pages publication and explicitly approved making `Krushna.Heaven_final` public after GitHub rejected Pages for the private repository on the current plan. The repository is now public; Pages uses the existing manual workflow to publish only `public/` at `https://surajs28.github.io/Krushna.Heaven_final/`. This supersedes the initial private default below. The source, assets and documents are publicly visible with the user's approval. The existing `Icec_ream` repository remains untouched. Current illustrative media and provisional content remain subject to final client approval; this deployment exposes the current reviewable build.
+
 - The user explicitly requested a new GitHub repository named `Krushna.Heaven_final` and authorized adding the current project to it. Do not merge into or push to the existing `surajs28/Icec_ream` repository.
 - This working copy is an independent snapshot with a fresh `main` history at `outputs/Krushna.Heaven_final`. It includes the current cinematic hero, five-category DNA carousel, gallery, routes, optimized runtime media, editable source and research/intent material.
 - Create the new repository under `surajs28` as private by default. Initial upload to this repository is authorized; subsequent publishing or pushes still require the user's instruction.
