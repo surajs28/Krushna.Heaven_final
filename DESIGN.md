@@ -2,6 +2,8 @@
 
 This file describes the current implementation. `INTENT.md` remains the only source for product intent, research, facts, approvals and future plans.
 
+> **Update, 15 October 2026:** the homepage now follows the qissa.co.uk flow (`FIXES.md`, R01–R16). In short: the home order is hero → signatures → flavour band → gallery → story → menu highlights → visit. The home header condenses into a dark glass bar. Every page uses a three-line menu button whose overlay opens as a circle. The signatures and gallery share a night field (`--night`) with drifting café lights. The gallery has a photo opener, a masonry grid with 1s fade-up reveals and hover captions, a Follow line and a closing card. Round 3 (G01–G06): the homepage gallery is now a moving photo reel (`src/gallery-reel.ts`) with "View the full gallery", and the full grid lives on `gallery.html`. Round 4 (M01–M19): the menu page is a dark "carte" built by `scripts/build-menu.cjs` and enhanced by `src/menu-page.ts`, and the home order is now hero → signatures → moving photos → flavour band → explore the menu → feast band → dish stories → story → visit. Where this file disagrees, `FIXES.md` and `src/site.css` ("Reference flow", "Round 3" and "Round 4" blocks) are current.
+
 ## Current delivery: Phase 2
 
 The shipped static interface covers four public routes:

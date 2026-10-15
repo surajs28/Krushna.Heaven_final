@@ -3,64 +3,979 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#fff8ed" />
-  <meta name="description" content="Explore the Krushna's Heaven menu: gelato, woodfire pizza, brews, waffles, desserts and savoury bites." />
+  <meta name="theme-color" content="#1a0a10" />
+  <meta name="description" content="The Krushna's Heaven menu: 45 gelato flavours, sourdough pizza, brews, waffles, desserts and savoury bites, with prices." />
   <title>Menu | Krushna's Heaven</title>
-  <link rel="icon" href="assets/krushna/logo.png" />
-  <link rel="stylesheet" href="site.css?v=menu-4" />
-<link rel="stylesheet" href="menu-discovery.css?v=menu-4" /></head>
-<body class="page-menu">
+  <link rel="canonical" href="https://surajs28.github.io/Krushna.Heaven_final/menu.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Krushna's Heaven" />
+  <meta property="og:title" content="Menu | Krushna's Heaven" />
+  <meta property="og:description" content="The Krushna's Heaven menu: 45 gelato flavours, sourdough pizza, brews, waffles, desserts and savoury bites, with prices." />
+  <meta property="og:url" content="https://surajs28.github.io/Krushna.Heaven_final/menu.html" />
+  <meta property="og:image" content="https://surajs28.github.io/Krushna.Heaven_final/assets/krushna/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="The Krushna's Heaven café entrance glowing at night" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="assets/krushna/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="assets/krushna/favicon-64.png" sizes="64x64" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/krushna/apple-touch-icon.png" />
+  <link rel="stylesheet" href="site.css?v=carte-1" />
+</head>
+<body class="page-home page-menu">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" data-site-header>
-    <a class="brand" href="index.html" aria-label="Krushna's Heaven home"><img src="assets/krushna/logo.png" alt="Krushna's Heaven" /></a>
-    <nav class="primary-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="menu.html" aria-current="page">Menu</a><a href="story.html">Our story</a><a href="visit.html">Visit us</a></nav>
-    <div class="header-actions"><a class="button button--small" href="visit.html">Plan your visit <i data-lucide="arrow-right"></i></a><button class="menu-trigger" type="button" data-menu-trigger aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation"><i data-lucide="menu"></i></button></div>
-  </header>
-  <div class="site-menu" id="site-menu" data-menu-overlay aria-hidden="true" inert><nav class="site-menu__nav" aria-label="Mobile navigation"><a href="index.html"><span>01</span>Home</a><a href="menu.html"><span>02</span>Menu</a><a href="story.html"><span>03</span>Our story</a><a href="visit.html"><span>04</span>Visit us</a></nav><div class="site-menu__aside"><strong>Five cravings. One address.</strong><p>Find something for everyone at the table.</p></div></div>
-  <main id="main">
-  <section class="menu-opening container" aria-labelledby="menu-title">
-    <div class="menu-opening__copy"><p class="section-index">The Krushna’s Heaven menu</p><h1 id="menu-title">What are you<br />craving?</h1><p>A scoop for you. A pizza for the table.<br />Something for everyone to come together over.</p><a class="menu-opening__link" href="#menu-browser">Find your favourite <span aria-hidden="true">↓</span></a></div>
-    <figure class="menu-opening__photo"><img src="assets/krushna/gallery/01-brownie-gelato.webp" alt="Brownie topped with gelato and berries" width="768" height="1024" fetchpriority="high" /><figcaption>A sweeter kind of together.</figcaption></figure>
-  </section>
-  <div id="menu-browser" class="menu-browser">
-    <nav class="menu-category-bar" aria-label="Menu categories"><div class="container menu-category-track"><a href="#all" data-menu-category="all">Full menu</a><a href="#gelato" data-menu-category="gelato">Gelatos</a><a href="#woodfire" data-menu-category="woodfire">Woodfire Pizza</a><a href="#brews" data-menu-category="brews">Brews</a><a href="#waffles" data-menu-category="waffles">Waffles</a><a href="#savoury" data-menu-category="savoury">Savoury Bites</a></div></nav>
-    <div class="container menu-discovery" data-menu-controls hidden>
-      <div class="menu-search"><label for="menu-search">Find something you love</label><div class="menu-search__field"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="menu-search" type="search" placeholder="Try brownie, coffee or paneer…" autocomplete="off" enterkeyhint="search" /><button type="button" data-menu-clear aria-label="Clear search" hidden>×</button></div></div>
-      <div class="menu-pick"><label for="menu-recommendation">A little inspiration</label><select id="menu-recommendation"><option value="">All items</option value="Bestseller">Bestsellers</option><option value="Must try">Must try</option><option value="Chef’s special">Chef’s specials</option></select></div>
+    <button class="menu-trigger home-menu-trigger" type="button" data-menu-trigger aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation"><span class="menu-lines" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button>
+    <a class="brand" href="index.html" aria-label="Krushna's Heaven home"><img src="assets/krushna/logo-mark.webp" alt="Krushna's Heaven" width="192" height="192" /></a>
+    <div class="header-actions">
+      <a class="button button--small" href="visit.html">Plan your visit <i data-lucide="arrow-right"></i></a>
     </div>
-    <div class="container menu-results-bar"><p data-menu-status role="status" aria-live="polite">188 items across five cravings</p><label class="menu-jump" data-menu-controls hidden>Jump to <select data-menu-jump aria-label="Jump to a menu section"><option value="">Choose a section</option></select></label></div>
-    <div class="container menu-empty" data-menu-empty hidden><h2>No matches this time.</h2><p>Try a different name or ingredient, or return to the full menu.</p><button class="button" type="button" data-menu-reset>Show the full menu</button></div>
-    <div class="container menu-catalogue" id="all" data-menu-catalogue>
-      <section id="gelato" class="menu-chapter" data-menu-chapter="gelato" aria-labelledby="gelato-title">
-        <header class="menu-chapter__header"><div><h2 id="gelato-title">Premium Gelatos</h2><p>Discover Mr Gelato at Krushna’s Heaven. Scoops, shakes and sweet finishes, all in one place.</p><p class="menu-franchise">Featuring Mr Gelato at Krushna’s Heaven</p></div><img src="assets/krushna/gelato.jpeg" alt="" width="480" height="480" loading="lazy" /></header>
-        <div class="menu-size-panel" data-menu-controls hidden><label for="gelato-size">Choose your gelato size</label><select id="gelato-size"><option value="single">Single scoop</option><option value="double">Double scoop</option><option value="family">Family pack</option><option value="large">Large pack</option></select><p>Applies to gelato flavours. Shakes, sundaes and other treats have individual prices.</p></div>
-        <section class="menu-section" id="chocolate-classics" data-menu-group aria-labelledby="chocolate-classics-heading"><div class="menu-section__heading"><h3 id="chocolate-classics-heading">Chocolate classics</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="gelato-swiss-chocolate" data-badge="" data-search="Swiss Chocolate "><div class="menu-dish__copy"><h4>Swiss Chocolate</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹100</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹190</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹300</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹550</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-vanilla-choco-chips" data-badge="" data-search="Vanilla Choco Chips "><div class="menu-dish__copy"><h4>Vanilla Choco Chips</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹100</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹190</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹300</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹550</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-chocolate-crunch" data-badge="" data-search="Chocolate Crunch "><div class="menu-dish__copy"><h4>Chocolate Crunch</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹110</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹210</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹350</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹650</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-vanilla-fudge-brownie" data-badge="" data-search="Vanilla Fudge Brownie "><div class="menu-dish__copy"><h4>Vanilla Fudge Brownie</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹110</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹210</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹350</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹650</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-choco-chips-royal" data-badge="" data-search="Choco Chips Royal "><div class="menu-dish__copy"><h4>Choco Chips Royal</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹110</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹210</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹350</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹650</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-chocolate-hazelnut" data-badge="" data-search="Chocolate Hazelnut "><div class="menu-dish__copy"><h4>Chocolate Hazelnut</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹130</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹230</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹400</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹800</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-dark-italian-chocolate" data-badge="" data-search="Dark Italian Chocolate "><div class="menu-dish__copy"><h4>Dark Italian Chocolate</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹110</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹210</dd></div><div data-price-size="family"><dt>Family pack</dt><dd class="menu-price-pending">Please ask us</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹650</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-belgian-chocolate" data-badge="" data-search="Belgian Chocolate "><div class="menu-dish__copy"><h4>Belgian Chocolate</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹140</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹250</dd></div><div data-price-size="family"><dt>Family pack</dt><dd class="menu-price-pending">Please ask us</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹900</dd></div></dl></article></div></section><section class="menu-section" id="fruit-fresh" data-menu-group aria-labelledby="fruit-fresh-heading"><div class="menu-section__heading"><h3 id="fruit-fresh-heading">Fruit fresh</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="gelato-black-current" data-badge="" data-search="Black Current "><div class="menu-dish__copy"><h4>Black Current</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹100</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹190</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹300</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹550</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-chikoo" data-badge="" data-search="Chikoo "><div class="menu-dish__copy"><h4>Chikoo</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹100</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹190</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹300</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹550</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-orange-cheese-cake" data-badge="" data-search="Orange Cheese Cake "><div class="menu-dish__copy"><h4>Orange Cheese Cake</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹100</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹190</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹300</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹550</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-strawberry-cream" data-badge="" data-search="Strawberry Cream "><div class="menu-dish__copy"><h4>Strawberry Cream</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹100</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹190</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹300</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹550</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-sitafal" data-badge="" data-search="Sitafal "><div class="menu-dish__copy"><h4>Sitafal</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹110</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹210</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹350</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹650</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-fruit-n-nuts-overload" data-badge="" data-search="Fruit N Nuts Overload "><div class="menu-dish__copy"><h4>Fruit N Nuts Overload</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹110</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹210</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹350</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹650</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-pink-guava" data-badge="" data-search="Pink Guava "><div class="menu-dish__copy"><h4>Pink Guava</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹110</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹210</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹300</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹650</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-rose-melody" data-badge="" data-search="Rose Melody "><div class="menu-dish__copy"><h4>Rose Melody</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹100</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹190</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹400</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹550</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-blueberry-cheesecake" data-badge="" data-search="Blueberry Cheesecake "><div class="menu-dish__copy"><h4>Blueberry Cheesecake</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹130</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹230</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹400</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹650</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-raspberry-cheesecake" data-badge="" data-search="Raspberry Cheesecake "><div class="menu-dish__copy"><h4>Raspberry Cheesecake</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹130</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹230</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹400</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹650</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-strawberry-cheese-cake" data-badge="" data-search="Strawberry Cheese Cake "><div class="menu-dish__copy"><h4>Strawberry Cheese Cake</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹140</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹250</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹450</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹900</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-mango-alphonso" data-badge="" data-search="Mango Alphonso "><div class="menu-dish__copy"><h4>Mango Alphonso</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹130</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹230</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹400</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹650</dd></div></dl></article></div></section><section class="menu-section" id="creamy-delights" data-menu-group aria-labelledby="creamy-delights-heading"><div class="menu-section__heading"><h3 id="creamy-delights-heading">Creamy delights</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="gelato-vanilla-oreo-twist" data-badge="" data-search="Vanilla Oreo Twist "><div class="menu-dish__copy"><h4>Vanilla Oreo Twist</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹100</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹190</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹300</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹550</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-butterscotch" data-badge="" data-search="Butterscotch "><div class="menu-dish__copy"><h4>Butterscotch</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹100</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹190</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹300</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹550</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-caramel-crunch" data-badge="" data-search="Caramel Crunch "><div class="menu-dish__copy"><h4>Caramel Crunch</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹130</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹230</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹400</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹800</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-coconut" data-badge="" data-search="Coconut "><div class="menu-dish__copy"><h4>Coconut</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹130</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹190</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹300</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹550</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-kiwi" data-badge="" data-search="Kiwi "><div class="menu-dish__copy"><h4>Kiwi</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹100</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹190</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹300</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹550</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-cookies-n-cream" data-badge="" data-search="Cookies N Cream "><div class="menu-dish__copy"><h4>Cookies N Cream</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹130</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹230</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹400</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹800</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-royal-kulfi" data-badge="" data-search="Royal Kulfi "><div class="menu-dish__copy"><h4>Royal Kulfi</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹130</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹230</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹400</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹800</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-blue-sky" data-badge="" data-search="Blue Sky "><div class="menu-dish__copy"><h4>Blue Sky</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹130</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹230</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹400</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹800</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-vanilla-madagascar" data-badge="" data-search="Vanilla Madagascar "><div class="menu-dish__copy"><h4>Vanilla Madagascar</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹130</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹230</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹400</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹800</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-lichi" data-badge="" data-search="Lichi "><div class="menu-dish__copy"><h4>Lichi</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹100</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹190</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹300</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹550</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-new-york-cheese-cake" data-badge="" data-search="New York Cheese Cake "><div class="menu-dish__copy"><h4>New York Cheese Cake</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹130</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹230</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹400</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹800</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-black-forest-cheese-cake" data-badge="" data-search="Black Forest Cheese Cake "><div class="menu-dish__copy"><h4>Black Forest Cheese Cake</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹130</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹230</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹400</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹800</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-cappuccino" data-badge="" data-search="Cappuccino "><div class="menu-dish__copy"><h4>Cappuccino</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹130</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹230</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹400</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹800</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-mint-after-9" data-badge="" data-search="Mint After 9 "><div class="menu-dish__copy"><h4>Mint After 9</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹110</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹210</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹350</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹650</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-bubble-gum" data-badge="" data-search="Bubble Gum "><div class="menu-dish__copy"><h4>Bubble Gum</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹110</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹210</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹350</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹650</dd></div></dl></article></div></section><section class="menu-section" id="premium-indulgence" data-menu-group aria-labelledby="premium-indulgence-heading"><div class="menu-section__heading"><h3 id="premium-indulgence-heading">Premium indulgence</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="gelato-ferrero-rocher" data-badge="" data-search="Ferrero Rocher "><div class="menu-dish__copy"><h4>Ferrero Rocher</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹140</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹250</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹450</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹900</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-choco-fudge-walnut-brownie" data-badge="" data-search="Choco Fudge Walnut Brownie "><div class="menu-dish__copy"><h4>Choco Fudge Walnut Brownie</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹130</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹230</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹400</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹800</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-tiramisu" data-badge="" data-search="Tiramisu "><div class="menu-dish__copy"><h4>Tiramisu</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹140</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹250</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹450</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹900</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-diet-lite-vanilla-sugar-free" data-badge="" data-search="Diet Lite Vanilla (Sugar Free) "><div class="menu-dish__copy"><h4>Diet Lite Vanilla (Sugar Free)</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹130</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹230</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹400</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹800</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-diet-lite-chocolate-sugar-free" data-badge="" data-search="Diet Lite Chocolate (Sugar Free) "><div class="menu-dish__copy"><h4>Diet Lite Chocolate (Sugar Free)</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹140</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹250</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹450</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹900</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-lemon-ice-sorbet" data-badge="" data-search="Lemon Ice (Sorbet) "><div class="menu-dish__copy"><h4>Lemon Ice (Sorbet)</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹110</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹210</dd></div><div data-price-size="family"><dt>Family pack</dt><dd>₹350</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹650</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-pistachio" data-badge="" data-search="Pistachio "><div class="menu-dish__copy"><h4>Pistachio</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹140</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹250</dd></div><div data-price-size="family"><dt>Family pack</dt><dd class="menu-price-pending">Please ask us</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹900</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-madagascar-fine-chocolate" data-badge="" data-search="Madagascar Fine Chocolate "><div class="menu-dish__copy"><h4>Madagascar Fine Chocolate</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹140</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹250</dd></div><div data-price-size="family"><dt>Family pack</dt><dd class="menu-price-pending">Please ask us</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹900</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-whisky-n-cream" data-badge="" data-search="Whisky N Cream "><div class="menu-dish__copy"><h4>Whisky N Cream</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹140</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹250</dd></div><div data-price-size="family"><dt>Family pack</dt><dd class="menu-price-pending">Please ask us</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹900</dd></div></dl></article><article class="menu-dish" data-menu-item data-item-id="gelato-yoghurt-wild-berry" data-badge="" data-search="Yoghurt Wild Berry "><div class="menu-dish__copy"><h4>Yoghurt Wild Berry</h4></div><dl class="menu-prices"><div data-price-size="single"><dt>Single scoop</dt><dd>₹140</dd></div><div data-price-size="double"><dt>Double scoop</dt><dd>₹250</dd></div><div data-price-size="family"><dt>Family pack</dt><dd class="menu-price-pending">Please ask us</dd></div><div data-price-size="large"><dt>Large pack</dt><dd>₹900</dd></div></dl></article></div></section><section class="menu-section" id="shakes-with-softy" data-menu-group aria-labelledby="shakes-with-softy-heading"><div class="menu-section__heading"><h3 id="shakes-with-softy-heading">Shakes</h3><p>With softy</p></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="shakes-with-softy-brownie-shake" data-badge="Must try" data-search="Brownie Shake "><div class="menu-dish__copy"><h4>Brownie Shake</h4><span class="menu-badge">Must try</span></div><p class="menu-price">₹220</p></article><article class="menu-dish" data-menu-item data-item-id="shakes-with-softy-caramel-shake" data-badge="" data-search="Caramel Shake "><div class="menu-dish__copy"><h4>Caramel Shake</h4></div><p class="menu-price">₹200</p></article><article class="menu-dish" data-menu-item data-item-id="shakes-with-softy-cookie-blast-shake" data-badge="Bestseller" data-search="Cookie &amp; Blast Shake "><div class="menu-dish__copy"><h4>Cookie &amp; Blast Shake</h4><span class="menu-badge">Bestseller</span></div><p class="menu-price">₹230</p></article><article class="menu-dish" data-menu-item data-item-id="shakes-with-softy-hazelnut-shake" data-badge="" data-search="Hazelnut Shake "><div class="menu-dish__copy"><h4>Hazelnut Shake</h4></div><p class="menu-price">₹240</p></article><article class="menu-dish" data-menu-item data-item-id="shakes-with-softy-kesar-pista-shake" data-badge="" data-search="Kesar Pista Shake "><div class="menu-dish__copy"><h4>Kesar Pista Shake</h4></div><p class="menu-price">₹230</p></article><article class="menu-dish" data-menu-item data-item-id="shakes-with-softy-kunafa-shake" data-badge="" data-search="Kunafa Shake "><div class="menu-dish__copy"><h4>Kunafa Shake</h4></div><p class="menu-price">₹220</p></article><article class="menu-dish" data-menu-item data-item-id="shakes-with-softy-choco-crumble-shake" data-badge="" data-search="Choco Crumble Shake "><div class="menu-dish__copy"><h4>Choco Crumble Shake</h4></div><p class="menu-price">₹190</p></article></div></section><section class="menu-section" id="falooda-one-scoop-ice-cream-with-rabadi" data-menu-group aria-labelledby="falooda-one-scoop-ice-cream-with-rabadi-heading"><div class="menu-section__heading"><h3 id="falooda-one-scoop-ice-cream-with-rabadi-heading">Falooda</h3><p>One scoop of ice cream with rabadi</p></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="falooda-one-scoop-ice-cream-with-rabadi-kesar-pista-falooda" data-badge="Must try" data-search="Kesar Pista Falooda Vanilla Ice Cream"><div class="menu-dish__copy"><h4>Kesar Pista Falooda</h4><span class="menu-badge">Must try</span><p>Vanilla Ice Cream</p></div><p class="menu-price">₹230</p></article><article class="menu-dish" data-menu-item data-item-id="falooda-one-scoop-ice-cream-with-rabadi-golden-crunch-falooda" data-badge="" data-search="Golden Crunch Falooda Butterscotch Ice Cream"><div class="menu-dish__copy"><h4>Golden Crunch Falooda</h4><p>Butterscotch Ice Cream</p></div><p class="menu-price">₹200</p></article><article class="menu-dish" data-menu-item data-item-id="falooda-one-scoop-ice-cream-with-rabadi-dry-fruit-falooda" data-badge="Bestseller" data-search="Dry Fruit Falooda Fruit &amp; Nut Ice Cream"><div class="menu-dish__copy"><h4>Dry Fruit Falooda</h4><span class="menu-badge">Bestseller</span><p>Fruit &amp; Nut Ice Cream</p></div><p class="menu-price">₹240</p></article><article class="menu-dish" data-menu-item data-item-id="falooda-one-scoop-ice-cream-with-rabadi-shahi-rose-falooda" data-badge="" data-search="Shahi Rose Falooda Rose Melody"><div class="menu-dish__copy"><h4>Shahi Rose Falooda</h4><p>Rose Melody</p></div><p class="menu-price">₹210</p></article><article class="menu-dish" data-menu-item data-item-id="falooda-one-scoop-ice-cream-with-rabadi-mango-falooda" data-badge="Chef’s special" data-search="Mango Falooda "><div class="menu-dish__copy"><h4>Mango Falooda</h4><span class="menu-badge">Chef’s special</span></div><p class="menu-price">₹190</p></article><article class="menu-dish" data-menu-item data-item-id="falooda-one-scoop-ice-cream-with-rabadi-royal-chocolate-falooda" data-badge="" data-search="Royal Chocolate Falooda "><div class="menu-dish__copy"><h4>Royal Chocolate Falooda</h4></div><p class="menu-price">₹220</p></article></div></section><section class="menu-section" id="smoothies-with-softy" data-menu-group aria-labelledby="smoothies-with-softy-heading"><div class="menu-section__heading"><h3 id="smoothies-with-softy-heading">Smoothies</h3><p>With softy</p></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="smoothies-with-softy-custard-apple-smoothie" data-badge="" data-search="Custard Apple Smoothie "><div class="menu-dish__copy"><h4>Custard Apple Smoothie</h4></div><p class="menu-price">₹220</p></article><article class="menu-dish" data-menu-item data-item-id="smoothies-with-softy-mango-smoothie" data-badge="" data-search="Mango Smoothie "><div class="menu-dish__copy"><h4>Mango Smoothie</h4></div><p class="menu-price">₹200</p></article><article class="menu-dish" data-menu-item data-item-id="smoothies-with-softy-chikoo-smoothie" data-badge="" data-search="Chikoo Smoothie "><div class="menu-dish__copy"><h4>Chikoo Smoothie</h4></div><p class="menu-price">₹190</p></article><article class="menu-dish" data-menu-item data-item-id="smoothies-with-softy-strawberry-smoothie" data-badge="" data-search="Strawberry Smoothie "><div class="menu-dish__copy"><h4>Strawberry Smoothie</h4></div><p class="menu-price">₹180</p></article><article class="menu-dish" data-menu-item data-item-id="smoothies-with-softy-blueberry-smoothie" data-badge="" data-search="Blueberry Smoothie "><div class="menu-dish__copy"><h4>Blueberry Smoothie</h4></div><p class="menu-price">₹230</p></article><article class="menu-dish" data-menu-item data-item-id="smoothies-with-softy-black-current-smoothie" data-badge="" data-search="Black Current Smoothie "><div class="menu-dish__copy"><h4>Black Current Smoothie</h4></div><p class="menu-price">₹220</p></article></div></section><section class="menu-section" id="mastani" data-menu-group aria-labelledby="mastani-heading"><div class="menu-section__heading"><h3 id="mastani-heading">Mastani</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="mastani-aamchi-mastani" data-badge="" data-search="Aamchi Mastani "><div class="menu-dish__copy"><h4>Aamchi Mastani</h4></div><p class="menu-price">₹230</p></article><article class="menu-dish" data-menu-item data-item-id="mastani-chocolate-mastani" data-badge="" data-search="Chocolate Mastani "><div class="menu-dish__copy"><h4>Chocolate Mastani</h4></div><p class="menu-price">₹220</p></article><article class="menu-dish" data-menu-item data-item-id="mastani-rasmalai-mastani" data-badge="" data-search="Rasmalai Mastani "><div class="menu-dish__copy"><h4>Rasmalai Mastani</h4></div><p class="menu-price">₹210</p></article><article class="menu-dish" data-menu-item data-item-id="mastani-sitaphal-mastani" data-badge="Bestseller" data-search="Sitaphal Mastani "><div class="menu-dish__copy"><h4>Sitaphal Mastani</h4><span class="menu-badge">Bestseller</span></div><p class="menu-price">₹220</p></article><article class="menu-dish" data-menu-item data-item-id="mastani-butterscotch-mastani" data-badge="" data-search="Butterscotch Mastani "><div class="menu-dish__copy"><h4>Butterscotch Mastani</h4></div><p class="menu-price">₹240</p></article><article class="menu-dish" data-menu-item data-item-id="mastani-gulkand-mastani" data-badge="" data-search="Gulkand Mastani "><div class="menu-dish__copy"><h4>Gulkand Mastani</h4></div><p class="menu-price">₹190</p></article></div></section><section class="menu-section" id="sundae" data-menu-group aria-labelledby="sundae-heading"><div class="menu-section__heading"><h3 id="sundae-heading">Sundae</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="sundae-choco-brownie-sundae" data-badge="Must try" data-search="Choco Brownie Sundae "><div class="menu-dish__copy"><h4>Choco Brownie Sundae</h4><span class="menu-badge">Must try</span></div><p class="menu-price">₹190</p></article><article class="menu-dish" data-menu-item data-item-id="sundae-belgian-choco-sundae" data-badge="Bestseller" data-search="Belgian Choco Sundae "><div class="menu-dish__copy"><h4>Belgian Choco Sundae</h4><span class="menu-badge">Bestseller</span></div><p class="menu-price">₹220</p></article><article class="menu-dish" data-menu-item data-item-id="sundae-mocha-madness" data-badge="" data-search="Mocha Madness "><div class="menu-dish__copy"><h4>Mocha Madness</h4></div><p class="menu-price">₹210</p></article><article class="menu-dish" data-menu-item data-item-id="sundae-cookie-madness-sundae" data-badge="Must try" data-search="Cookie Madness Sundae "><div class="menu-dish__copy"><h4>Cookie Madness Sundae</h4><span class="menu-badge">Must try</span></div><p class="menu-price">₹230</p></article><article class="menu-dish" data-menu-item data-item-id="sundae-fruit-twist-sundae" data-badge="" data-search="Fruit Twist Sundae Strawberry, Blueberry, Blackcurrant"><div class="menu-dish__copy"><h4>Fruit Twist Sundae</h4><p>Strawberry, Blueberry, Blackcurrant</p></div><p class="menu-price">₹220</p></article><article class="menu-dish" data-menu-item data-item-id="sundae-pistachio-kulfi-sundae" data-badge="Chef’s special" data-search="Pistachio Kulfi Sundae "><div class="menu-dish__copy"><h4>Pistachio Kulfi Sundae</h4><span class="menu-badge">Chef’s special</span></div><p class="menu-price">₹240</p></article></div></section><section class="menu-section" id="cones-baskets" data-menu-group aria-labelledby="cones-baskets-heading"><div class="menu-section__heading"><h3 id="cones-baskets-heading">Cones &amp; baskets</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="cones-baskets-waffle-cone" data-badge="" data-search="Waffle Cone "><div class="menu-dish__copy"><h4>Waffle Cone</h4></div><p class="menu-price">₹15</p></article><article class="menu-dish" data-menu-item data-item-id="cones-baskets-waffle-basket" data-badge="" data-search="Waffle Basket "><div class="menu-dish__copy"><h4>Waffle Basket</h4></div><p class="menu-price">₹20</p></article><article class="menu-dish" data-menu-item data-item-id="cones-baskets-chocolate-waffle-cone" data-badge="" data-search="Chocolate Waffle Cone "><div class="menu-dish__copy"><h4>Chocolate Waffle Cone</h4></div><p class="menu-price">₹25</p></article><article class="menu-dish" data-menu-item data-item-id="cones-baskets-special-waffle-cone" data-badge="" data-search="Special Waffle Cone "><div class="menu-dish__copy"><h4>Special Waffle Cone</h4></div><p class="menu-price">₹30</p></article></div></section>
-      </section>
-      <section id="woodfire" class="menu-chapter" data-menu-chapter="woodfire" aria-labelledby="woodfire-title">
-        <header class="menu-chapter__header"><div><h2 id="woodfire-title">Woodfire Pizza</h2><p>Explore our sourdough pizzas, calzones and artisanal panuozzo.</p></div><img src="assets/krushna/dna/woodfire-pizza-480.webp" alt="" width="480" height="480" loading="lazy" /></header>
+  </header>
+  <div class="site-menu" id="site-menu" data-menu-overlay aria-hidden="true" inert><nav class="site-menu__nav" aria-label="Mobile navigation"><a href="index.html"><span>01</span>Home</a><a href="menu.html" aria-current="page"><span>02</span>Menu</a><a href="story.html"><span>03</span>Our story</a><a href="gallery.html"><span>04</span>Gallery</a><a href="visit.html"><span>05</span>Visit us</a></nav><div class="site-menu__aside"><strong>Five cravings. One address.</strong><p>Find something for everyone at the table.</p></div></div>
+  <main id="main" class="carte">
+    <section class="carte-hero" aria-labelledby="menu-title" data-ambient>
+      <div class="carte-hero__inner container">
+        <div class="carte-hero__copy">
+          <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">The menu</span></nav>
+          <p class="eyebrow-line">Five chapters · 188 dishes</p>
+          <h1 id="menu-title">The <em class="glow-text">menu.</em></h1>
+          <p class="carte-hero__lede">Every craving has its own chapter. Slow-churned gelato, sourdough pizza, brews, waffles and savoury plates, all made for sharing.</p>
+          <div class="carte-hero__actions">
+            <a class="button" href="#gelato">Start with gelato <i data-lucide="arrow-down"></i></a>
+            <a class="button button--ghost" href="assets/krushna/krushnas-heaven-menu.pdf" download>Download the menu <span class="button__meta">PDF · 2.4 MB</span></a>
+          </div>
+        </div>
+        <div class="carte-hero__art" aria-hidden="true">
+          <img class="carte-hero__feather" src="assets/krushna/menu/peacock-feather.webp" alt="" />
+          <div class="carte-hero__arch"><img src="assets/krushna/menu/gelato-cup.webp" alt="" fetchpriority="high" /></div>
+          <svg class="carte-hero__outline" viewBox="0 0 200 300" preserveAspectRatio="none"><path d="M2 300V118C2 72 40 48 69 31C85 22 95 13 100 2C105 13 115 22 131 31C160 48 198 72 198 118V300" fill="none" stroke="currentColor" stroke-width="1.2" vector-effect="non-scaling-stroke" /></svg>
+          <img class="carte-hero__scoop carte-hero__scoop--a" src="assets/krushna/menu/scoop-chocolate.webp" alt="" />
+          <img class="carte-hero__scoop carte-hero__scoop--b" src="assets/krushna/menu/scoop-fruit.webp" alt="" />
+        </div>
+      </div>
+      <ol class="carte-index container">
+        <li style="--accent: #f0749d"><a href="#gelato"><span class="carte-index__no">01</span><span class="carte-index__name">Premium Gelatos</span><span class="carte-index__meta">45 flavours · 31 treats</span><img class="carte-index__art" src="assets/krushna/menu/scoop-fruit.webp" alt="" loading="lazy" /></a></li>
+        <li style="--accent: #ef7a5d"><a href="#woodfire"><span class="carte-index__no">02</span><span class="carte-index__name">Woodfire Pizza</span><span class="carte-index__meta">12 on the menu</span><img class="carte-index__art is-photo" src="assets/krushna/menu/pizza-sourdough.webp" alt="" loading="lazy" /></a></li>
+        <li style="--accent: #5fb7ae"><a href="#brews"><span class="carte-index__no">03</span><span class="carte-index__name">Brews</span><span class="carte-index__meta">56 on the menu</span><img class="carte-index__art" src="assets/krushna/menu/cappuccino.webp" alt="" loading="lazy" /></a></li>
+        <li style="--accent: #e8b64c"><a href="#waffles"><span class="carte-index__no">04</span><span class="carte-index__name">Waffles &amp; sweet plates</span><span class="carte-index__meta">17 on the menu</span><img class="carte-index__art" src="assets/krushna/menu/stick-waffle.webp" alt="" loading="lazy" /></a></li>
+        <li style="--accent: #f2a65a"><a href="#savoury"><span class="carte-index__no">05</span><span class="carte-index__name">Savoury Bites</span><span class="carte-index__meta">23 on the menu</span><img class="carte-index__art" src="assets/krushna/menu/burger.webp" alt="" loading="lazy" /></a></li>
+      </ol>
+    </section>
 
-        <section class="menu-section" id="sourdough-pizzas" data-menu-group aria-labelledby="sourdough-pizzas-heading"><div class="menu-section__heading"><h3 id="sourdough-pizzas-heading">Sourdough Pizzas</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="sourdough-pizzas-marinara-pizza" data-badge="" data-search="Marinara Pizza Ingredients: Homemade Marinara Sauce, Confit Sliced Garlic, Olive Oil. Garnish: Fresh Basil, Spicy Olive Oil infused with Herbs"><div class="menu-dish__copy"><h4>Marinara Pizza</h4><p>Ingredients: Homemade Marinara Sauce, Confit Sliced Garlic, Olive Oil. Garnish: Fresh Basil, Spicy Olive Oil infused with Herbs</p></div><p class="menu-price">₹459</p></article><article class="menu-dish" data-menu-item data-item-id="sourdough-pizzas-neapolitan-margherita-pizza" data-badge="" data-search="Neapolitan Margherita Pizza Ingredients: Homemade Pomodoro Sauce, Fresh Buffalo Mozzarella, Olive Oil. Garnish: Fresh Basil, Parmesan Cheese"><div class="menu-dish__copy"><h4>Neapolitan Margherita Pizza</h4><p>Ingredients: Homemade Pomodoro Sauce, Fresh Buffalo Mozzarella, Olive Oil. Garnish: Fresh Basil, Parmesan Cheese</p></div><p class="menu-price">₹499</p></article><article class="menu-dish" data-menu-item data-item-id="sourdough-pizzas-three-cheese-pizza" data-badge="" data-search="Three Cheese Pizza Ingredients: Herb Garlic Butter, Fresh Buffalo Mozzarella, Fior Di Latte, Parmesan Cheese. Garnish: Parsley, Black Pepper, Fresh Basil"><div class="menu-dish__copy"><h4>Three Cheese Pizza</h4><p>Ingredients: Herb Garlic Butter, Fresh Buffalo Mozzarella, Fior Di Latte, Parmesan Cheese. Garnish: Parsley, Black Pepper, Fresh Basil</p></div><p class="menu-price">₹579</p></article><article class="menu-dish" data-menu-item data-item-id="sourdough-pizzas-four-cheese-pizza" data-badge="" data-search="Four Cheese Pizza Ingredients: Homemade Cream Cheese Sauce, Ricotta Cheese, Yellow Cheddar Cheese, Emmental Cheese, Homemade Confit Garlic, Confit Cherry Tomatoes, Jalapeño Salsa. Garnish: Parmesan Cheese, Fresh Parsley"><div class="menu-dish__copy"><h4>Four Cheese Pizza</h4><p>Ingredients: Homemade Cream Cheese Sauce, Ricotta Cheese, Yellow Cheddar Cheese, Emmental Cheese, Homemade Confit Garlic, Confit Cherry Tomatoes, Jalapeño Salsa. Garnish: Parmesan Cheese, Fresh Parsley</p></div><p class="menu-price">₹679</p></article><article class="menu-dish" data-menu-item data-item-id="sourdough-pizzas-truffle-shrum-pizza" data-badge="" data-search="Truffle Shrum Pizza Ingredients: Homemade Mushroom Sauce, Fresh Buffalo Cheese, Button Mushroom, Oyster Mushroom, Homemade Jalapeño Salsa, Confit Tomato, Truffle Oil. Garnish: Parmesan Cheese, Fresh Parsley"><div class="menu-dish__copy"><h4>Truffle Shrum Pizza</h4><p>Ingredients: Homemade Mushroom Sauce, Fresh Buffalo Cheese, Button Mushroom, Oyster Mushroom, Homemade Jalapeño Salsa, Confit Tomato, Truffle Oil. Garnish: Parmesan Cheese, Fresh Parsley</p></div><p class="menu-price">₹689</p></article><article class="menu-dish" data-menu-item data-item-id="sourdough-pizzas-buffalo-verdure-pizza" data-badge="" data-search="Buffalo Verdure Pizza Ingredients: Homemade Buffalo Sauce, Fior Di Latte, Yellow Zucchini, Green Zucchini, Red Bell Pepper, Yellow Bell Pepper, Green Bell Pepper, Baby Corn, Broccoli, Button Mushrooms. Garnish: Parmesan Cheese, Fresh Parsley"><div class="menu-dish__copy"><h4>Buffalo Verdure Pizza</h4><p>Ingredients: Homemade Buffalo Sauce, Fior Di Latte, Yellow Zucchini, Green Zucchini, Red Bell Pepper, Yellow Bell Pepper, Green Bell Pepper, Baby Corn, Broccoli, Button Mushrooms. Garnish: Parmesan Cheese, Fresh Parsley</p></div><p class="menu-price">₹699</p></article><article class="menu-dish" data-menu-item data-item-id="sourdough-pizzas-amritsar-to-krushna-heaven" data-badge="" data-search="Amritsar to Krushna Heaven Ingredients: Homemade Makhani Sauce, Fior Di Latte, Cottage Cheese (Paneer) Tikka, Sliced Onions, Red, Yellow &amp; Green Bell Peppers, Jalapeños, Homemade Confit Tomatoes. Garnish: Parmesan Cheese, Laccha Onion, Pickled Onion, Fresh Coriander"><div class="menu-dish__copy"><h4>Amritsar to Krushna Heaven</h4><p>Ingredients: Homemade Makhani Sauce, Fior Di Latte, Cottage Cheese (Paneer) Tikka, Sliced Onions, Red, Yellow &amp; Green Bell Peppers, Jalapeños, Homemade Confit Tomatoes. Garnish: Parmesan Cheese, Laccha Onion, Pickled Onion, Fresh Coriander</p></div><p class="menu-price">₹649</p></article><article class="menu-dish" data-menu-item data-item-id="sourdough-pizzas-pesto-inferno" data-badge="" data-search="Pesto Inferno Ingredients: Homemade Basil Pesto, Fior Di Latte, Sundried Tomatoes, Saute Veggies, Homemade Confit Tomatoes, Jalapeños, Homemade Confit Garlic. Garnish: Rocket Leaves, Burrata Cheese, Parmesan Cheese"><div class="menu-dish__copy"><h4>Pesto Inferno</h4><p>Ingredients: Homemade Basil Pesto, Fior Di Latte, Sundried Tomatoes, Saute Veggies, Homemade Confit Tomatoes, Jalapeños, Homemade Confit Garlic. Garnish: Rocket Leaves, Burrata Cheese, Parmesan Cheese</p></div><p class="menu-price">₹699</p></article></div></section><section class="menu-section" id="calzone" data-menu-group aria-labelledby="calzone-heading"><div class="menu-section__heading"><h3 id="calzone-heading">Calzone</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="calzone-eggplant-cheese-calzone" data-badge="" data-search="Eggplant &amp; Cheese Calzone Ingredients: Fried Eggplant, Cow Mozzarella Cheese, Homemade Basil Pesto, Homemade Spicy Sauce. Garnish: Parmesan Cheese, Parsley, Rocket Leaves"><div class="menu-dish__copy"><h4>Eggplant &amp; Cheese Calzone</h4><p>Ingredients: Fried Eggplant, Cow Mozzarella Cheese, Homemade Basil Pesto, Homemade Spicy Sauce. Garnish: Parmesan Cheese, Parsley, Rocket Leaves</p></div><p class="menu-price">₹399</p></article><article class="menu-dish" data-menu-item data-item-id="calzone-garlic-cheese-calzone" data-badge="" data-search="Garlic Cheese Calzone Ingredients: Ricotta Cheese, Fior Di Latte Cheese, Buffalo Cheese, Homemade Confit Garlic Butter. Garnish: Parmesan Cheese"><div class="menu-dish__copy"><h4>Garlic Cheese Calzone</h4><p>Ingredients: Ricotta Cheese, Fior Di Latte Cheese, Buffalo Cheese, Homemade Confit Garlic Butter. Garnish: Parmesan Cheese</p></div><p class="menu-price">₹290</p></article></div></section><section class="menu-section" id="artisanal-panuozzo" data-menu-group aria-labelledby="artisanal-panuozzo-heading"><div class="menu-section__heading"><h3 id="artisanal-panuozzo-heading">Artisanal Panuozzo</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="artisanal-panuozzo-eggplant-panuozzo" data-badge="" data-search="Eggplant Panuozzo Ingredients: Eggplant Baked with Cheese, Fior Di Latte Cheese, Homemade Basil Pesto, Homemade Spicy Sauce. Garnish: Parmesan Cheese, Rocket Leaves, Homemade Sumac Yogurt Dip, Parsley"><div class="menu-dish__copy"><h4>Eggplant Panuozzo</h4><p>Ingredients: Eggplant Baked with Cheese, Fior Di Latte Cheese, Homemade Basil Pesto, Homemade Spicy Sauce. Garnish: Parmesan Cheese, Rocket Leaves, Homemade Sumac Yogurt Dip, Parsley</p></div><p class="menu-price">₹399</p></article><article class="menu-dish" data-menu-item data-item-id="artisanal-panuozzo-caponata" data-badge="" data-search="Caponata Ingredients: Homemade Basil Pesto, Sautéed Veggies, Fior Di Latte. Garnish: Parmesan Cheese, Parsley, Rocket Leaves"><div class="menu-dish__copy"><h4>Caponata</h4><p>Ingredients: Homemade Basil Pesto, Sautéed Veggies, Fior Di Latte. Garnish: Parmesan Cheese, Parsley, Rocket Leaves</p></div><p class="menu-price">₹349</p></article></div></section>
-      </section>
-      <section id="brews" class="menu-chapter" data-menu-chapter="brews" aria-labelledby="brews-title">
-        <header class="menu-chapter__header"><div><h2 id="brews-title">Brews</h2><p>From a first espresso to a long conversation. Coffee, tea and something refreshing.</p></div><img src="assets/krushna/gallery/responsive/08-signature-coffee-800.webp" alt="" width="480" height="480" loading="lazy" /></header>
+    <div class="carte-nav" data-carte-nav>
+      <div class="carte-nav__bar container">
+        <nav class="carte-nav__links" aria-label="Menu chapters" data-carte-links><a href="#gelato" data-carte-link="gelato">Gelatos</a><a href="#woodfire" data-carte-link="woodfire">Woodfire Pizza</a><a href="#brews" data-carte-link="brews">Brews</a><a href="#waffles" data-carte-link="waffles">Waffles</a><a href="#savoury" data-carte-link="savoury">Savoury Bites</a><span class="carte-nav__indicator" aria-hidden="true"></span></nav>
+        <button class="carte-nav__search" type="button" aria-expanded="false" aria-controls="carte-search" data-carte-search-toggle hidden><i data-lucide="search"></i><span>Search</span></button>
+      </div>
+      <div class="carte-search container" id="carte-search" data-carte-search hidden>
+        <label class="sr-only" for="carte-search-input">Search the menu</label>
+        <input id="carte-search-input" type="search" placeholder="Try mango, pizza or latte…" autocomplete="off" enterkeyhint="search" />
+        <p class="carte-search__status" role="status" aria-live="polite" data-carte-status></p>
+      </div>
+    </div>
 
-        <section class="menu-section" id="hot-classic" data-menu-group aria-labelledby="hot-classic-heading"><div class="menu-section__heading"><h3 id="hot-classic-heading">Hot Classic</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="hot-classic-espresso" data-badge="" data-search="Espresso Strong Coffee Shot"><div class="menu-dish__copy"><h4>Espresso</h4><p>Strong Coffee Shot</p></div><p class="menu-price">₹149</p></article><article class="menu-dish" data-menu-item data-item-id="hot-classic-caffe-americano" data-badge="" data-search="Caffe Americano Espresso + Hot Water"><div class="menu-dish__copy"><h4>Caffe Americano</h4><p>Espresso + Hot Water</p></div><p class="menu-price">₹159</p></article><article class="menu-dish" data-menu-item data-item-id="hot-classic-cappuccino" data-badge="" data-search="Cappuccino Espresso + Steamed milk + Thick Milk Foam"><div class="menu-dish__copy"><h4>Cappuccino</h4><p>Espresso + Steamed milk + Thick Milk Foam</p></div><p class="menu-price">₹179</p></article><article class="menu-dish" data-menu-item data-item-id="hot-classic-caffe-latte" data-badge="" data-search="Caffe Latte Espresso + Steamed Milk + Thin Layer of Milk Foam"><div class="menu-dish__copy"><h4>Caffe Latte</h4><p>Espresso + Steamed Milk + Thin Layer of Milk Foam</p></div><p class="menu-price">₹199</p></article><article class="menu-dish" data-menu-item data-item-id="hot-classic-flat-white" data-badge="" data-search="Flat White Espresso + Velvety Milk Foam"><div class="menu-dish__copy"><h4>Flat White</h4><p>Espresso + Velvety Milk Foam</p></div><p class="menu-price">₹219</p></article><article class="menu-dish" data-menu-item data-item-id="hot-classic-caffe-mocha" data-badge="" data-search="Caffe Mocha Espresso + Chocolate + Steamed Milk"><div class="menu-dish__copy"><h4>Caffe Mocha</h4><p>Espresso + Chocolate + Steamed Milk</p></div><p class="menu-price">₹219</p></article><article class="menu-dish" data-menu-item data-item-id="hot-classic-cortado" data-badge="" data-search="Cortado Equal Espresso and Steam Milk Foam"><div class="menu-dish__copy"><h4>Cortado</h4><p>Equal Espresso and Steam Milk Foam</p></div><p class="menu-price">₹179</p></article><article class="menu-dish" data-menu-item data-item-id="hot-classic-affogato" data-badge="" data-search="Affogato Hot Espresso Poured Over Gelato"><div class="menu-dish__copy"><h4>Affogato</h4><p>Hot Espresso Poured Over Gelato</p></div><p class="menu-price">₹239</p></article><article class="menu-dish" data-menu-item data-item-id="hot-classic-hot-chocolate" data-badge="" data-search="Hot Chocolate A Smooth, Comforting Blend of Premium Cocoa Powder"><div class="menu-dish__copy"><h4>Hot Chocolate</h4><p>A Smooth, Comforting Blend of Premium Cocoa Powder</p></div><p class="menu-price">₹219</p></article></div></section><section class="menu-section" id="cold-classic" data-menu-group aria-labelledby="cold-classic-heading"><div class="menu-section__heading"><h3 id="cold-classic-heading">Cold Classic</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="cold-classic-classic-cold-coffee" data-badge="" data-search="Classic Cold Coffee Double Espresso + Gelato + Milk"><div class="menu-dish__copy"><h4>Classic Cold Coffee</h4><p>Double Espresso + Gelato + Milk</p></div><p class="menu-price">₹249</p></article><article class="menu-dish" data-menu-item data-item-id="cold-classic-brownie-frappe" data-badge="" data-search="Brownie Frappe Double Espresso + Gelato + Brownie + Milk"><div class="menu-dish__copy"><h4>Brownie Frappe</h4><p>Double Espresso + Gelato + Brownie + Milk</p></div><p class="menu-price">₹299</p></article><article class="menu-dish" data-menu-item data-item-id="cold-classic-heaven-s-signature" data-badge="" data-search="Heaven&#39;s Signature Double Espresso + Gelato + Milk + Whip Cream"><div class="menu-dish__copy"><h4>Heaven&#39;s Signature</h4><p>Double Espresso + Gelato + Milk + Whip Cream</p></div><p class="menu-price">₹289</p></article><article class="menu-dish" data-menu-item data-item-id="cold-classic-caramel-frappe" data-badge="" data-search="Caramel Frappe Double Espresso + Gelato + Milk + Caramel Sauce"><div class="menu-dish__copy"><h4>Caramel Frappe</h4><p>Double Espresso + Gelato + Milk + Caramel Sauce</p></div><p class="menu-price">₹279</p></article><article class="menu-dish" data-menu-item data-item-id="cold-classic-vanilla-frappe" data-badge="" data-search="Vanilla Frappe Double Espresso + Gelato + Milk + Vanilla"><div class="menu-dish__copy"><h4>Vanilla Frappe</h4><p>Double Espresso + Gelato + Milk + Vanilla</p></div><p class="menu-price">₹279</p></article></div></section><section class="menu-section" id="iced-tea" data-menu-group aria-labelledby="iced-tea-heading"><div class="menu-section__heading"><h3 id="iced-tea-heading">Iced Tea</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="iced-tea-lemon-iced-tea" data-badge="" data-search="Lemon Iced Tea Water + Black Tea + Sugar + Fresh Lemon Juice"><div class="menu-dish__copy"><h4>Lemon Iced Tea</h4><p>Water + Black Tea + Sugar + Fresh Lemon Juice</p></div><p class="menu-price">₹179</p></article><article class="menu-dish" data-menu-item data-item-id="iced-tea-peach-iced-tea" data-badge="" data-search="Peach Iced Tea Water + Black Tea + Sugar + Ripe Peaches"><div class="menu-dish__copy"><h4>Peach Iced Tea</h4><p>Water + Black Tea + Sugar + Ripe Peaches</p></div><p class="menu-price">₹189</p></article><article class="menu-dish" data-menu-item data-item-id="iced-tea-hibiscus-mint-tea" data-badge="" data-search="Hibiscus Mint Tea Water + Hibiscus + Mint"><div class="menu-dish__copy"><h4>Hibiscus Mint Tea</h4><p>Water + Hibiscus + Mint</p></div><p class="menu-price">₹199</p></article></div></section><section class="menu-section" id="iced-coffee" data-menu-group aria-labelledby="iced-coffee-heading"><div class="menu-section__heading"><h3 id="iced-coffee-heading">Iced Coffee</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="iced-coffee-iced-latte" data-badge="" data-search="Iced Latte Double Espresso + Ice + Milk + Foam"><div class="menu-dish__copy"><h4>Iced Latte</h4><p>Double Espresso + Ice + Milk + Foam</p></div><p class="menu-price">₹199</p></article><article class="menu-dish" data-menu-item data-item-id="iced-coffee-iced-mocha" data-badge="" data-search="Iced Mocha Double Espresso + Ice + Milk + Foam + Chocolate Sauce"><div class="menu-dish__copy"><h4>Iced Mocha</h4><p>Double Espresso + Ice + Milk + Foam + Chocolate Sauce</p></div><p class="menu-price">₹219</p></article><article class="menu-dish" data-menu-item data-item-id="iced-coffee-iced-americano" data-badge="" data-search="Iced Americano Double Espresso + Water + Ice"><div class="menu-dish__copy"><h4>Iced Americano</h4><p>Double Espresso + Water + Ice</p></div><p class="menu-price">₹179</p></article><article class="menu-dish" data-menu-item data-item-id="iced-coffee-iced-blue-latte" data-badge="" data-search="Iced Blue Latte Double espresso + Ice + Milk + Blue Curacao"><div class="menu-dish__copy"><h4>Iced Blue Latte</h4><p>Double espresso + Ice + Milk + Blue Curacao</p></div><p class="menu-price">₹249</p></article><article class="menu-dish" data-menu-item data-item-id="iced-coffee-iced-red-latte" data-badge="" data-search="Iced Red Latte Double Espresso + Ice + Milk + Red Rose"><div class="menu-dish__copy"><h4>Iced Red Latte</h4><p>Double Espresso + Ice + Milk + Red Rose</p></div><p class="menu-price">₹239</p></article></div></section><section class="menu-section" id="mocktails" data-menu-group aria-labelledby="mocktails-heading"><div class="menu-section__heading"><h3 id="mocktails-heading">Mocktails</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="mocktails-classic-virgin-mojito" data-badge="" data-search="Classic Virgin Mojito "><div class="menu-dish__copy"><h4>Classic Virgin Mojito</h4></div><p class="menu-price">₹199</p></article><article class="menu-dish" data-menu-item data-item-id="mocktails-shahi-gulab-paan" data-badge="" data-search="Shahi Gulab Paan "><div class="menu-dish__copy"><h4>Shahi Gulab Paan</h4></div><p class="menu-price">₹209</p></article><article class="menu-dish" data-menu-item data-item-id="mocktails-apple-mint-splash" data-badge="" data-search="Apple Mint Splash "><div class="menu-dish__copy"><h4>Apple Mint Splash</h4></div><p class="menu-price">₹199</p></article><article class="menu-dish" data-menu-item data-item-id="mocktails-watermelon-mimosa" data-badge="" data-search="Watermelon Mimosa "><div class="menu-dish__copy"><h4>Watermelon Mimosa</h4></div><p class="menu-price">₹209</p></article><article class="menu-dish" data-menu-item data-item-id="mocktails-blue-paradise" data-badge="" data-search="Blue Paradise "><div class="menu-dish__copy"><h4>Blue Paradise</h4></div><p class="menu-price">₹219</p></article><article class="menu-dish" data-menu-item data-item-id="mocktails-chilli-guava-mary" data-badge="" data-search="Chilli Guava Mary "><div class="menu-dish__copy"><h4>Chilli Guava Mary</h4></div><p class="menu-price">₹239</p></article><article class="menu-dish" data-menu-item data-item-id="mocktails-malt-magic" data-badge="" data-search="Malt &amp; Magic "><div class="menu-dish__copy"><h4>Malt &amp; Magic</h4></div><p class="menu-price">₹199</p></article><article class="menu-dish" data-menu-item data-item-id="mocktails-mango-passion" data-badge="" data-search="Mango Passion "><div class="menu-dish__copy"><h4>Mango Passion</h4></div><p class="menu-price">₹219</p></article><article class="menu-dish" data-menu-item data-item-id="mocktails-tropical-orange" data-badge="" data-search="Tropical Orange "><div class="menu-dish__copy"><h4>Tropical Orange</h4></div><p class="menu-price">₹219</p></article><article class="menu-dish" data-menu-item data-item-id="mocktails-shikanji" data-badge="" data-search="Shikanji "><div class="menu-dish__copy"><h4>Shikanji</h4></div><p class="menu-price">₹179</p></article><article class="menu-dish" data-menu-item data-item-id="mocktails-aam-ka-panna" data-badge="" data-search="Aam Ka Panna "><div class="menu-dish__copy"><h4>Aam Ka Panna</h4></div><p class="menu-price">₹179</p></article><article class="menu-dish" data-menu-item data-item-id="mocktails-island-cooler" data-badge="" data-search="Island Cooler "><div class="menu-dish__copy"><h4>Island Cooler</h4></div><p class="menu-price">₹229</p></article></div></section><section class="menu-section" id="signature-protein-smoothies" data-menu-group aria-labelledby="signature-protein-smoothies-heading"><div class="menu-section__heading"><h3 id="signature-protein-smoothies-heading">Signature Protein Smoothies</h3><p>Protein bar: 6:30–10:30 am, as listed in the menu.</p></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="signature-protein-smoothies-pre-caffeine-smoothie" data-badge="" data-search="Pre Caffeine Smoothie Espresso + Whey Protein + Oats + Peanut Butter + Cocoa Powder + Milk + Honey"><div class="menu-dish__copy"><h4>Pre Caffeine Smoothie</h4><p>Espresso + Whey Protein + Oats + Peanut Butter + Cocoa Powder + Milk + Honey</p></div><p class="menu-price">₹270</p></article><article class="menu-dish" data-menu-item data-item-id="signature-protein-smoothies-berry-slim-shake" data-badge="" data-search="Berry Slim Shake Whey Protein + Strawberries + Almond Milk + Honey"><div class="menu-dish__copy"><h4>Berry Slim Shake</h4><p>Whey Protein + Strawberries + Almond Milk + Honey</p></div><p class="menu-price">₹250</p></article><article class="menu-dish" data-menu-item data-item-id="signature-protein-smoothies-banana-peanut-powerup" data-badge="" data-search="Banana Peanut PowerUp Whey Protein + Banana + Peanut Butter + Milk"><div class="menu-dish__copy"><h4>Banana Peanut PowerUp</h4><p>Whey Protein + Banana + Peanut Butter + Milk</p></div><p class="menu-price">₹230</p></article><article class="menu-dish" data-menu-item data-item-id="signature-protein-smoothies-post-workout-muscle-gainer" data-badge="" data-search="Post Workout Muscle Gainer Whey Protein + Oats + Banana + Dry Fruits + Milk + Peanut Butter + Dates"><div class="menu-dish__copy"><h4>Post Workout Muscle Gainer</h4><p>Whey Protein + Oats + Banana + Dry Fruits + Milk + Peanut Butter + Dates</p></div><p class="menu-price">₹280</p></article><article class="menu-dish" data-menu-item data-item-id="signature-protein-smoothies-desi-sattu-fuel" data-badge="" data-search="Desi Sattu Fuel "><div class="menu-dish__copy"><h4>Desi Sattu Fuel</h4></div><p class="menu-price">₹220</p></article></div></section><section class="menu-section" id="fresh-juices" data-menu-group aria-labelledby="fresh-juices-heading"><div class="menu-section__heading"><h3 id="fresh-juices-heading">Fresh Juices</h3><p>Protein bar: 6:30–10:30 am, as listed in the menu.</p></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="fresh-juices-abc-juice" data-badge="" data-search="ABC Juice Apple + Beetroot + Carrot"><div class="menu-dish__copy"><h4>ABC Juice</h4><p>Apple + Beetroot + Carrot</p></div><p class="menu-price">₹179</p></article><article class="menu-dish" data-menu-item data-item-id="fresh-juices-red-healthy-juice" data-badge="" data-search="Red Healthy Juice Orange + Beetroot + Ginger + Mint"><div class="menu-dish__copy"><h4>Red Healthy Juice</h4><p>Orange + Beetroot + Ginger + Mint</p></div><p class="menu-price">₹179</p></article><article class="menu-dish" data-menu-item data-item-id="fresh-juices-amla-ginger-shot" data-badge="" data-search="Amla Ginger Shot Amla + Ginger + Kiwi"><div class="menu-dish__copy"><h4>Amla Ginger Shot</h4><p>Amla + Ginger + Kiwi</p></div><p class="menu-price">₹159</p></article><article class="menu-dish" data-menu-item data-item-id="fresh-juices-liver-detox-juice" data-badge="" data-search="Liver Detox Juice Spinach + Celery + Mint + Ginger + Green Apple"><div class="menu-dish__copy"><h4>Liver Detox Juice</h4><p>Spinach + Celery + Mint + Ginger + Green Apple</p></div><p class="menu-price">₹199</p></article></div></section><section class="menu-section" id="heaven-s-special-tea" data-menu-group aria-labelledby="heaven-s-special-tea-heading"><div class="menu-section__heading"><h3 id="heaven-s-special-tea-heading">Heaven&#39;s Special Tea</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="heaven-s-special-tea-krushna-s-special-herbal-tea" data-badge="" data-search="Krushna&#39;s Special Herbal Tea Ashwagandha + ArjunSal + Ginger + Sabja+Tulsi"><div class="menu-dish__copy"><h4>Krushna&#39;s Special Herbal Tea</h4><p>Ashwagandha + ArjunSal + Ginger + Sabja+Tulsi</p></div><p class="menu-price">₹50</p></article><article class="menu-dish" data-menu-item data-item-id="heaven-s-special-tea-lemon-tea" data-badge="" data-search="Lemon Tea "><div class="menu-dish__copy"><h4>Lemon Tea</h4></div><p class="menu-price">₹40</p></article><article class="menu-dish" data-menu-item data-item-id="heaven-s-special-tea-black-tea" data-badge="" data-search="Black Tea "><div class="menu-dish__copy"><h4>Black Tea</h4></div><p class="menu-price">₹40</p></article><article class="menu-dish" data-menu-item data-item-id="heaven-s-special-tea-ginger-honey-tea" data-badge="" data-search="Ginger Honey Tea "><div class="menu-dish__copy"><h4>Ginger Honey Tea</h4></div><p class="menu-price">₹50</p></article></div></section><section class="menu-section" id="brew-add-ons" data-menu-group aria-labelledby="brew-add-ons-heading"><div class="menu-section__heading"><h3 id="brew-add-ons-heading">Brew add-ons</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="brew-add-ons-hazelnut-flavour" data-badge="" data-search="Hazelnut Flavour "><div class="menu-dish__copy"><h4>Hazelnut Flavour</h4></div><p class="menu-price">₹50</p></article><article class="menu-dish" data-menu-item data-item-id="brew-add-ons-vanilla-flavour" data-badge="" data-search="Vanilla Flavour "><div class="menu-dish__copy"><h4>Vanilla Flavour</h4></div><p class="menu-price">₹50</p></article><article class="menu-dish" data-menu-item data-item-id="brew-add-ons-caramel-flavour" data-badge="" data-search="Caramel Flavour "><div class="menu-dish__copy"><h4>Caramel Flavour</h4></div><p class="menu-price">₹50</p></article><article class="menu-dish" data-menu-item data-item-id="brew-add-ons-irish-flavour" data-badge="" data-search="Irish Flavour "><div class="menu-dish__copy"><h4>Irish Flavour</h4></div><p class="menu-price">₹50</p></article><article class="menu-dish" data-menu-item data-item-id="brew-add-ons-whipped-cream" data-badge="" data-search="Whipped Cream "><div class="menu-dish__copy"><h4>Whipped Cream</h4></div><p class="menu-price">₹50</p></article><article class="menu-dish" data-menu-item data-item-id="brew-add-ons-chocolate-sauce" data-badge="" data-search="Chocolate Sauce "><div class="menu-dish__copy"><h4>Chocolate Sauce</h4></div><p class="menu-price">₹50</p></article><article class="menu-dish" data-menu-item data-item-id="brew-add-ons-espresso-shot" data-badge="" data-search="Espresso Shot "><div class="menu-dish__copy"><h4>Espresso Shot</h4></div><p class="menu-price">₹80</p></article><article class="menu-dish" data-menu-item data-item-id="brew-add-ons-almond-milk" data-badge="" data-search="Almond Milk "><div class="menu-dish__copy"><h4>Almond Milk</h4></div><p class="menu-price">₹80</p></article><article class="menu-dish" data-menu-item data-item-id="brew-add-ons-oats-milk" data-badge="" data-search="Oats Milk "><div class="menu-dish__copy"><h4>Oats Milk</h4></div><p class="menu-price">₹80</p></article></div></section>
-      </section>
-      <section id="waffles" class="menu-chapter" data-menu-chapter="waffles" aria-labelledby="waffles-title">
-        <header class="menu-chapter__header"><div><h2 id="waffles-title">Waffles &amp; sweet plates</h2><p>Waffles, mini pancakes and artisanal desserts. Leave room for something sweet.</p></div><img src="assets/krushna/gallery/responsive/01-brownie-gelato-480.webp" alt="" width="480" height="480" loading="lazy" /></header>
+    <div class="carte-chapters" data-menu-catalogue>
+    <section class="carte-chapter" id="gelato" style="--accent: #f0749d" aria-labelledby="gelato-title" data-carte-chapter>
+      <div class="container">
+        <figure class="carte-banner"><img src="assets/krushna/gallery/11-gelato-counter.webp" srcset="assets/krushna/gallery/responsive/11-gelato-counter-800.webp 800w, assets/krushna/gallery/11-gelato-counter.webp 1360w" sizes="(max-width: 90rem) 92vw, 1440px" width="1360" height="1020" alt="The pastel gelato counter at Krushna’s Heaven" loading="lazy" decoding="async" style="object-position: center 58%" /><figcaption>The gelato counter</figcaption></figure>
+        <header class="carte-chapter__head">
+          <span class="carte-chapter__no" aria-hidden="true">01</span>
+          <h2 id="gelato-title">Premium Gelatos</h2>
+          <p class="carte-chapter__note">slow-churned, scooped to order</p>
+        </header>
+        <p class="carte-chapter__intro">Slow-churned gelato in four families of flavour, then shakes, falooda, mastani and sundaes to finish.</p>
+        <div class="flavour-boards" data-flavour-boards>
+          <div class="size-switch" role="group" aria-label="Gelato size" data-size-switch hidden><button type="button" data-size-option="single" aria-pressed="true">Single scoop</button><button type="button" data-size-option="double" aria-pressed="false">Double scoop</button><button type="button" data-size-option="family" aria-pressed="false">Family pack</button><button type="button" data-size-option="large" aria-pressed="false">Large pack</button></div>
+          <div class="flavour-boards__grid">
+          <section class="flavour-board" id="chocolate-classics" style="--family: #c8956c" aria-labelledby="chocolate-classics-heading" data-menu-group>
+            <header class="flavour-board__head"><img class="carte-board__art" src="assets/krushna/menu/scoop-chocolate.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="chocolate-classics-heading">Chocolate classics</h3><p>8 flavours</p></div></header>
+            <table class="flavour-table">
+              <caption class="sr-only">Chocolate classics gelato prices in rupees</caption>
+              <thead><tr><th scope="col">Flavour</th><th scope="col" data-size-col="single"><span class="sr-only">Single scoop</span><span aria-hidden="true">Single</span></th><th scope="col" data-size-col="double"><span class="sr-only">Double scoop</span><span aria-hidden="true">Double</span></th><th scope="col" data-size-col="family"><span class="sr-only">Family pack</span><span aria-hidden="true">Family</span></th><th scope="col" data-size-col="large"><span class="sr-only">Large pack</span><span aria-hidden="true">Large</span></th></tr></thead>
+              <tbody data-flavour-tier>
+                <tr class="flavour-tier"><th scope="colgroup" colspan="5">Classics</th></tr>
+                <tr class="flavour" data-menu-item data-search="swiss chocolate   classics chocolate classics"><th scope="row"><span class="flavour__name">Swiss Chocolate</span></th><td data-size-col="single">₹100</td><td data-size-col="double">₹190</td><td data-size-col="family">₹300</td><td data-size-col="large">₹550</td></tr>
+                <tr class="flavour" data-menu-item data-search="vanilla choco chips   classics chocolate classics"><th scope="row"><span class="flavour__name">Vanilla Choco Chips</span></th><td data-size-col="single">₹100</td><td data-size-col="double">₹190</td><td data-size-col="family">₹300</td><td data-size-col="large">₹550</td></tr>
+                <tr class="flavour" data-menu-item data-search="chocolate crunch   classics chocolate classics"><th scope="row"><span class="flavour__name">Chocolate Crunch</span></th><td data-size-col="single">₹110</td><td data-size-col="double">₹210</td><td data-size-col="family">₹350</td><td data-size-col="large">₹650</td></tr>
+              </tbody>
+              <tbody data-flavour-tier>
+                <tr class="flavour-tier"><th scope="colgroup" colspan="5">Most Loved</th></tr>
+                <tr class="flavour" data-menu-item data-search="vanilla fudge brownie   most loved chocolate classics"><th scope="row"><span class="flavour__name">Vanilla Fudge Brownie</span></th><td data-size-col="single">₹110</td><td data-size-col="double">₹210</td><td data-size-col="family">₹350</td><td data-size-col="large">₹650</td></tr>
+                <tr class="flavour" data-menu-item data-search="choco chips royal   most loved chocolate classics"><th scope="row"><span class="flavour__name">Choco Chips Royal</span></th><td data-size-col="single">₹110</td><td data-size-col="double">₹210</td><td data-size-col="family">₹350</td><td data-size-col="large">₹650</td></tr>
+                <tr class="flavour" data-menu-item data-search="chocolate hazelnut   most loved chocolate classics"><th scope="row"><span class="flavour__name">Chocolate Hazelnut</span></th><td data-size-col="single">₹130</td><td data-size-col="double">₹230</td><td data-size-col="family">₹400</td><td data-size-col="large">₹800</td></tr>
+              </tbody>
+              <tbody data-flavour-tier>
+                <tr class="flavour-tier"><th scope="colgroup" colspan="5">Premium Picks</th></tr>
+                <tr class="flavour" data-menu-item data-search="dark italian chocolate   premium picks chocolate classics"><th scope="row"><span class="flavour__name">Dark Italian Chocolate</span></th><td data-size-col="single">₹110</td><td data-size-col="double">₹210</td><td data-size-col="family" class="is-ask">Ask us</td><td data-size-col="large">₹650</td></tr>
+                <tr class="flavour" data-menu-item data-search="belgian chocolate  bestseller premium picks chocolate classics"><th scope="row"><span class="flavour__name">Belgian Chocolate</span><span class="dish-badge">Bestseller</span></th><td data-size-col="single">₹140</td><td data-size-col="double">₹250</td><td data-size-col="family" class="is-ask">Ask us</td><td data-size-col="large">₹900</td></tr>
+              </tbody>
+            </table>
+          </section>
+          <section class="flavour-board" id="fruit-fresh" style="--family: #4fb3a9" aria-labelledby="fruit-fresh-heading" data-menu-group>
+            <header class="flavour-board__head"><img class="carte-board__art" src="assets/krushna/menu/scoop-fruit.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="fruit-fresh-heading">Fruit fresh</h3><p>12 flavours</p></div></header>
+            <table class="flavour-table">
+              <caption class="sr-only">Fruit fresh gelato prices in rupees</caption>
+              <thead><tr><th scope="col">Flavour</th><th scope="col" data-size-col="single"><span class="sr-only">Single scoop</span><span aria-hidden="true">Single</span></th><th scope="col" data-size-col="double"><span class="sr-only">Double scoop</span><span aria-hidden="true">Double</span></th><th scope="col" data-size-col="family"><span class="sr-only">Family pack</span><span aria-hidden="true">Family</span></th><th scope="col" data-size-col="large"><span class="sr-only">Large pack</span><span aria-hidden="true">Large</span></th></tr></thead>
+              <tbody data-flavour-tier>
+                <tr class="flavour-tier"><th scope="colgroup" colspan="5">Classics</th></tr>
+                <tr class="flavour" data-menu-item data-search="black currant   classics fruit fresh"><th scope="row"><span class="flavour__name">Black Currant</span></th><td data-size-col="single">₹100</td><td data-size-col="double">₹190</td><td data-size-col="family">₹300</td><td data-size-col="large">₹550</td></tr>
+                <tr class="flavour" data-menu-item data-search="chikoo  bestseller classics fruit fresh"><th scope="row"><span class="flavour__name">Chikoo</span><span class="dish-badge">Bestseller</span></th><td data-size-col="single">₹100</td><td data-size-col="double">₹190</td><td data-size-col="family">₹300</td><td data-size-col="large">₹550</td></tr>
+                <tr class="flavour" data-menu-item data-search="orange cheesecake   classics fruit fresh"><th scope="row"><span class="flavour__name">Orange Cheesecake</span></th><td data-size-col="single">₹100</td><td data-size-col="double">₹190</td><td data-size-col="family">₹300</td><td data-size-col="large">₹550</td></tr>
+                <tr class="flavour" data-menu-item data-search="strawberry cream   classics fruit fresh"><th scope="row"><span class="flavour__name">Strawberry Cream</span></th><td data-size-col="single">₹100</td><td data-size-col="double">₹190</td><td data-size-col="family">₹300</td><td data-size-col="large">₹550</td></tr>
+              </tbody>
+              <tbody data-flavour-tier>
+                <tr class="flavour-tier"><th scope="colgroup" colspan="5">Most Loved</th></tr>
+                <tr class="flavour" data-menu-item data-search="sitafal  bestseller most loved fruit fresh"><th scope="row"><span class="flavour__name">Sitafal</span><span class="dish-badge">Bestseller</span></th><td data-size-col="single">₹110</td><td data-size-col="double">₹210</td><td data-size-col="family">₹350</td><td data-size-col="large">₹650</td></tr>
+                <tr class="flavour" data-menu-item data-search="fruit n nuts overload   most loved fruit fresh"><th scope="row"><span class="flavour__name">Fruit N Nuts Overload</span></th><td data-size-col="single">₹110</td><td data-size-col="double">₹210</td><td data-size-col="family">₹350</td><td data-size-col="large">₹650</td></tr>
+                <tr class="flavour" data-menu-item data-search="pink guava  must try most loved fruit fresh"><th scope="row"><span class="flavour__name">Pink Guava</span><span class="dish-badge">Must try</span></th><td data-size-col="single">₹110</td><td data-size-col="double">₹210</td><td data-size-col="family">₹300</td><td data-size-col="large">₹650</td></tr>
+                <tr class="flavour" data-menu-item data-search="rose melody   most loved fruit fresh"><th scope="row"><span class="flavour__name">Rose Melody</span></th><td data-size-col="single">₹100</td><td data-size-col="double">₹190</td><td data-size-col="family">₹400</td><td data-size-col="large">₹550</td></tr>
+              </tbody>
+              <tbody data-flavour-tier>
+                <tr class="flavour-tier"><th scope="colgroup" colspan="5">Premium Picks</th></tr>
+                <tr class="flavour" data-menu-item data-search="blueberry cheesecake  must try premium picks fruit fresh"><th scope="row"><span class="flavour__name">Blueberry Cheesecake</span><span class="dish-badge">Must try</span></th><td data-size-col="single">₹130</td><td data-size-col="double">₹230</td><td data-size-col="family">₹400</td><td data-size-col="large">₹650</td></tr>
+                <tr class="flavour" data-menu-item data-search="raspberry cheesecake   premium picks fruit fresh"><th scope="row"><span class="flavour__name">Raspberry Cheesecake</span></th><td data-size-col="single">₹130</td><td data-size-col="double">₹230</td><td data-size-col="family">₹400</td><td data-size-col="large">₹650</td></tr>
+                <tr class="flavour" data-menu-item data-search="strawberry cheesecake   premium picks fruit fresh"><th scope="row"><span class="flavour__name">Strawberry Cheesecake</span></th><td data-size-col="single">₹140</td><td data-size-col="double">₹250</td><td data-size-col="family">₹450</td><td data-size-col="large">₹900</td></tr>
+                <tr class="flavour" data-menu-item data-search="mango alphonso  must try premium picks fruit fresh"><th scope="row"><span class="flavour__name">Mango Alphonso</span><span class="dish-badge">Must try</span></th><td data-size-col="single">₹130</td><td data-size-col="double">₹230</td><td data-size-col="family">₹400</td><td data-size-col="large">₹650</td></tr>
+              </tbody>
+            </table>
+          </section>
+          <section class="flavour-board" id="creamy-delights" style="--family: #f29bb6" aria-labelledby="creamy-delights-heading" data-menu-group>
+            <header class="flavour-board__head"><img class="carte-board__art" src="assets/krushna/menu/scoop-vanilla.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="creamy-delights-heading">Creamy delights</h3><p>15 flavours</p></div></header>
+            <table class="flavour-table">
+              <caption class="sr-only">Creamy delights gelato prices in rupees</caption>
+              <thead><tr><th scope="col">Flavour</th><th scope="col" data-size-col="single"><span class="sr-only">Single scoop</span><span aria-hidden="true">Single</span></th><th scope="col" data-size-col="double"><span class="sr-only">Double scoop</span><span aria-hidden="true">Double</span></th><th scope="col" data-size-col="family"><span class="sr-only">Family pack</span><span aria-hidden="true">Family</span></th><th scope="col" data-size-col="large"><span class="sr-only">Large pack</span><span aria-hidden="true">Large</span></th></tr></thead>
+              <tbody data-flavour-tier>
+                <tr class="flavour-tier"><th scope="colgroup" colspan="5">Classics</th></tr>
+                <tr class="flavour" data-menu-item data-search="vanilla oreo twist  chef’s special classics creamy delights"><th scope="row"><span class="flavour__name">Vanilla Oreo Twist</span><span class="dish-badge">Chef’s special</span></th><td data-size-col="single">₹100</td><td data-size-col="double">₹190</td><td data-size-col="family">₹300</td><td data-size-col="large">₹550</td></tr>
+                <tr class="flavour" data-menu-item data-search="butterscotch   classics creamy delights"><th scope="row"><span class="flavour__name">Butterscotch</span></th><td data-size-col="single">₹100</td><td data-size-col="double">₹190</td><td data-size-col="family">₹300</td><td data-size-col="large">₹550</td></tr>
+                <tr class="flavour" data-menu-item data-search="caramel crunch   classics creamy delights"><th scope="row"><span class="flavour__name">Caramel Crunch</span></th><td data-size-col="single">₹130</td><td data-size-col="double">₹230</td><td data-size-col="family">₹400</td><td data-size-col="large">₹800</td></tr>
+                <tr class="flavour" data-menu-item data-search="coconut   classics creamy delights"><th scope="row"><span class="flavour__name">Coconut</span></th><td data-size-col="single">₹130</td><td data-size-col="double">₹190</td><td data-size-col="family">₹300</td><td data-size-col="large">₹550</td></tr>
+                <tr class="flavour" data-menu-item data-search="kiwi   classics creamy delights"><th scope="row"><span class="flavour__name">Kiwi</span></th><td data-size-col="single">₹100</td><td data-size-col="double">₹190</td><td data-size-col="family">₹300</td><td data-size-col="large">₹550</td></tr>
+              </tbody>
+              <tbody data-flavour-tier>
+                <tr class="flavour-tier"><th scope="colgroup" colspan="5">Most Loved</th></tr>
+                <tr class="flavour" data-menu-item data-search="cookies n cream   most loved creamy delights"><th scope="row"><span class="flavour__name">Cookies N Cream</span></th><td data-size-col="single">₹130</td><td data-size-col="double">₹230</td><td data-size-col="family">₹400</td><td data-size-col="large">₹800</td></tr>
+                <tr class="flavour" data-menu-item data-search="royal kulfi  chef’s special most loved creamy delights"><th scope="row"><span class="flavour__name">Royal Kulfi</span><span class="dish-badge">Chef’s special</span></th><td data-size-col="single">₹130</td><td data-size-col="double">₹230</td><td data-size-col="family">₹400</td><td data-size-col="large">₹800</td></tr>
+                <tr class="flavour" data-menu-item data-search="blue sky  kids’ special most loved creamy delights"><th scope="row"><span class="flavour__name">Blue Sky</span><span class="dish-badge">Kids’ special</span></th><td data-size-col="single">₹130</td><td data-size-col="double">₹230</td><td data-size-col="family">₹400</td><td data-size-col="large">₹800</td></tr>
+                <tr class="flavour" data-menu-item data-search="vanilla madagascar  bestseller most loved creamy delights"><th scope="row"><span class="flavour__name">Vanilla Madagascar</span><span class="dish-badge">Bestseller</span></th><td data-size-col="single">₹130</td><td data-size-col="double">₹230</td><td data-size-col="family">₹400</td><td data-size-col="large">₹800</td></tr>
+                <tr class="flavour" data-menu-item data-search="lichi   most loved creamy delights"><th scope="row"><span class="flavour__name">Lichi</span></th><td data-size-col="single">₹100</td><td data-size-col="double">₹190</td><td data-size-col="family">₹300</td><td data-size-col="large">₹550</td></tr>
+              </tbody>
+              <tbody data-flavour-tier>
+                <tr class="flavour-tier"><th scope="colgroup" colspan="5">Premium Picks</th></tr>
+                <tr class="flavour" data-menu-item data-search="new york cheesecake   premium picks creamy delights"><th scope="row"><span class="flavour__name">New York Cheesecake</span></th><td data-size-col="single">₹130</td><td data-size-col="double">₹230</td><td data-size-col="family">₹400</td><td data-size-col="large">₹800</td></tr>
+                <tr class="flavour" data-menu-item data-search="black forest cheesecake   premium picks creamy delights"><th scope="row"><span class="flavour__name">Black Forest Cheesecake</span></th><td data-size-col="single">₹130</td><td data-size-col="double">₹230</td><td data-size-col="family">₹400</td><td data-size-col="large">₹800</td></tr>
+                <tr class="flavour" data-menu-item data-search="cappuccino   premium picks creamy delights"><th scope="row"><span class="flavour__name">Cappuccino</span></th><td data-size-col="single">₹130</td><td data-size-col="double">₹230</td><td data-size-col="family">₹400</td><td data-size-col="large">₹800</td></tr>
+                <tr class="flavour" data-menu-item data-search="mint after 9  must try premium picks creamy delights"><th scope="row"><span class="flavour__name">Mint After 9</span><span class="dish-badge">Must try</span></th><td data-size-col="single">₹110</td><td data-size-col="double">₹210</td><td data-size-col="family">₹350</td><td data-size-col="large">₹650</td></tr>
+                <tr class="flavour" data-menu-item data-search="bubble gum   premium picks creamy delights"><th scope="row"><span class="flavour__name">Bubble Gum</span></th><td data-size-col="single">₹110</td><td data-size-col="double">₹210</td><td data-size-col="family">₹350</td><td data-size-col="large">₹650</td></tr>
+              </tbody>
+            </table>
+          </section>
+          <section class="flavour-board" id="premium-indulgence" style="--family: #e6c25a" aria-labelledby="premium-indulgence-heading" data-menu-group>
+            <header class="flavour-board__head"><img class="carte-board__art" src="assets/krushna/menu/scoop-caramel.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="premium-indulgence-heading">Premium indulgence</h3><p>10 flavours</p></div></header>
+            <table class="flavour-table">
+              <caption class="sr-only">Premium indulgence gelato prices in rupees</caption>
+              <thead><tr><th scope="col">Flavour</th><th scope="col" data-size-col="single"><span class="sr-only">Single scoop</span><span aria-hidden="true">Single</span></th><th scope="col" data-size-col="double"><span class="sr-only">Double scoop</span><span aria-hidden="true">Double</span></th><th scope="col" data-size-col="family"><span class="sr-only">Family pack</span><span aria-hidden="true">Family</span></th><th scope="col" data-size-col="large"><span class="sr-only">Large pack</span><span aria-hidden="true">Large</span></th></tr></thead>
+              <tbody data-flavour-tier>
+                <tr class="flavour-tier"><th scope="colgroup" colspan="5">Classics</th></tr>
+                <tr class="flavour" data-menu-item data-search="ferrero rocher   classics premium indulgence"><th scope="row"><span class="flavour__name">Ferrero Rocher</span></th><td data-size-col="single">₹140</td><td data-size-col="double">₹250</td><td data-size-col="family">₹450</td><td data-size-col="large">₹900</td></tr>
+                <tr class="flavour" data-menu-item data-search="choco fudge walnut brownie   classics premium indulgence"><th scope="row"><span class="flavour__name">Choco Fudge Walnut Brownie</span></th><td data-size-col="single">₹130</td><td data-size-col="double">₹230</td><td data-size-col="family">₹400</td><td data-size-col="large">₹800</td></tr>
+              </tbody>
+              <tbody data-flavour-tier>
+                <tr class="flavour-tier"><th scope="colgroup" colspan="5">Most Loved</th></tr>
+                <tr class="flavour" data-menu-item data-search="tiramisu   most loved premium indulgence"><th scope="row"><span class="flavour__name">Tiramisu</span></th><td data-size-col="single">₹140</td><td data-size-col="double">₹250</td><td data-size-col="family">₹450</td><td data-size-col="large">₹900</td></tr>
+                <tr class="flavour" data-menu-item data-search="diet lite vanilla (sugar free)   most loved premium indulgence"><th scope="row"><span class="flavour__name">Diet Lite Vanilla (Sugar Free)</span></th><td data-size-col="single">₹130</td><td data-size-col="double">₹230</td><td data-size-col="family">₹400</td><td data-size-col="large">₹800</td></tr>
+                <tr class="flavour" data-menu-item data-search="diet lite chocolate (sugar free)   most loved premium indulgence"><th scope="row"><span class="flavour__name">Diet Lite Chocolate (Sugar Free)</span></th><td data-size-col="single">₹140</td><td data-size-col="double">₹250</td><td data-size-col="family">₹450</td><td data-size-col="large">₹900</td></tr>
+                <tr class="flavour" data-menu-item data-search="lemon ice (sorbet)   most loved premium indulgence"><th scope="row"><span class="flavour__name">Lemon Ice (Sorbet)</span></th><td data-size-col="single">₹110</td><td data-size-col="double">₹210</td><td data-size-col="family">₹350</td><td data-size-col="large">₹650</td></tr>
+              </tbody>
+              <tbody data-flavour-tier>
+                <tr class="flavour-tier"><th scope="colgroup" colspan="5">Premium Picks</th></tr>
+                <tr class="flavour" data-menu-item data-search="pistachio  must try premium picks premium indulgence"><th scope="row"><span class="flavour__name">Pistachio</span><span class="dish-badge">Must try</span></th><td data-size-col="single">₹140</td><td data-size-col="double">₹250</td><td data-size-col="family" class="is-ask">Ask us</td><td data-size-col="large">₹900</td></tr>
+                <tr class="flavour" data-menu-item data-search="madagascar fine chocolate   premium picks premium indulgence"><th scope="row"><span class="flavour__name">Madagascar Fine Chocolate</span></th><td data-size-col="single">₹140</td><td data-size-col="double">₹250</td><td data-size-col="family" class="is-ask">Ask us</td><td data-size-col="large">₹900</td></tr>
+                <tr class="flavour" data-menu-item data-search="whisky n cream  chef’s special premium picks premium indulgence"><th scope="row"><span class="flavour__name">Whisky N Cream</span><span class="dish-badge">Chef’s special</span></th><td data-size-col="single">₹140</td><td data-size-col="double">₹250</td><td data-size-col="family" class="is-ask">Ask us</td><td data-size-col="large">₹900</td></tr>
+                <tr class="flavour" data-menu-item data-search="yoghurt wild berry  chef’s special premium picks premium indulgence"><th scope="row"><span class="flavour__name">Yoghurt Wild Berry</span><span class="dish-badge">Chef’s special</span></th><td data-size-col="single">₹140</td><td data-size-col="double">₹250</td><td data-size-col="family" class="is-ask">Ask us</td><td data-size-col="large">₹900</td></tr>
+              </tbody>
+            </table>
+          </section>
+          </div>
+        <section class="cone-strip" id="cones-baskets" aria-labelledby="cones-baskets-heading" data-menu-group>
+          <h3 id="cones-baskets-heading">Make it a cone</h3>
+          <ul><li data-menu-item data-search="waffle cone    cones &amp; baskets"><span>Waffle Cone</span><b>₹15</b></li><li data-menu-item data-search="waffle basket    cones &amp; baskets"><span>Waffle Basket</span><b>₹20</b></li><li data-menu-item data-search="chocolate waffle cone    cones &amp; baskets"><span>Chocolate Waffle Cone</span><b>₹25</b></li><li data-menu-item data-search="special waffle cone    cones &amp; baskets"><span>Special Waffle Cone</span><b>₹30</b></li></ul>
+        </section>
+        </div>
+        <div class="carte-suite">
+          <h3 class="carte-suite__title">Scoops &amp; treats</h3>
+          <div class="carte-groups">
+        <section class="carte-group" id="shakes-with-softy" aria-labelledby="shakes-with-softy-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/shakes.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="shakes-with-softy-heading">Shakes</h3><p>With softy</p></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="brownie shake  must try  shakes">
+              <div class="dish__line"><h4 class="dish__name">Brownie Shake</h4><span class="dish-badge">Must try</span><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹220</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="caramel shake    shakes">
+              <div class="dish__line"><h4 class="dish__name">Caramel Shake</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹200</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="cookie &amp; blast shake  bestseller  shakes">
+              <div class="dish__line"><h4 class="dish__name">Cookie &amp; Blast Shake</h4><span class="dish-badge">Bestseller</span><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹230</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="hazelnut shake    shakes">
+              <div class="dish__line"><h4 class="dish__name">Hazelnut Shake</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹240</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="kesar pista shake    shakes">
+              <div class="dish__line"><h4 class="dish__name">Kesar Pista Shake</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹230</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="kunafa shake    shakes">
+              <div class="dish__line"><h4 class="dish__name">Kunafa Shake</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹220</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="choco crumble shake    shakes">
+              <div class="dish__line"><h4 class="dish__name">Choco Crumble Shake</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹190</span></div>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="falooda-one-scoop-ice-cream-with-rabadi" aria-labelledby="falooda-one-scoop-ice-cream-with-rabadi-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/falooda.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="falooda-one-scoop-ice-cream-with-rabadi-heading">Falooda</h3><p>One scoop of ice cream with rabadi</p></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="kesar pista falooda vanilla ice cream must try  falooda">
+              <div class="dish__line"><h4 class="dish__name">Kesar Pista Falooda</h4><span class="dish-badge">Must try</span><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹230</span></div>
+              <p class="dish__desc">Vanilla Ice Cream</p>
+            </li>
+            <li class="dish" data-menu-item data-search="golden crunch falooda butterscotch ice cream   falooda">
+              <div class="dish__line"><h4 class="dish__name">Golden Crunch Falooda</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹200</span></div>
+              <p class="dish__desc">Butterscotch Ice Cream</p>
+            </li>
+            <li class="dish" data-menu-item data-search="dry fruit falooda fruit &amp; nut ice cream bestseller  falooda">
+              <div class="dish__line"><h4 class="dish__name">Dry Fruit Falooda</h4><span class="dish-badge">Bestseller</span><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹240</span></div>
+              <p class="dish__desc">Fruit &amp; Nut Ice Cream</p>
+            </li>
+            <li class="dish" data-menu-item data-search="shahi rose falooda rose melody   falooda">
+              <div class="dish__line"><h4 class="dish__name">Shahi Rose Falooda</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹210</span></div>
+              <p class="dish__desc">Rose Melody</p>
+            </li>
+            <li class="dish" data-menu-item data-search="mango falooda  chef’s special  falooda">
+              <div class="dish__line"><h4 class="dish__name">Mango Falooda</h4><span class="dish-badge">Chef’s special</span><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹190</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="royal chocolate falooda    falooda">
+              <div class="dish__line"><h4 class="dish__name">Royal Chocolate Falooda</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹220</span></div>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="smoothies-with-softy" aria-labelledby="smoothies-with-softy-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/smoothie.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="smoothies-with-softy-heading">Smoothies</h3><p>With softy</p></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="custard apple smoothie    smoothies">
+              <div class="dish__line"><h4 class="dish__name">Custard Apple Smoothie</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹220</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="mango smoothie    smoothies">
+              <div class="dish__line"><h4 class="dish__name">Mango Smoothie</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹200</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="chikoo smoothie    smoothies">
+              <div class="dish__line"><h4 class="dish__name">Chikoo Smoothie</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹190</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="strawberry smoothie    smoothies">
+              <div class="dish__line"><h4 class="dish__name">Strawberry Smoothie</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹180</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="blueberry smoothie    smoothies">
+              <div class="dish__line"><h4 class="dish__name">Blueberry Smoothie</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹230</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="black currant smoothie    smoothies">
+              <div class="dish__line"><h4 class="dish__name">Black Currant Smoothie</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹220</span></div>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="mastani" aria-labelledby="mastani-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/mastani.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="mastani-heading">Mastani</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="aamchi mastani    mastani">
+              <div class="dish__line"><h4 class="dish__name">Aamchi Mastani</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹230</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="chocolate mastani    mastani">
+              <div class="dish__line"><h4 class="dish__name">Chocolate Mastani</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹220</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="rasmalai mastani    mastani">
+              <div class="dish__line"><h4 class="dish__name">Rasmalai Mastani</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹210</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="sitaphal mastani  bestseller  mastani">
+              <div class="dish__line"><h4 class="dish__name">Sitaphal Mastani</h4><span class="dish-badge">Bestseller</span><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹220</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="butterscotch mastani    mastani">
+              <div class="dish__line"><h4 class="dish__name">Butterscotch Mastani</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹240</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="gulkand mastani    mastani">
+              <div class="dish__line"><h4 class="dish__name">Gulkand Mastani</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹190</span></div>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="sundae" aria-labelledby="sundae-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/sundae.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="sundae-heading">Sundae</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="choco brownie sundae  must try  sundae">
+              <div class="dish__line"><h4 class="dish__name">Choco Brownie Sundae</h4><span class="dish-badge">Must try</span><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹190</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="belgian choco sundae  bestseller  sundae">
+              <div class="dish__line"><h4 class="dish__name">Belgian Choco Sundae</h4><span class="dish-badge">Bestseller</span><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹220</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="mocha madness    sundae">
+              <div class="dish__line"><h4 class="dish__name">Mocha Madness</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹210</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="cookie madness sundae  must try  sundae">
+              <div class="dish__line"><h4 class="dish__name">Cookie Madness Sundae</h4><span class="dish-badge">Must try</span><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹230</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="fruit twist sundae strawberry, blueberry, blackcurrant   sundae">
+              <div class="dish__line"><h4 class="dish__name">Fruit Twist Sundae</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹220</span></div>
+              <p class="dish__desc">Strawberry, Blueberry, Blackcurrant</p>
+            </li>
+            <li class="dish" data-menu-item data-search="pistachio kulfi sundae  chef’s special  sundae">
+              <div class="dish__line"><h4 class="dish__name">Pistachio Kulfi Sundae</h4><span class="dish-badge">Chef’s special</span><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹240</span></div>
+            </li>
+          </ul>
+        </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="gelato-story" aria-labelledby="gelato-story-title" data-carte-alias="gelato">
+      <div class="container gelato-story__inner">
+        <div class="gelato-story__lead">
+          <p class="eyebrow-line">The story of gelato</p>
+          <h2 id="gelato-story-title"><em class="glow-text">Gelato</em> is Italian for “frozen”.</h2>
+          <p>Traditionally from northern Italy, gelato is churned more slowly than ice cream, with less air and less fat, so the creaminess and the flavour come through first.</p>
+        </div>
+        <ul class="gelato-facts">
+          <li><b>Slow-churned</b><span>Less air means a denser scoop and a deeper flavour.</span></li>
+          <li><b>100% vegetarian</b><span>Every gelato on our menu is vegetarian.</span></li>
+          <li><b>Sorbetto</b><span>Our sorbettos are made from water, sugar and fresh fruit.</span></li>
+          <li><b>Variegato</b><span>The ripples and toppings folded through a gelato have a name: variegato.</span></li>
+        </ul>
+        <div class="gelato-lingo">
+          <h3>Useful gelato lingo</h3>
+          <dl>
+            <div><dt lang="it">Una coppa</dt><dd>a cup</dd></div>
+            <div><dt lang="it">Un cono</dt><dd>a cone</dd></div>
+            <div><dt lang="it">Gusti</dt><dd>flavours</dd></div>
+          </dl>
+        </div>
+        <div class="scoop-sizes">
+          <h3>Scoop serving sizes</h3>
+          <ol>
+            <li style="--d: 2.10"><span class="scoop-sizes__dot" aria-hidden="true"></span><b>Single scoop</b><span>73 g</span></li>
+            <li style="--d: 2.84"><span class="scoop-sizes__dot" aria-hidden="true"></span><b>Double scoop</b><span>133 g</span></li>
+            <li style="--d: 3.89"><span class="scoop-sizes__dot" aria-hidden="true"></span><b>Family pack</b><span>250 g</span></li>
+            <li style="--d: 5.50"><span class="scoop-sizes__dot" aria-hidden="true"></span><b>Large pack</b><span>500 g</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section class="carte-chapter" id="woodfire" style="--accent: #ef7a5d" aria-labelledby="woodfire-title" data-carte-chapter>
+      <div class="container">
+        <figure class="carte-banner"><img src="assets/krushna/dna/woodfire-pizza.webp" srcset="assets/krushna/dna/woodfire-pizza-480.webp 480w, assets/krushna/dna/woodfire-pizza.webp 800w" sizes="(max-width: 90rem) 92vw, 1440px" width="800" height="1200" alt="Sourdough pizza with a blistered crust, mozzarella and basil" loading="lazy" decoding="async" style="object-position: center 42%" /><figcaption>Sourdough pizza</figcaption></figure>
+        <header class="carte-chapter__head">
+          <span class="carte-chapter__no" aria-hidden="true">02</span>
+          <h2 id="woodfire-title">Woodfire Pizza</h2>
+          <p class="carte-chapter__note">sourdough, straight from the oven</p>
+        </header>
+        <p class="carte-chapter__intro">Explore our sourdough pizzas, calzones and artisanal panuozzo.</p>
+        <div class="carte-groups">
+        <section class="carte-group" id="sourdough-pizzas" aria-labelledby="sourdough-pizzas-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art is-photo" src="assets/krushna/menu/pizza-sourdough.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="sourdough-pizzas-heading">Sourdough Pizzas</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="marinara pizza ingredients: homemade marinara sauce, confit sliced garlic, olive oil. garnish: fresh basil, spicy olive oil infused with herbs   sourdough pizzas">
+              <div class="dish__line"><h4 class="dish__name">Marinara Pizza</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹459</span></div>
+              <p class="dish__desc">Ingredients: Homemade Marinara Sauce, Confit Sliced Garlic, Olive Oil. Garnish: Fresh Basil, Spicy Olive Oil infused with Herbs</p>
+            </li>
+            <li class="dish" data-menu-item data-search="neapolitan margherita pizza ingredients: homemade pomodoro sauce, fresh buffalo mozzarella, olive oil. garnish: fresh basil, parmesan cheese   sourdough pizzas">
+              <div class="dish__line"><h4 class="dish__name">Neapolitan Margherita Pizza</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹499</span></div>
+              <p class="dish__desc">Ingredients: Homemade Pomodoro Sauce, Fresh Buffalo Mozzarella, Olive Oil. Garnish: Fresh Basil, Parmesan Cheese</p>
+            </li>
+            <li class="dish" data-menu-item data-search="three cheese pizza ingredients: herb garlic butter, fresh buffalo mozzarella, fior di latte, parmesan cheese. garnish: parsley, black pepper, fresh basil   sourdough pizzas">
+              <div class="dish__line"><h4 class="dish__name">Three Cheese Pizza</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹579</span></div>
+              <p class="dish__desc">Ingredients: Herb Garlic Butter, Fresh Buffalo Mozzarella, Fior Di Latte, Parmesan Cheese. Garnish: Parsley, Black Pepper, Fresh Basil</p>
+            </li>
+            <li class="dish" data-menu-item data-search="four cheese pizza ingredients: homemade cream cheese sauce, ricotta cheese, yellow cheddar cheese, emmental cheese, homemade confit garlic, confit cherry tomatoes, jalapeño salsa. garnish: parmesan cheese, fresh parsley   sourdough pizzas">
+              <div class="dish__line"><h4 class="dish__name">Four Cheese Pizza</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹679</span></div>
+              <p class="dish__desc">Ingredients: Homemade Cream Cheese Sauce, Ricotta Cheese, Yellow Cheddar Cheese, Emmental Cheese, Homemade Confit Garlic, Confit Cherry Tomatoes, Jalapeño Salsa. Garnish: Parmesan Cheese, Fresh Parsley</p>
+            </li>
+            <li class="dish" data-menu-item data-search="truffle shrum pizza ingredients: homemade mushroom sauce, fresh buffalo cheese, button mushroom, oyster mushroom, homemade jalapeño salsa, confit tomato, truffle oil. garnish: parmesan cheese, fresh parsley   sourdough pizzas">
+              <div class="dish__line"><h4 class="dish__name">Truffle Shrum Pizza</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹689</span></div>
+              <p class="dish__desc">Ingredients: Homemade Mushroom Sauce, Fresh Buffalo Cheese, Button Mushroom, Oyster Mushroom, Homemade Jalapeño Salsa, Confit Tomato, Truffle Oil. Garnish: Parmesan Cheese, Fresh Parsley</p>
+            </li>
+            <li class="dish" data-menu-item data-search="buffalo verdure pizza ingredients: homemade buffalo sauce, fior di latte, yellow zucchini, green zucchini, red bell pepper, yellow bell pepper, green bell pepper, baby corn, broccoli, button mushrooms. garnish: parmesan cheese, fresh parsley   sourdough pizzas">
+              <div class="dish__line"><h4 class="dish__name">Buffalo Verdure Pizza</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹699</span></div>
+              <p class="dish__desc">Ingredients: Homemade Buffalo Sauce, Fior Di Latte, Yellow Zucchini, Green Zucchini, Red Bell Pepper, Yellow Bell Pepper, Green Bell Pepper, Baby Corn, Broccoli, Button Mushrooms. Garnish: Parmesan Cheese, Fresh Parsley</p>
+            </li>
+            <li class="dish" data-menu-item data-search="amritsar to krushna heaven ingredients: homemade makhani sauce, fior di latte, cottage cheese (paneer) tikka, sliced onions, red, yellow &amp; green bell peppers, jalapeños, homemade confit tomatoes. garnish: parmesan cheese, laccha onion, pickled onion, fresh coriander   sourdough pizzas">
+              <div class="dish__line"><h4 class="dish__name">Amritsar to Krushna Heaven</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹649</span></div>
+              <p class="dish__desc">Ingredients: Homemade Makhani Sauce, Fior Di Latte, Cottage Cheese (Paneer) Tikka, Sliced Onions, Red, Yellow &amp; Green Bell Peppers, Jalapeños, Homemade Confit Tomatoes. Garnish: Parmesan Cheese, Laccha Onion, Pickled Onion, Fresh Coriander</p>
+            </li>
+            <li class="dish" data-menu-item data-search="pesto inferno ingredients: homemade basil pesto, fior di latte, sundried tomatoes, saute veggies, homemade confit tomatoes, jalapeños, homemade confit garlic. garnish: rocket leaves, burrata cheese, parmesan cheese   sourdough pizzas">
+              <div class="dish__line"><h4 class="dish__name">Pesto Inferno</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹699</span></div>
+              <p class="dish__desc">Ingredients: Homemade Basil Pesto, Fior Di Latte, Sundried Tomatoes, Saute Veggies, Homemade Confit Tomatoes, Jalapeños, Homemade Confit Garlic. Garnish: Rocket Leaves, Burrata Cheese, Parmesan Cheese</p>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="calzone" aria-labelledby="calzone-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art is-photo" src="assets/krushna/menu/calzone.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="calzone-heading">Calzone</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="eggplant &amp; cheese calzone ingredients: fried eggplant, cow mozzarella cheese, homemade basil pesto, homemade spicy sauce. garnish: parmesan cheese, parsley, rocket leaves   calzone">
+              <div class="dish__line"><h4 class="dish__name">Eggplant &amp; Cheese Calzone</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹399</span></div>
+              <p class="dish__desc">Ingredients: Fried Eggplant, Cow Mozzarella Cheese, Homemade Basil Pesto, Homemade Spicy Sauce. Garnish: Parmesan Cheese, Parsley, Rocket Leaves</p>
+            </li>
+            <li class="dish" data-menu-item data-search="garlic cheese calzone ingredients: ricotta cheese, fior di latte cheese, buffalo cheese, homemade confit garlic butter. garnish: parmesan cheese   calzone">
+              <div class="dish__line"><h4 class="dish__name">Garlic Cheese Calzone</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹290</span></div>
+              <p class="dish__desc">Ingredients: Ricotta Cheese, Fior Di Latte Cheese, Buffalo Cheese, Homemade Confit Garlic Butter. Garnish: Parmesan Cheese</p>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="artisanal-panuozzo" aria-labelledby="artisanal-panuozzo-heading" data-menu-group>
+          <header class="carte-group__head"><div><h3 id="artisanal-panuozzo-heading">Artisanal Panuozzo</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="eggplant panuozzo ingredients: eggplant baked with cheese, fior di latte cheese, homemade basil pesto, homemade spicy sauce. garnish: parmesan cheese, rocket leaves, homemade sumac yogurt dip, parsley   artisanal panuozzo">
+              <div class="dish__line"><h4 class="dish__name">Eggplant Panuozzo</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹399</span></div>
+              <p class="dish__desc">Ingredients: Eggplant Baked with Cheese, Fior Di Latte Cheese, Homemade Basil Pesto, Homemade Spicy Sauce. Garnish: Parmesan Cheese, Rocket Leaves, Homemade Sumac Yogurt Dip, Parsley</p>
+            </li>
+            <li class="dish" data-menu-item data-search="caponata ingredients: homemade basil pesto, sautéed veggies, fior di latte. garnish: parmesan cheese, parsley, rocket leaves   artisanal panuozzo">
+              <div class="dish__line"><h4 class="dish__name">Caponata</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹349</span></div>
+              <p class="dish__desc">Ingredients: Homemade Basil Pesto, Sautéed Veggies, Fior Di Latte. Garnish: Parmesan Cheese, Parsley, Rocket Leaves</p>
+            </li>
+          </ul>
+        </section>
+        </div>
+      </div>
+    </section>
+    <section class="carte-chapter" id="brews" style="--accent: #5fb7ae" aria-labelledby="brews-title" data-carte-chapter>
+      <div class="container">
+        <figure class="carte-banner"><img src="assets/krushna/gallery/08-signature-coffee.webp" srcset="assets/krushna/gallery/responsive/08-signature-coffee-800.webp 800w, assets/krushna/gallery/08-signature-coffee.webp 1600w" sizes="(max-width: 90rem) 92vw, 1440px" width="1600" height="900" alt="Latte art on a wooden tray beside coffee beans" loading="lazy" decoding="async" style="object-position: center 50%" /><figcaption>A moment for coffee</figcaption></figure>
+        <header class="carte-chapter__head">
+          <span class="carte-chapter__no" aria-hidden="true">03</span>
+          <h2 id="brews-title">Brews</h2>
+          <p class="carte-chapter__note">pour, sip, stay a while</p>
+        </header>
+        <p class="carte-chapter__intro">From a first espresso to a long conversation. Coffee, tea and something refreshing.</p>
+        <div class="carte-suite">
+          <h3 class="carte-suite__title">Coffee &amp; tea</h3>
+          <div class="carte-groups">
+        <section class="carte-group carte-group--compact" id="hot-classic" aria-labelledby="hot-classic-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/cappuccino.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="hot-classic-heading">Hot Classic</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="espresso strong coffee shot   hot classic">
+              <div class="dish__line"><h4 class="dish__name">Espresso</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹149</span></div>
+              <p class="dish__desc">Strong Coffee Shot</p>
+            </li>
+            <li class="dish" data-menu-item data-search="caffe americano espresso + hot water   hot classic">
+              <div class="dish__line"><h4 class="dish__name">Caffe Americano</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹159</span></div>
+              <p class="dish__desc">Espresso + Hot Water</p>
+            </li>
+            <li class="dish" data-menu-item data-search="cappuccino espresso + steamed milk + thick milk foam   hot classic">
+              <div class="dish__line"><h4 class="dish__name">Cappuccino</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹179</span></div>
+              <p class="dish__desc">Espresso + Steamed milk + Thick Milk Foam</p>
+            </li>
+            <li class="dish" data-menu-item data-search="caffe latte espresso + steamed milk + thin layer of milk foam   hot classic">
+              <div class="dish__line"><h4 class="dish__name">Caffe Latte</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹199</span></div>
+              <p class="dish__desc">Espresso + Steamed Milk + Thin Layer of Milk Foam</p>
+            </li>
+            <li class="dish" data-menu-item data-search="flat white espresso + velvety milk foam   hot classic">
+              <div class="dish__line"><h4 class="dish__name">Flat White</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹219</span></div>
+              <p class="dish__desc">Espresso + Velvety Milk Foam</p>
+            </li>
+            <li class="dish" data-menu-item data-search="caffe mocha espresso + chocolate + steamed milk   hot classic">
+              <div class="dish__line"><h4 class="dish__name">Caffe Mocha</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹219</span></div>
+              <p class="dish__desc">Espresso + Chocolate + Steamed Milk</p>
+            </li>
+            <li class="dish" data-menu-item data-search="cortado equal espresso and steam milk foam   hot classic">
+              <div class="dish__line"><h4 class="dish__name">Cortado</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹179</span></div>
+              <p class="dish__desc">Equal Espresso and Steam Milk Foam</p>
+            </li>
+            <li class="dish" data-menu-item data-search="affogato hot espresso poured over gelato   hot classic">
+              <div class="dish__line"><h4 class="dish__name">Affogato</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹239</span></div>
+              <p class="dish__desc">Hot Espresso Poured Over Gelato</p>
+            </li>
+            <li class="dish" data-menu-item data-search="hot chocolate a smooth, comforting blend of premium cocoa powder   hot classic">
+              <div class="dish__line"><h4 class="dish__name">Hot Chocolate</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹219</span></div>
+              <p class="dish__desc">A Smooth, Comforting Blend of Premium Cocoa Powder</p>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="cold-classic" aria-labelledby="cold-classic-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/iced-coffee.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="cold-classic-heading">Cold Classic</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="classic cold coffee double espresso + gelato + milk   cold classic">
+              <div class="dish__line"><h4 class="dish__name">Classic Cold Coffee</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹249</span></div>
+              <p class="dish__desc">Double Espresso + Gelato + Milk</p>
+            </li>
+            <li class="dish" data-menu-item data-search="brownie frappe double espresso + gelato + brownie + milk   cold classic">
+              <div class="dish__line"><h4 class="dish__name">Brownie Frappe</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹299</span></div>
+              <p class="dish__desc">Double Espresso + Gelato + Brownie + Milk</p>
+            </li>
+            <li class="dish" data-menu-item data-search="heaven&#39;s signature double espresso + gelato + milk + whip cream   cold classic">
+              <div class="dish__line"><h4 class="dish__name">Heaven&#39;s Signature</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹289</span></div>
+              <p class="dish__desc">Double Espresso + Gelato + Milk + Whip Cream</p>
+            </li>
+            <li class="dish" data-menu-item data-search="caramel frappe double espresso + gelato + milk + caramel sauce   cold classic">
+              <div class="dish__line"><h4 class="dish__name">Caramel Frappe</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹279</span></div>
+              <p class="dish__desc">Double Espresso + Gelato + Milk + Caramel Sauce</p>
+            </li>
+            <li class="dish" data-menu-item data-search="vanilla frappe double espresso + gelato + milk + vanilla   cold classic">
+              <div class="dish__line"><h4 class="dish__name">Vanilla Frappe</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹279</span></div>
+              <p class="dish__desc">Double Espresso + Gelato + Milk + Vanilla</p>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="iced-coffee" aria-labelledby="iced-coffee-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/iced-latte.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="iced-coffee-heading">Iced Coffee</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="iced latte double espresso + ice + milk + foam   iced coffee">
+              <div class="dish__line"><h4 class="dish__name">Iced Latte</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹199</span></div>
+              <p class="dish__desc">Double Espresso + Ice + Milk + Foam</p>
+            </li>
+            <li class="dish" data-menu-item data-search="iced mocha double espresso + ice + milk + foam + chocolate sauce   iced coffee">
+              <div class="dish__line"><h4 class="dish__name">Iced Mocha</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹219</span></div>
+              <p class="dish__desc">Double Espresso + Ice + Milk + Foam + Chocolate Sauce</p>
+            </li>
+            <li class="dish" data-menu-item data-search="iced americano double espresso + water + ice   iced coffee">
+              <div class="dish__line"><h4 class="dish__name">Iced Americano</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹179</span></div>
+              <p class="dish__desc">Double Espresso + Water + Ice</p>
+            </li>
+            <li class="dish" data-menu-item data-search="iced blue latte double espresso + ice + milk + blue curacao   iced coffee">
+              <div class="dish__line"><h4 class="dish__name">Iced Blue Latte</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹249</span></div>
+              <p class="dish__desc">Double espresso + Ice + Milk + Blue Curacao</p>
+            </li>
+            <li class="dish" data-menu-item data-search="iced red latte double espresso + ice + milk + red rose   iced coffee">
+              <div class="dish__line"><h4 class="dish__name">Iced Red Latte</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹239</span></div>
+              <p class="dish__desc">Double Espresso + Ice + Milk + Red Rose</p>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="iced-tea" aria-labelledby="iced-tea-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/iced-tea.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="iced-tea-heading">Iced Tea</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="lemon iced tea water + black tea + sugar + fresh lemon juice   iced tea">
+              <div class="dish__line"><h4 class="dish__name">Lemon Iced Tea</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹179</span></div>
+              <p class="dish__desc">Water + Black Tea + Sugar + Fresh Lemon Juice</p>
+            </li>
+            <li class="dish" data-menu-item data-search="peach iced tea water + black tea + sugar + ripe peaches   iced tea">
+              <div class="dish__line"><h4 class="dish__name">Peach Iced Tea</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹189</span></div>
+              <p class="dish__desc">Water + Black Tea + Sugar + Ripe Peaches</p>
+            </li>
+            <li class="dish" data-menu-item data-search="hibiscus mint tea water + hibiscus + mint   iced tea">
+              <div class="dish__line"><h4 class="dish__name">Hibiscus Mint Tea</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹199</span></div>
+              <p class="dish__desc">Water + Hibiscus + Mint</p>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group carte-group--compact" id="brew-add-ons" aria-labelledby="brew-add-ons-heading" data-menu-group>
+          <header class="carte-group__head"><div><h3 id="brew-add-ons-heading">Brew add-ons</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="hazelnut flavour    brew add-ons">
+              <div class="dish__line"><h4 class="dish__name">Hazelnut Flavour</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹50</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="vanilla flavour    brew add-ons">
+              <div class="dish__line"><h4 class="dish__name">Vanilla Flavour</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹50</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="caramel flavour    brew add-ons">
+              <div class="dish__line"><h4 class="dish__name">Caramel Flavour</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹50</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="irish flavour    brew add-ons">
+              <div class="dish__line"><h4 class="dish__name">Irish Flavour</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹50</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="whipped cream    brew add-ons">
+              <div class="dish__line"><h4 class="dish__name">Whipped Cream</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹50</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="chocolate sauce    brew add-ons">
+              <div class="dish__line"><h4 class="dish__name">Chocolate Sauce</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹50</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="espresso shot    brew add-ons">
+              <div class="dish__line"><h4 class="dish__name">Espresso Shot</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹80</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="almond milk    brew add-ons">
+              <div class="dish__line"><h4 class="dish__name">Almond Milk</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹80</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="oats milk    brew add-ons">
+              <div class="dish__line"><h4 class="dish__name">Oats Milk</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹80</span></div>
+            </li>
+          </ul>
+        </section>
+          </div>
+        </div>
+        <div class="carte-suite">
+          <h3 class="carte-suite__title">Mocktails &amp; coolers</h3>
+          <div class="carte-groups">
+        <section class="carte-group carte-group--compact" id="mocktails" aria-labelledby="mocktails-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/mocktails.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="mocktails-heading">Mocktails</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="classic virgin mojito    mocktails">
+              <div class="dish__line"><h4 class="dish__name">Classic Virgin Mojito</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹199</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="shahi gulab paan    mocktails">
+              <div class="dish__line"><h4 class="dish__name">Shahi Gulab Paan</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹209</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="apple mint splash    mocktails">
+              <div class="dish__line"><h4 class="dish__name">Apple Mint Splash</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹199</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="watermelon mimosa    mocktails">
+              <div class="dish__line"><h4 class="dish__name">Watermelon Mimosa</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹209</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="blue paradise    mocktails">
+              <div class="dish__line"><h4 class="dish__name">Blue Paradise</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹219</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="chilli guava mary    mocktails">
+              <div class="dish__line"><h4 class="dish__name">Chilli Guava Mary</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹239</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="malt &amp; magic    mocktails">
+              <div class="dish__line"><h4 class="dish__name">Malt &amp; Magic</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹199</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="mango passion    mocktails">
+              <div class="dish__line"><h4 class="dish__name">Mango Passion</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹219</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="tropical orange    mocktails">
+              <div class="dish__line"><h4 class="dish__name">Tropical Orange</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹219</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="shikanji    mocktails">
+              <div class="dish__line"><h4 class="dish__name">Shikanji</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹179</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="aam ka panna    mocktails">
+              <div class="dish__line"><h4 class="dish__name">Aam Ka Panna</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹179</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="island cooler    mocktails">
+              <div class="dish__line"><h4 class="dish__name">Island Cooler</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹229</span></div>
+            </li>
+          </ul>
+        </section>
+          </div>
+        </div>
+        <div class="carte-suite">
+          <h3 class="carte-suite__title">Protein bar</h3>
+          <div class="carte-groups">
+        <section class="carte-group" id="signature-protein-smoothies" aria-labelledby="signature-protein-smoothies-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/protein-smoothie.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="signature-protein-smoothies-heading">Signature Protein Smoothies</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="pre caffeine smoothie espresso + whey protein + oats + peanut butter + cocoa powder + milk + honey   signature protein smoothies">
+              <div class="dish__line"><h4 class="dish__name">Pre Caffeine Smoothie</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹270</span></div>
+              <p class="dish__desc">Espresso + Whey Protein + Oats + Peanut Butter + Cocoa Powder + Milk + Honey</p>
+            </li>
+            <li class="dish" data-menu-item data-search="berry slim shake whey protein + strawberries + almond milk + honey   signature protein smoothies">
+              <div class="dish__line"><h4 class="dish__name">Berry Slim Shake</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹250</span></div>
+              <p class="dish__desc">Whey Protein + Strawberries + Almond Milk + Honey</p>
+            </li>
+            <li class="dish" data-menu-item data-search="banana peanut powerup whey protein + banana + peanut butter + milk   signature protein smoothies">
+              <div class="dish__line"><h4 class="dish__name">Banana Peanut PowerUp</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹230</span></div>
+              <p class="dish__desc">Whey Protein + Banana + Peanut Butter + Milk</p>
+            </li>
+            <li class="dish" data-menu-item data-search="post workout muscle gainer whey protein + oats + banana + dry fruits + milk + peanut butter + dates   signature protein smoothies">
+              <div class="dish__line"><h4 class="dish__name">Post Workout Muscle Gainer</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹280</span></div>
+              <p class="dish__desc">Whey Protein + Oats + Banana + Dry Fruits + Milk + Peanut Butter + Dates</p>
+            </li>
+            <li class="dish" data-menu-item data-search="desi sattu fuel    signature protein smoothies">
+              <div class="dish__line"><h4 class="dish__name">Desi Sattu Fuel</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹220</span></div>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="fresh-juices" aria-labelledby="fresh-juices-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/juice.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="fresh-juices-heading">Fresh Juices</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="abc juice apple + beetroot + carrot   fresh juices">
+              <div class="dish__line"><h4 class="dish__name">ABC Juice</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹179</span></div>
+              <p class="dish__desc">Apple + Beetroot + Carrot</p>
+            </li>
+            <li class="dish" data-menu-item data-search="red healthy juice orange + beetroot + ginger + mint   fresh juices">
+              <div class="dish__line"><h4 class="dish__name">Red Healthy Juice</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹179</span></div>
+              <p class="dish__desc">Orange + Beetroot + Ginger + Mint</p>
+            </li>
+            <li class="dish" data-menu-item data-search="amla ginger shot amla + ginger + kiwi   fresh juices">
+              <div class="dish__line"><h4 class="dish__name">Amla Ginger Shot</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹159</span></div>
+              <p class="dish__desc">Amla + Ginger + Kiwi</p>
+            </li>
+            <li class="dish" data-menu-item data-search="liver detox juice spinach + celery + mint + ginger + green apple   fresh juices">
+              <div class="dish__line"><h4 class="dish__name">Liver Detox Juice</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹199</span></div>
+              <p class="dish__desc">Spinach + Celery + Mint + Ginger + Green Apple</p>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="heaven-s-special-tea" aria-labelledby="heaven-s-special-tea-heading" data-menu-group>
+          <header class="carte-group__head"><div><h3 id="heaven-s-special-tea-heading">Heaven&#39;s Special Tea</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="krushna&#39;s special herbal tea ashwagandha + arjunsal + ginger + sabja+tulsi   heaven&#39;s special tea">
+              <div class="dish__line"><h4 class="dish__name">Krushna&#39;s Special Herbal Tea</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹50</span></div>
+              <p class="dish__desc">Ashwagandha + ArjunSal + Ginger + Sabja+Tulsi</p>
+            </li>
+            <li class="dish" data-menu-item data-search="lemon tea    heaven&#39;s special tea">
+              <div class="dish__line"><h4 class="dish__name">Lemon Tea</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹40</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="black tea    heaven&#39;s special tea">
+              <div class="dish__line"><h4 class="dish__name">Black Tea</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹40</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="ginger honey tea    heaven&#39;s special tea">
+              <div class="dish__line"><h4 class="dish__name">Ginger Honey Tea</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹50</span></div>
+            </li>
+          </ul>
+        </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="carte-chapter" id="waffles" style="--accent: #e8b64c" aria-labelledby="waffles-title" data-carte-chapter>
+      <div class="container">
+        <figure class="carte-banner"><img src="assets/krushna/gallery/01-brownie-gelato.webp" srcset="assets/krushna/gallery/responsive/01-brownie-gelato-480.webp 480w, assets/krushna/gallery/01-brownie-gelato.webp 768w" sizes="(max-width: 90rem) 92vw, 1440px" width="768" height="1024" alt="Chocolate brownie with a scoop of vanilla gelato" loading="lazy" decoding="async" style="object-position: center 62%" /><figcaption>Brownie with gelato</figcaption></figure>
+        <header class="carte-chapter__head">
+          <span class="carte-chapter__no" aria-hidden="true">04</span>
+          <h2 id="waffles-title">Waffles &amp; sweet plates</h2>
+          <p class="carte-chapter__note">leave room for something sweet</p>
+        </header>
+        <p class="carte-chapter__intro">Waffles, mini pancakes and artisanal desserts. Leave room for something sweet.</p>
+        <div class="carte-suite">
+          <h3 class="carte-suite__title">Waffles &amp; pancakes</h3>
+          <div class="carte-groups">
+        <section class="carte-group" id="waffle-selection" aria-labelledby="waffle-selection-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art is-photo" src="assets/krushna/menu/waffle.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="waffle-selection-heading">Waffles</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="black currant waffle    waffles">
+              <div class="dish__line"><h4 class="dish__name">Black Currant Waffle</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹210</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="butter scotch waffle    waffles">
+              <div class="dish__line"><h4 class="dish__name">Butter Scotch Waffle</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹200</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="white chocolate waffle    waffles">
+              <div class="dish__line"><h4 class="dish__name">White Chocolate Waffle</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹180</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="caramel n crunch    waffles">
+              <div class="dish__line"><h4 class="dish__name">Caramel N Crunch</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹220</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="passion fruit waffle    waffles">
+              <div class="dish__line"><h4 class="dish__name">Passion Fruit Waffle</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹230</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="toffee caramel    waffles">
+              <div class="dish__line"><h4 class="dish__name">Toffee Caramel</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹190</span></div>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="stick-waffles" aria-labelledby="stick-waffles-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/stick-waffle.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="stick-waffles-heading">Stick Waffles</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="choco stick waffle    stick waffles">
+              <div class="dish__line"><h4 class="dish__name">Choco Stick Waffle</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹230</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="caramel stick waffle    stick waffles">
+              <div class="dish__line"><h4 class="dish__name">Caramel Stick Waffle</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹230</span></div>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="make-your-own-waffle" aria-labelledby="make-your-own-waffle-heading" data-menu-group>
+          <header class="carte-group__head"><div><h3 id="make-your-own-waffle-heading">Make Your Own Waffle</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="chocolate waffle hazelnut, dark, choco crunch) choose any one item   make your own waffle">
+              <div class="dish__line"><h4 class="dish__name">Chocolate Waffle</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹230</span></div>
+              <p class="dish__desc">Hazelnut, Dark, Choco Crunch) Choose Any One Item</p>
+            </li>
+            <li class="dish" data-menu-item data-search="berry waffle raspberry, strawberry, blueberry) choose any one item   make your own waffle">
+              <div class="dish__line"><h4 class="dish__name">Berry Waffle</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹230</span></div>
+              <p class="dish__desc">Raspberry, Strawberry, Blueberry) Choose Any One Item</p>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="pancakes-mini" aria-labelledby="pancakes-mini-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/pancakes.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="pancakes-mini-heading">Pancakes (mini)</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="classic pancake with honey   pancakes (mini)">
+              <div class="dish__line"><h4 class="dish__name">Classic Pancake</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹179</span></div>
+              <p class="dish__desc">with Honey</p>
+            </li>
+            <li class="dish" data-menu-item data-search="choco crunch pancake    pancakes (mini)">
+              <div class="dish__line"><h4 class="dish__name">Choco Crunch Pancake</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹189</span></div>
+            </li>
+            <li class="dish" data-menu-item data-search="caramel scotch pancake    pancakes (mini)">
+              <div class="dish__line"><h4 class="dish__name">Caramel Scotch Pancake</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹199</span></div>
+            </li>
+          </ul>
+        </section>
+          </div>
+        </div>
+        <div class="carte-suite">
+          <h3 class="carte-suite__title">Signature desserts</h3>
+          <div class="carte-groups">
+        <section class="carte-group carte-group--feature" id="desserts" aria-labelledby="desserts-heading" data-menu-group>
+          <header class="carte-group__head"><div><h3 id="desserts-heading">Special Desserts</h3></div></header>
+          <ul class="dishes">
+            <li class="dish dish--feature dish--no-photo" data-menu-item data-search="classic tiramisu the ultimate italian comfort dessert—light, creamy, and deeply flavorful. ingredients: espresso-soaked savoiardi (ladyfingers), whipped mascarpone cream, premium cocoa powder dusting.   special desserts">
+              <div class="dish__body">
+                <div class="dish__line"><h4 class="dish__name">Classic Tiramisu</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹395</span></div>
+                <p class="dish__desc">The ultimate Italian comfort dessert—light, creamy, and deeply flavorful. Ingredients: Espresso-soaked savoiardi (Ladyfingers), whipped mascarpone cream, premium cocoa powder dusting.</p>
+              </div>
+            </li>
+            <li class="dish dish--feature" data-menu-item data-search="blueberry panna cotta a silky-smooth, delicate cream custard perfectly balanced with a vibrant, tangy berry glaze. ingredients: vanilla bean infused sweet cream, fresh blueberry coulis compote, fresh mint.   special desserts">
+              <img class="dish__photo" src="assets/krushna/gallery/responsive/07-blueberry-panna-cotta-480.webp" alt="Blueberry panna cotta on a pale green plate" loading="lazy" decoding="async" />
+              <div class="dish__body">
+                <div class="dish__line"><h4 class="dish__name">Blueberry Panna Cotta</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹299</span></div>
+                <p class="dish__desc">A silky-smooth, delicate cream custard perfectly balanced with a vibrant, tangy berry glaze. Ingredients: Vanilla bean infused sweet cream, fresh blueberry coulis compote, fresh mint.</p>
+              </div>
+            </li>
+            <li class="dish dish--feature" data-menu-item data-search="chocolate brownie with ice-cream a crowd-favorite classic served hot with a dramatic table-side sizzle. ingredients: fudgy homemade dark walnut chocolate brownie, hot chocolate fudge sauce, served with a scoop of creamy vanilla gelato.   special desserts">
+              <img class="dish__photo" src="assets/krushna/gallery/responsive/01-brownie-gelato-480.webp" alt="Chocolate brownie topped with a scoop of gelato" loading="lazy" decoding="async" />
+              <div class="dish__body">
+                <div class="dish__line"><h4 class="dish__name">Chocolate Brownie with Ice-cream</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹245</span></div>
+                <p class="dish__desc">A crowd-favorite classic served hot with a dramatic table-side sizzle. Ingredients: Fudgy homemade dark walnut chocolate brownie, hot chocolate fudge sauce, served with a scoop of creamy vanilla gelato.</p>
+              </div>
+            </li>
+            <li class="dish dish--feature" data-menu-item data-search="the gourd-gée tiramisu served in an elegant, clear glass tumbler, this tiramisu features a velvety, cloud-like mascarpone cream base accented by a rich layer of dark chocolate sauce. it is crowned with three crisp, sugar-dusted ladyfinger biscuits standing upright. espresso sauce is poured over the center, melting into the cream for an indulgent finish.   special desserts">
+              <img class="dish__photo" src="assets/krushna/menu/gourd-gee-tiramisu.webp" alt="The Gourd-Gée Tiramisu in a glass tumbler with espresso being poured" loading="lazy" decoding="async" />
+              <div class="dish__body">
+                <div class="dish__line"><h4 class="dish__name">The Gourd-Gée Tiramisu</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹245</span></div>
+                <p class="dish__desc">Served in an elegant, clear glass tumbler, this tiramisu features a velvety, cloud-like mascarpone cream base accented by a rich layer of dark chocolate sauce. It is crowned with three crisp, sugar-dusted ladyfinger biscuits standing upright. Espresso sauce is poured over the center, melting into the cream for an indulgent finish.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="carte-chapter" id="savoury" style="--accent: #f2a65a" aria-labelledby="savoury-title" data-carte-chapter>
+      <div class="container">
+        <figure class="carte-banner"><img src="assets/krushna/gallery/09-croissant-savoury-bite.webp" srcset="assets/krushna/gallery/responsive/09-croissant-savoury-bite-800.webp 800w, assets/krushna/gallery/09-croissant-savoury-bite.webp 1600w" sizes="(max-width: 90rem) 92vw, 1440px" width="1600" height="899" alt="Filled croissant sandwich with fries and two dips" loading="lazy" decoding="async" style="object-position: center 55%" /><figcaption>Croissant sandwich with fries</figcaption></figure>
+        <header class="carte-chapter__head">
+          <span class="carte-chapter__no" aria-hidden="true">05</span>
+          <h2 id="savoury-title">Savoury Bites</h2>
+          <p class="carte-chapter__note">for the whole table</p>
+        </header>
+        <p class="carte-chapter__intro">Pasta, croissant sandwiches, burgers and sides to bring the table together.</p>
+        <div class="carte-groups">
+        <section class="carte-group" id="pasta" aria-labelledby="pasta-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/pasta.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="pasta-heading">Pasta</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="pasta aglio olio classic italian spaghetti pasta tossed in olive oil, garlic, herbs &amp; chilli flakes   pasta">
+              <div class="dish__line"><h4 class="dish__name">Pasta Aglio Olio</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹390</span></div>
+              <p class="dish__desc">Classic Italian Spaghetti pasta tossed in olive oil, garlic, herbs &amp; chilli flakes</p>
+            </li>
+            <li class="dish" data-menu-item data-search="pasta marinara pasta tossed in a rich tomato marinara sauce with herbs, garlic &amp; seasoning   pasta">
+              <div class="dish__line"><h4 class="dish__name">Pasta Marinara</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹420</span></div>
+              <p class="dish__desc">Pasta tossed in a rich tomato marinara sauce with herbs, garlic &amp; Seasoning</p>
+            </li>
+            <li class="dish" data-menu-item data-search="pasta arabiata pasta tossed in spicy arrabbiata sauce with garlic, vegetables &amp; chilli flakes and basil   pasta">
+              <div class="dish__line"><h4 class="dish__name">Pasta Arabiata</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹430</span></div>
+              <p class="dish__desc">Pasta tossed in spicy Arrabbiata sauce with garlic, Vegetables &amp; chilli flakes and basil</p>
+            </li>
+            <li class="dish" data-menu-item data-search="pasta alfredo pasta tossed in a rich and creamy alfredo sauce with herbs, vegetables and cheese   pasta">
+              <div class="dish__line"><h4 class="dish__name">Pasta Alfredo</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹440</span></div>
+              <p class="dish__desc">Pasta tossed in a rich and creamy Alfredo sauce with herbs, Vegetables and Cheese</p>
+            </li>
+            <li class="dish" data-menu-item data-search="pasta pesto spaghetti tossed in fresh basil pesto sauce with garlic, vegetables, olive oil &amp; parmesan   pasta">
+              <div class="dish__line"><h4 class="dish__name">Pasta Pesto</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹460</span></div>
+              <p class="dish__desc">Spaghetti tossed in fresh basil pesto sauce with garlic, Vegetables, olive oil &amp; parmesan</p>
+            </li>
+            <li class="dish" data-menu-item data-search="pasta au gratin aka alferno, baked pink sauce pasta with vegetables, herbs and cheese finished with a golden gratin crust   pasta">
+              <div class="dish__line"><h4 class="dish__name">Pasta Au Gratin</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹470</span></div>
+              <p class="dish__desc">AKA Alferno, baked Pink sauce pasta with vegetables, herbs and cheese finished with a golden gratin crust</p>
+            </li>
+            <li class="dish" data-menu-item data-search="pasta with ratatouille pasta tossed with slow-cooked ratatouille vegetables in a rich herbed tomato sauce   pasta">
+              <div class="dish__line"><h4 class="dish__name">Pasta With Ratatouille</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹450</span></div>
+              <p class="dish__desc">Pasta tossed with slow-cooked ratatouille vegetables in a rich herbed tomato sauce</p>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="fries" aria-labelledby="fries-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/fries.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="fries-heading">Fries</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="classic salted fries crispy french fries seasoned lightly and served hot   fries">
+              <div class="dish__line"><h4 class="dish__name">Classic Salted Fries</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹210</span></div>
+              <p class="dish__desc">Crispy French fries seasoned lightly and served hot</p>
+            </li>
+            <li class="dish" data-menu-item data-search="masala fries crispy french fries tossed in homemade masala seasoning   fries">
+              <div class="dish__line"><h4 class="dish__name">Masala Fries</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹230</span></div>
+              <p class="dish__desc">Crispy French fries tossed in homemade masala seasoning</p>
+            </li>
+            <li class="dish" data-menu-item data-search="chilli lime fries crispy fries tossed with zesty chilli and tangy lime seasoning   fries">
+              <div class="dish__line"><h4 class="dish__name">Chilli Lime Fries</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹250</span></div>
+              <p class="dish__desc">Crispy fries tossed with zesty chilli and tangy lime seasoning</p>
+            </li>
+            <li class="dish" data-menu-item data-search="peri peri french fries crispy french fries tossed in spicy and smoky peri peri seasoning   fries">
+              <div class="dish__line"><h4 class="dish__name">Peri Peri French Fries</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹270</span></div>
+              <p class="dish__desc">Crispy French fries tossed in spicy and smoky peri peri seasoning</p>
+            </li>
+            <li class="dish" data-menu-item data-search="truffle parmesan french fries crispy fries tossed in truffle oil &amp; topped with parmesan cheese and herbs   fries">
+              <div class="dish__line"><h4 class="dish__name">Truffle Parmesan French Fries</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹290</span></div>
+              <p class="dish__desc">Crispy fries tossed in truffle oil &amp; topped with parmesan cheese and herbs</p>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="croissant-sandwich" aria-labelledby="croissant-sandwich-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/croissant.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="croissant-sandwich-heading">Croissant Sandwich</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="mushroom royale croissant sandwich mushroom duxelle, mixed greens, sautéed mushroom, boconchinni   croissant sandwich">
+              <div class="dish__line"><h4 class="dish__name">Mushroom Royale Croissant Sandwich</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹420</span></div>
+              <p class="dish__desc">Mushroom Duxelle, Mixed Greens, Sautéed Mushroom, Boconchinni</p>
+            </li>
+            <li class="dish" data-menu-item data-search="paneer tikka delight croissant sandwich mint chutney, mixed greens, lacha onion, tomato, paneer tikka   croissant sandwich">
+              <div class="dish__line"><h4 class="dish__name">Paneer Tikka Delight Croissant Sandwich</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹380</span></div>
+              <p class="dish__desc">Mint Chutney, Mixed Greens, Lacha Onion, Tomato, Paneer Tikka</p>
+            </li>
+            <li class="dish" data-menu-item data-search="bombay masala cheese croissant sandwich mint chutney, mixed greens, lacha onion, tomato, homemade mixed vegetable patty   croissant sandwich">
+              <div class="dish__line"><h4 class="dish__name">Bombay Masala Cheese Croissant Sandwich</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹410</span></div>
+              <p class="dish__desc">Mint Chutney, Mixed Greens, Lacha Onion, Tomato, Homemade Mixed Vegetable Patty</p>
+            </li>
+            <li class="dish" data-menu-item data-search="mediterranean delight croissant sandwich hummus, mixed greens, coleslaw, onion, tomato, falafel, garlic sauce   croissant sandwich">
+              <div class="dish__line"><h4 class="dish__name">Mediterranean Delight Croissant Sandwich</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹390</span></div>
+              <p class="dish__desc">Hummus, Mixed Greens, Coleslaw, Onion, Tomato, Falafel, Garlic Sauce</p>
+            </li>
+            <li class="dish" data-menu-item data-search="burrata caprese croissant sandwich pesto, mixed green, tomato compote, burrata cheese   croissant sandwich">
+              <div class="dish__line"><h4 class="dish__name">Burrata Caprese Croissant Sandwich</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹480</span></div>
+              <p class="dish__desc">Pesto, Mixed Green, Tomato Compote, Burrata Cheese</p>
+            </li>
+            <li class="dish" data-menu-item data-search="ratatouille crunch croissant sandwich marinara sauce, mixed green, ratatouille, cheese   croissant sandwich">
+              <div class="dish__line"><h4 class="dish__name">Ratatouille Crunch Croissant Sandwich</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹430</span></div>
+              <p class="dish__desc">Marinara Sauce, Mixed Green, Ratatouille, Cheese</p>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="burger" aria-labelledby="burger-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/burger.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="burger-heading">Burger</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="crispy paneer supreme burger crispy homemade paneer patty layered with caramelised onions, cheese &amp; signature sauces in a soft bun   burger">
+              <div class="dish__line"><h4 class="dish__name">Crispy Paneer Supreme Burger</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹380</span></div>
+              <p class="dish__desc">Crispy homemade paneer patty layered with caramelised onions, cheese &amp; signature sauces in a soft bun</p>
+            </li>
+            <li class="dish" data-menu-item data-search="soya stack burger juicy soya patty stacked with greens, cheese &amp; flavorful sauces in a soft bun   burger">
+              <div class="dish__line"><h4 class="dish__name">Soya Stack Burger</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹360</span></div>
+              <p class="dish__desc">Juicy soya patty stacked with greens, cheese &amp; flavorful sauces in a soft bun</p>
+            </li>
+            <li class="dish" data-menu-item data-search="desi aloo crunch burger crispy desi aloo patty loaded with fresh greens and homemade sauces in a soft bun   burger">
+              <div class="dish__line"><h4 class="dish__name">Desi Aloo Crunch Burger</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹370</span></div>
+              <p class="dish__desc">Crispy desi aloo patty loaded with fresh greens and homemade sauces in a soft bun</p>
+            </li>
+            <li class="dish" data-menu-item data-search="falafel burger crispy falafel patty layered with hummus and garlic sauce with coleslaw in homemade made sauces with a soft bun   burger">
+              <div class="dish__line"><h4 class="dish__name">Falafel Burger</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹390</span></div>
+              <p class="dish__desc">Crispy falafel patty layered with hummus and garlic sauce with coleslaw in homemade made sauces with a soft bun</p>
+            </li>
+          </ul>
+        </section>
+        <section class="carte-group" id="nachos" aria-labelledby="nachos-heading" data-menu-group>
+          <header class="carte-group__head"><img class="carte-group__art" src="assets/krushna/menu/nachos.webp" alt="" loading="lazy" decoding="async" /><div><h3 id="nachos-heading">Nachos</h3></div></header>
+          <ul class="dishes">
+            <li class="dish" data-menu-item data-search="nachos with salsa and cheese sauce crispy nachos served with tangy salsa and creamy cheese sauce   nachos">
+              <div class="dish__line"><h4 class="dish__name">Nachos With Salsa And Cheese Sauce</h4><span class="dish__leader" aria-hidden="true"></span><span class="dish__price">₹350</span></div>
+              <p class="dish__desc">Crispy nachos served with tangy salsa and creamy cheese sauce</p>
+            </li>
+          </ul>
+        </section>
+        </div>
+      </div>
+    </section>
+      <div class="carte-empty container" data-carte-empty hidden><h2>Nothing matches that yet.</h2><p>Try another name or ingredient, such as mango, paneer or latte.</p></div>
+    </div>
 
-        <section class="menu-section" id="waffle-selection" data-menu-group aria-labelledby="waffle-selection-heading"><div class="menu-section__heading"><h3 id="waffle-selection-heading">Waffles</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="waffles-black-current-waffle" data-badge="" data-search="Black Current Waffle "><div class="menu-dish__copy"><h4>Black Current Waffle</h4></div><p class="menu-price">₹210</p></article><article class="menu-dish" data-menu-item data-item-id="waffles-butter-scotch-waffle" data-badge="" data-search="Butter Scotch Waffle "><div class="menu-dish__copy"><h4>Butter Scotch Waffle</h4></div><p class="menu-price">₹200</p></article><article class="menu-dish" data-menu-item data-item-id="waffles-white-chocolate-waffle" data-badge="" data-search="White Chocolate Waffle "><div class="menu-dish__copy"><h4>White Chocolate Waffle</h4></div><p class="menu-price">₹180</p></article><article class="menu-dish" data-menu-item data-item-id="waffles-caramel-n-crunch" data-badge="" data-search="Caramel N Crunch "><div class="menu-dish__copy"><h4>Caramel N Crunch</h4></div><p class="menu-price">₹220</p></article><article class="menu-dish" data-menu-item data-item-id="waffles-passion-fruit-waffle" data-badge="" data-search="Passion Fruit Waffle "><div class="menu-dish__copy"><h4>Passion Fruit Waffle</h4></div><p class="menu-price">₹230</p></article><article class="menu-dish" data-menu-item data-item-id="waffles-toffee-caramel" data-badge="" data-search="Toffee Caramel "><div class="menu-dish__copy"><h4>Toffee Caramel</h4></div><p class="menu-price">₹190</p></article></div></section><section class="menu-section" id="pancakes-mini" data-menu-group aria-labelledby="pancakes-mini-heading"><div class="menu-section__heading"><h3 id="pancakes-mini-heading">Pancakes (mini)</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="pancakes-mini-classic-pancake" data-badge="" data-search="Classic Pancake with Honey"><div class="menu-dish__copy"><h4>Classic Pancake</h4><p>with Honey</p></div><p class="menu-price">₹179</p></article><article class="menu-dish" data-menu-item data-item-id="pancakes-mini-choco-crunch-pancake" data-badge="" data-search="Choco Crunch Pancake "><div class="menu-dish__copy"><h4>Choco Crunch Pancake</h4></div><p class="menu-price">₹189</p></article><article class="menu-dish" data-menu-item data-item-id="pancakes-mini-caramel-scotch-pancake" data-badge="" data-search="Caramel Scotch Pancake "><div class="menu-dish__copy"><h4>Caramel Scotch Pancake</h4></div><p class="menu-price">₹199</p></article></div></section><section class="menu-section" id="stick-waffles" data-menu-group aria-labelledby="stick-waffles-heading"><div class="menu-section__heading"><h3 id="stick-waffles-heading">Stick Waffles</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="stick-waffles-choco-stick-waffle" data-badge="" data-search="Choco Stick Waffle "><div class="menu-dish__copy"><h4>Choco Stick Waffle</h4></div><p class="menu-price">₹230</p></article><article class="menu-dish" data-menu-item data-item-id="stick-waffles-caramel-stick-waffle" data-badge="" data-search="Caramel Stick Waffle "><div class="menu-dish__copy"><h4>Caramel Stick Waffle</h4></div><p class="menu-price">₹230</p></article></div></section><section class="menu-section" id="make-your-own-waffle" data-menu-group aria-labelledby="make-your-own-waffle-heading"><div class="menu-section__heading"><h3 id="make-your-own-waffle-heading">Make Your Own Waffle</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="make-your-own-waffle-chocolate-waffle" data-badge="" data-search="Chocolate Waffle Hazelnut, Dark, Choco Crunch) Choose Any One Item"><div class="menu-dish__copy"><h4>Chocolate Waffle</h4><p>Hazelnut, Dark, Choco Crunch) Choose Any One Item</p></div><p class="menu-price">₹230</p></article><article class="menu-dish" data-menu-item data-item-id="make-your-own-waffle-berry-waffle" data-badge="" data-search="Berry Waffle Raspberry, Strawberry, Blueberry) Choose Any One Item"><div class="menu-dish__copy"><h4>Berry Waffle</h4><p>Raspberry, Strawberry, Blueberry) Choose Any One Item</p></div><p class="menu-price">₹230</p></article></div></section><section class="menu-section" id="desserts" data-menu-group aria-labelledby="desserts-heading"><div class="menu-section__heading"><h3 id="desserts-heading">Special Desserts</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="special-desserts-classic-tiramisu" data-badge="" data-search="Classic Tiramisu The ultimate Italian comfort dessert—light, creamy, and deeply flavorful. Ingredients: Espresso-soaked savoiardi (Ladyfingers), whipped mascarpone cream, premium cocoa powder dusting."><div class="menu-dish__copy"><h4>Classic Tiramisu</h4><p>The ultimate Italian comfort dessert—light, creamy, and deeply flavorful. Ingredients: Espresso-soaked savoiardi (Ladyfingers), whipped mascarpone cream, premium cocoa powder dusting.</p></div><p class="menu-price">₹395</p></article><article class="menu-dish" data-menu-item data-item-id="special-desserts-blueberry-panna-cotta" data-badge="" data-search="Blueberry Panna Cotta A silky-smooth, delicate cream custard perfectly balanced with a vibrant, tangy berry glaze. Ingredients: Vanilla bean infused sweet cream, fresh blueberry coulis compote, fresh mint."><div class="menu-dish__copy"><h4>Blueberry Panna Cotta</h4><p>A silky-smooth, delicate cream custard perfectly balanced with a vibrant, tangy berry glaze. Ingredients: Vanilla bean infused sweet cream, fresh blueberry coulis compote, fresh mint.</p></div><p class="menu-price">₹299</p></article><article class="menu-dish" data-menu-item data-item-id="special-desserts-chocolate-brownie-with-ice-cream" data-badge="" data-search="Chocolate Brownie with Ice-cream A crowd-favorite classic served hot with a dramatic table-side sizzle. Ingredients: Fudgy homemade dark walnut chocolate brownie, hot chocolate fudge sauce, served with a scoop of creamy vanilla gelato."><div class="menu-dish__copy"><h4>Chocolate Brownie with Ice-cream</h4><p>A crowd-favorite classic served hot with a dramatic table-side sizzle. Ingredients: Fudgy homemade dark walnut chocolate brownie, hot chocolate fudge sauce, served with a scoop of creamy vanilla gelato.</p></div><p class="menu-price">₹245</p></article><article class="menu-dish" data-menu-item data-item-id="special-desserts-the-gourd-g-e-tiramisu" data-badge="" data-search="The Gourd-Gée Tiramisu Served in an elegant, clear glass tumbler, this tiramisu features a velvety, cloud-like mascarpone cream base accented by a rich layer of dark chocolate sauce. It is crowned with three crisp, sugar-dusted ladyfinger biscuits standing upright. Espresso sauce is poured over the center, melting into the cream for an indulgent finish."><div class="menu-dish__copy"><h4>The Gourd-Gée Tiramisu</h4><p>Served in an elegant, clear glass tumbler, this tiramisu features a velvety, cloud-like mascarpone cream base accented by a rich layer of dark chocolate sauce. It is crowned with three crisp, sugar-dusted ladyfinger biscuits standing upright. Espresso sauce is poured over the center, melting into the cream for an indulgent finish.</p></div><p class="menu-price">₹245</p></article></div></section>
-      </section>
-      <section id="savoury" class="menu-chapter" data-menu-chapter="savoury" aria-labelledby="savoury-title">
-        <header class="menu-chapter__header"><div><h2 id="savoury-title">Savoury Bites</h2><p>Pasta, croissant sandwiches, burgers and sides to bring the table together.</p></div><img src="assets/krushna/dna/savoury-burger-480.webp" alt="" width="480" height="480" loading="lazy" /></header>
-
-        <section class="menu-section" id="pasta" data-menu-group aria-labelledby="pasta-heading"><div class="menu-section__heading"><h3 id="pasta-heading">Pasta</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="pasta-pasta-aglio-olio" data-badge="" data-search="Pasta Aglio Olio Classic Italian Spaghetti pasta tossed in olive oil, garlic, herbs &amp; chilli flakes"><div class="menu-dish__copy"><h4>Pasta Aglio Olio</h4><p>Classic Italian Spaghetti pasta tossed in olive oil, garlic, herbs &amp; chilli flakes</p></div><p class="menu-price">₹390</p></article><article class="menu-dish" data-menu-item data-item-id="pasta-pasta-marinara" data-badge="" data-search="Pasta Marinara Pasta tossed in a rich tomato marinara sauce with herbs, garlic &amp; Seasoning"><div class="menu-dish__copy"><h4>Pasta Marinara</h4><p>Pasta tossed in a rich tomato marinara sauce with herbs, garlic &amp; Seasoning</p></div><p class="menu-price">₹420</p></article><article class="menu-dish" data-menu-item data-item-id="pasta-pasta-arabiata" data-badge="" data-search="Pasta Arabiata Pasta tossed in spicy Arrabbiata sauce with garlic, Vegetables &amp; chilli flakes and basil"><div class="menu-dish__copy"><h4>Pasta Arabiata</h4><p>Pasta tossed in spicy Arrabbiata sauce with garlic, Vegetables &amp; chilli flakes and basil</p></div><p class="menu-price">₹430</p></article><article class="menu-dish" data-menu-item data-item-id="pasta-pasta-alfredo" data-badge="" data-search="Pasta Alfredo Pasta tossed in a rich and creamy Alfredo sauce with herbs, Vegetables and Cheese"><div class="menu-dish__copy"><h4>Pasta Alfredo</h4><p>Pasta tossed in a rich and creamy Alfredo sauce with herbs, Vegetables and Cheese</p></div><p class="menu-price">₹440</p></article><article class="menu-dish" data-menu-item data-item-id="pasta-pasta-pesto" data-badge="" data-search="Pasta Pesto Spaghetti tossed in fresh basil pesto sauce with garlic, Vegetables, olive oil &amp; parmesan"><div class="menu-dish__copy"><h4>Pasta Pesto</h4><p>Spaghetti tossed in fresh basil pesto sauce with garlic, Vegetables, olive oil &amp; parmesan</p></div><p class="menu-price">₹460</p></article><article class="menu-dish" data-menu-item data-item-id="pasta-pasta-au-gratin" data-badge="" data-search="Pasta Au Gratin AKA Alferno, baked Pink sauce pasta with vegetables, herbs and cheese finished with a golden gratin crust"><div class="menu-dish__copy"><h4>Pasta Au Gratin</h4><p>AKA Alferno, baked Pink sauce pasta with vegetables, herbs and cheese finished with a golden gratin crust</p></div><p class="menu-price">₹470</p></article><article class="menu-dish" data-menu-item data-item-id="pasta-pasta-with-ratatouille" data-badge="" data-search="Pasta With Ratatouille Pasta tossed with slow-cooked ratatouille vegetables in a rich herbed tomato sauce"><div class="menu-dish__copy"><h4>Pasta With Ratatouille</h4><p>Pasta tossed with slow-cooked ratatouille vegetables in a rich herbed tomato sauce</p></div><p class="menu-price">₹450</p></article></div></section><section class="menu-section" id="fries" data-menu-group aria-labelledby="fries-heading"><div class="menu-section__heading"><h3 id="fries-heading">Fries</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="fries-classic-salted-fries" data-badge="" data-search="Classic Salted Fries Crispy French fries seasoned lightly and served hot"><div class="menu-dish__copy"><h4>Classic Salted Fries</h4><p>Crispy French fries seasoned lightly and served hot</p></div><p class="menu-price">₹210</p></article><article class="menu-dish" data-menu-item data-item-id="fries-masala-fries" data-badge="" data-search="Masala Fries Crispy French fries tossed in homemade masala seasoning"><div class="menu-dish__copy"><h4>Masala Fries</h4><p>Crispy French fries tossed in homemade masala seasoning</p></div><p class="menu-price">₹230</p></article><article class="menu-dish" data-menu-item data-item-id="fries-chilli-lime-fries" data-badge="" data-search="Chilli Lime Fries Crispy fries tossed with zesty chilli and tangy lime seasoning"><div class="menu-dish__copy"><h4>Chilli Lime Fries</h4><p>Crispy fries tossed with zesty chilli and tangy lime seasoning</p></div><p class="menu-price">₹250</p></article><article class="menu-dish" data-menu-item data-item-id="fries-peri-peri-french-fries" data-badge="" data-search="Peri Peri French Fries Crispy French fries tossed in spicy and smoky peri peri seasoning"><div class="menu-dish__copy"><h4>Peri Peri French Fries</h4><p>Crispy French fries tossed in spicy and smoky peri peri seasoning</p></div><p class="menu-price">₹270</p></article><article class="menu-dish" data-menu-item data-item-id="fries-truffle-parmesan-french-fries" data-badge="" data-search="Truffle Parmesan French Fries Crispy fries tossed in truffle oil &amp; topped with parmesan cheese and herbs"><div class="menu-dish__copy"><h4>Truffle Parmesan French Fries</h4><p>Crispy fries tossed in truffle oil &amp; topped with parmesan cheese and herbs</p></div><p class="menu-price">₹290</p></article></div></section><section class="menu-section" id="croissant-sandwich" data-menu-group aria-labelledby="croissant-sandwich-heading"><div class="menu-section__heading"><h3 id="croissant-sandwich-heading">Croissant Sandwich</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="croissant-sandwich-mushroom-royale-croissant-sandwich" data-badge="" data-search="Mushroom Royale Croissant Sandwich Mushroom Duxelle, Mixed Greens, Sautéed Mushroom, Boconchinni"><div class="menu-dish__copy"><h4>Mushroom Royale Croissant Sandwich</h4><p>Mushroom Duxelle, Mixed Greens, Sautéed Mushroom, Boconchinni</p></div><p class="menu-price">₹420</p></article><article class="menu-dish" data-menu-item data-item-id="croissant-sandwich-paneer-tikka-delight-croissant-sandwich" data-badge="" data-search="Paneer Tikka Delight Croissant Sandwich Mint Chutney, Mixed Greens, Lacha Onion, Tomato, Paneer Tikka"><div class="menu-dish__copy"><h4>Paneer Tikka Delight Croissant Sandwich</h4><p>Mint Chutney, Mixed Greens, Lacha Onion, Tomato, Paneer Tikka</p></div><p class="menu-price">₹380</p></article><article class="menu-dish" data-menu-item data-item-id="croissant-sandwich-bombay-masala-cheese-croissant-sandwich" data-badge="" data-search="Bombay Masala Cheese Croissant Sandwich Mint Chutney, Mixed Greens, Lacha Onion, Tomato, Homemade Mixed Vegetable Patty"><div class="menu-dish__copy"><h4>Bombay Masala Cheese Croissant Sandwich</h4><p>Mint Chutney, Mixed Greens, Lacha Onion, Tomato, Homemade Mixed Vegetable Patty</p></div><p class="menu-price">₹410</p></article><article class="menu-dish" data-menu-item data-item-id="croissant-sandwich-mediterranean-delight-croissant-sandwich" data-badge="" data-search="Mediterranean Delight Croissant Sandwich Hummus, Mixed Greens, Coleslaw, Onion, Tomato, Falafel, Garlic Sauce"><div class="menu-dish__copy"><h4>Mediterranean Delight Croissant Sandwich</h4><p>Hummus, Mixed Greens, Coleslaw, Onion, Tomato, Falafel, Garlic Sauce</p></div><p class="menu-price">₹390</p></article><article class="menu-dish" data-menu-item data-item-id="croissant-sandwich-burrata-caprese-croissant-sandwich" data-badge="" data-search="Burrata Caprese Croissant Sandwich Pesto, Mixed Green, Tomato Compote, Burrata Cheese"><div class="menu-dish__copy"><h4>Burrata Caprese Croissant Sandwich</h4><p>Pesto, Mixed Green, Tomato Compote, Burrata Cheese</p></div><p class="menu-price">₹480</p></article><article class="menu-dish" data-menu-item data-item-id="croissant-sandwich-ratatouille-crunch-croissant-sandwich" data-badge="" data-search="Ratatouille Crunch Croissant Sandwich Marinara Sauce, Mixed Green, Ratatouille, Cheese"><div class="menu-dish__copy"><h4>Ratatouille Crunch Croissant Sandwich</h4><p>Marinara Sauce, Mixed Green, Ratatouille, Cheese</p></div><p class="menu-price">₹430</p></article></div></section><section class="menu-section" id="burger" data-menu-group aria-labelledby="burger-heading"><div class="menu-section__heading"><h3 id="burger-heading">Burger</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="burger-crispy-paneer-supreme-burger" data-badge="" data-search="Crispy Paneer Supreme Burger Crispy homemade paneer patty layered with caramelised onions, cheese &amp; signature sauces in a soft bun"><div class="menu-dish__copy"><h4>Crispy Paneer Supreme Burger</h4><p>Crispy homemade paneer patty layered with caramelised onions, cheese &amp; signature sauces in a soft bun</p></div><p class="menu-price">₹380</p></article><article class="menu-dish" data-menu-item data-item-id="burger-soya-stack-burger" data-badge="" data-search="Soya Stack Burger Juicy soya patty stacked with greens, cheese &amp; flavorful sauces in a soft bun"><div class="menu-dish__copy"><h4>Soya Stack Burger</h4><p>Juicy soya patty stacked with greens, cheese &amp; flavorful sauces in a soft bun</p></div><p class="menu-price">₹360</p></article><article class="menu-dish" data-menu-item data-item-id="burger-desi-aloo-crunch-burger" data-badge="" data-search="Desi Aloo Crunch Burger Crispy desi aloo patty loaded with fresh greens and homemade sauces in a soft bun"><div class="menu-dish__copy"><h4>Desi Aloo Crunch Burger</h4><p>Crispy desi aloo patty loaded with fresh greens and homemade sauces in a soft bun</p></div><p class="menu-price">₹370</p></article><article class="menu-dish" data-menu-item data-item-id="burger-falafel-burger" data-badge="" data-search="Falafel Burger Crispy falafel patty layered with hummus and garlic sauce with coleslaw in homemade made sauces with a soft bun"><div class="menu-dish__copy"><h4>Falafel Burger</h4><p>Crispy falafel patty layered with hummus and garlic sauce with coleslaw in homemade made sauces with a soft bun</p></div><p class="menu-price">₹390</p></article></div></section><section class="menu-section" id="nachos" data-menu-group aria-labelledby="nachos-heading"><div class="menu-section__heading"><h3 id="nachos-heading">Nachos</h3></div><div class="menu-dishes"><article class="menu-dish" data-menu-item data-item-id="nachos-nachos-with-salsa-and-cheese-sauce" data-badge="" data-search="Nachos With Salsa And Cheese Sauce Crispy nachos served with tangy salsa and creamy cheese sauce"><div class="menu-dish__copy"><h4>Nachos With Salsa And Cheese Sauce</h4><p>Crispy nachos served with tangy salsa and creamy cheese sauce</p></div><p class="menu-price">₹350</p></article></div></section>
-      </section></div>
-    <div class="container menu-footnote"><p>GST is charged separately as applicable, as stated in the menu. Prices marked “Please ask us” will be confirmed by our team.</p><p>Photography is illustrative. For ingredient or allergy questions, please speak to our team before ordering.</p></div>
-  </div>
-  <section class="menu-closing container"><h2>Bring your appetite.<br />We’ll bring the choices.</h2><a class="button" href="visit.html">Plan your visit <i data-lucide="arrow-right"></i></a></section>
-</main>
-  <footer class="site-footer"><div class="site-footer__grid container"><div class="footer-brand"><img src="assets/krushna/logo.png" alt="Krushna's Heaven" /><p>Five cravings, one welcoming café.</p></div><div class="footer-column"><h2>Explore</h2><a href="index.html">Home</a><a href="story.html">Our story</a><a href="visit.html">Visit us</a></div><div class="footer-column"><h2>At your table</h2><span>Five cravings. One address.</span><a href="index.html#gallery">Explore the café</a></div><div class="footer-column"><h2>Follow</h2><a href="https://www.instagram.com/krushnasheaven/" target="_blank" rel="noreferrer"><i data-lucide="camera"></i> Instagram</a></div></div><div class="site-footer__base container"><span>© <span data-current-year></span> Krushna's Heaven</span><span>Good food brings people closer.</span></div></footer>
-  <script src="site.js?v=experience-9" defer></script>
-<script src="menu-discovery.js?v=menu-4" defer></script></body>
+    <section class="carte-close">
+      <div class="container">
+        <div class="carte-notes">
+          <p>Prices in Indian rupees. GST is charged separately as applicable.</p>
+          <p>Prices marked “Ask us” will be confirmed by our team. Photography is illustrative.</p>
+          <p>For ingredient or allergy questions, please speak to our team before ordering.</p>
+        </div>
+        <div class="gallery-cta">
+          <p class="eyebrow-line eyebrow-line--center">Hungry yet?</p>
+          <h2>Bring your appetite. <em class="glow-text">We’ll bring the choices.</em></h2>
+          <p>Come by for a scoop, a slice or a long evening with everyone you love.</p>
+          <div class="gallery-cta__actions"><a class="button" href="visit.html">Plan your visit <i data-lucide="arrow-right"></i></a><a class="button button--ghost" href="assets/krushna/krushnas-heaven-menu.pdf" download>Download the menu</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="site-footer__grid container"><div class="footer-brand"><img src="assets/krushna/logo-full.webp" alt="Krushna's Heaven" width="448" height="391" loading="lazy" /><p>Five cravings, one welcoming café.</p></div><div class="footer-column"><h2>Explore</h2><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="story.html">Our story</a><a href="gallery.html">Gallery</a><a href="visit.html">Visit us</a></div><div class="footer-column"><h2>Find us</h2><address><span>Beside Krushna Pure Veg, opp. Mahatma Phule Sanskrutik Bhavan</span><span>Wanowrie, Pune 411040</span></address><a href="tel:+919156600883">91566 00883</a><a href="https://maps.app.goo.gl/JEWK9di5hMymi1ks9" target="_blank" rel="noopener">Get directions</a></div><div class="footer-column"><h2>Follow</h2><a href="https://www.instagram.com/krushnasheaven/" target="_blank" rel="noreferrer"><i data-lucide="camera"></i> Instagram</a></div></div><div class="site-footer__base container"><span>© <span data-current-year></span> Krushna's Heaven</span><span>Good food brings people closer.</span></div></footer>
+  <script src="site.js?v=carte-1" defer></script>
+  <script src="menu-page.js?v=carte-1" defer></script>
+</body>
 </html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://surajs28.github.io/Krushna.Heaven_final/sitemap.xml

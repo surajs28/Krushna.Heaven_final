@@ -17,9 +17,8 @@ GitHub Pages without server-side routing.
 | Our Story | `story.html` | Brand, café and franchise relationship |
 | Visit Us | `visit.html` | Locality-level visit shell pending verified business details |
 
-Legacy Mr Gelato routes and visual experiments remain in the repository only
-as recoverable references while the final pages are built. They are not the
-target architecture.
+Legacy Mr Gelato routes and visual experiments now live in `legacy/` and are
+not published. See `legacy/README.md` and `FIXES.md` (F04).
 
 ## Source structure
 
@@ -41,10 +40,20 @@ All runtime URLs must remain relative so project-site deployment under
 
 ## Local commands
 
+Windows (PowerShell):
+
 ```powershell
 npm.cmd ci
 npm.cmd run build
 npm.cmd run preview
+```
+
+macOS / Linux (Node 24 LTS):
+
+```bash
+npm ci
+npm run build
+npm run preview
 ```
 
 The preview serves `public/` at `http://localhost:4200` and listens on the local

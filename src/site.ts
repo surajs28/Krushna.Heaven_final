@@ -1,31 +1,41 @@
 import {
+  ArrowDown,
   ArrowLeft,
   ArrowRight,
   Camera,
   Clock3,
+  Mail,
   MapPin,
   Menu,
   Phone,
   Expand,
+  Search,
+  Store,
   X,
   createIcons,
 } from "lucide";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { mountAmbientLights } from "./ambient-lights";
+import { mountGalleryReel } from "./gallery-reel";
 import { dnaSwipeTarget } from "./dna-gesture";
 import { bindHorizontalSwipe } from "./swipe";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const iconSet = {
+  ArrowDown,
   ArrowLeft,
   ArrowRight,
   Camera,
   Clock3,
+  Mail,
   MapPin,
   Menu,
   Phone,
   Expand,
+  Search,
+  Store,
   X,
 };
 
@@ -221,20 +231,22 @@ heroMotion.add("(prefers-reduced-motion: no-preference)", () => {
   const introHeader = document.querySelector<HTMLElement>(".page-home .site-header");
   const intro = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-  // Navigation and actions remain usable from the first frame.
+  // Headline leads; navigation and actions stay usable from the first frame.
   if (introHeader) intro.from(introHeader, { opacity: 0.6, y: -8, duration: 0.4 }, 0);
-  if (introEyebrow) intro.from(introEyebrow, { autoAlpha: 0, y: 12, duration: 0.72 }, 0.18);
-  intro.from(lineInners, { yPercent: 108, duration: 1.08, stagger: 0.11 }, 0.3);
-  if (introCopy) intro.from(introCopy, { autoAlpha: 0, y: 20, duration: 0.78 }, 0.76);
-  if (introActions) intro.from(introActions.children, { opacity: 0.75, y: 10, duration: 0.48, stagger: 0.06 }, 0.2);
-  if (introCue) intro.from(introCue, { autoAlpha: 0, y: 10, duration: 0.7 }, 1.08);
-  if (introSeal) intro.from(introSeal, { autoAlpha: 0, scale: 0.88, duration: 0.86 }, 1.02);
+  intro.from(lineInners, { yPercent: 108, duration: 0.8, stagger: 0.08 }, 0);
+  if (introEyebrow) intro.from(introEyebrow, { autoAlpha: 0, y: 12, duration: 0.5 }, 0.12);
+  if (introCopy) intro.from(introCopy, { autoAlpha: 0, y: 16, duration: 0.55 }, 0.38);
+  if (introActions) intro.from(introActions.children, { opacity: 0.75, y: 10, duration: 0.45, stagger: 0.05 }, 0.5);
+  if (introCue) intro.from(introCue, { autoAlpha: 0, y: 10, duration: 0.5 }, 0.75);
+  if (introSeal) intro.from(introSeal, { autoAlpha: 0, scale: 0.88, duration: 0.6 }, 0.75);
 
   if (heroMedia) {
+    // The film drifts at ~18% of scroll speed while it gently enlarges, as on the reference.
     gsap.to(heroMedia, {
-      scale: 1.045,
+      y: () => hero.offsetHeight * 0.18,
+      scale: 1.08,
       ease: "none",
-      scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: 0.6 },
+      scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: 0.6, invalidateOnRefresh: true },
     });
   }
 
@@ -273,6 +285,8 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
   const wrapIndex = (value: number) => ((value % total) + total) % total;
   const dnaDesktop = window.matchMedia("(min-width: 56.25rem)");
   let rotationPaused = false;
+  // Rebuilding the scene must not re-hide a heading the visitor has already seen.
+  let dnaHeaderShown = false;
   let teardown = () => {};
 
   const setupDna = () => {
@@ -289,6 +303,9 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
 
     const controller = new AbortController();
     const { signal } = controller;
+    // Desktop scroll already drives the orbit; a timer moving it too fights the reader.
+    const scrollDriven = dnaDesktop.matches;
+    if (dnaMotion) dnaMotion.hidden = scrollDriven;
     const state = { position: 0 };
     let activeIndex = -1;
     let positionTween: ReturnType<typeof gsap.to> | null = null;
@@ -322,7 +339,7 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
       manualOffset = state.position - scrollPosition;
       dnaStage.classList.remove("is-moving");
     };
-    const canRotate = () => sectionVisible && !rotationPaused && !document.hidden &&
+    const canRotate = () => !scrollDriven && sectionVisible && !rotationPaused && !document.hidden &&
       !menuOpen && !dragging && !interacting && !scrolling && !keyboardFocus && !readingCopy;
     const scheduleAuto = () => {
       cancelAuto();
@@ -338,6 +355,12 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
       window.clearTimeout(scrollIdleTimer);
       scrollIdleTimer = window.setTimeout(() => {
         scrolling = false;
+        // Without auto-play, settle on the nearest card so the orbit never rests mid-turn.
+        const nearest = Math.round(state.position);
+        if (scrollDriven && !dragging && !positionTween && Math.abs(nearest - state.position) > 0.001) {
+          animateTo(nearest, true, 0.45);
+          return;
+        }
         scheduleAuto();
       }, 700);
     };
@@ -658,7 +681,7 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
         scrollTrigger: {
           trigger: pinFits ? dnaSection : dnaStage,
           start: pinFits ? "top top" : "top 75%",
-          end: pinFits ? () => `+=${Math.round(window.innerHeight * 1.9)}` : "bottom 25%",
+          end: pinFits ? () => `+=${Math.round(window.innerHeight * 1.3)}` : "bottom 25%",
           pin: pinFits ? dnaPin : false,
           pinSpacing: pinFits,
           scrub: 0.65,
@@ -700,13 +723,15 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
     });
     sceneObserver.observe(dnaStage);
 
-    if (dnaHeader) {
-      headerTween = gsap.from(dnaHeader.children, {
-        autoAlpha: 0,
-        y: 28,
+    if (dnaHeader && !dnaHeaderShown) {
+      // fromTo, not from: a re-run of `from` would record the hidden state as the end state.
+      headerTween = gsap.fromTo(dnaHeader.children, { autoAlpha: 0, y: 28 }, {
+        autoAlpha: 1,
+        y: 0,
         duration: 0.82,
         stagger: 0.08,
         ease: "power3.out",
+        onComplete: () => { dnaHeaderShown = true; },
         scrollTrigger: {
           trigger: dnaSection,
           start: "top 78%",
@@ -727,6 +752,8 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
       scrollTween?.kill();
       headerTween?.scrollTrigger?.kill();
       headerTween?.kill();
+      if (dnaHeader) gsap.set(dnaHeader.children, { clearProps: "opacity,visibility,transform" });
+      if (dnaMotion) dnaMotion.hidden = false;
       positionTween?.kill();
       metaTimeline?.kill();
       gsap.killTweensOf(state);
@@ -754,6 +781,7 @@ const galleryGrid = document.querySelector<HTMLElement>("[data-gallery-grid]");
 if (galleryGrid) {
   const figures = Array.from(galleryGrid.querySelectorAll<HTMLElement>("[data-gallery-item]"));
   const images = figures.map((figure) => figure.querySelector<HTMLImageElement>("img")!);
+  const photos = figures.map((figure) => figure.querySelector<HTMLElement>(".gallery-journal__photo")!);
   const twoColumns = window.matchMedia("(max-width: 56.25rem)");
   let lastWidth = -1;
   let layoutFrame = 0;
@@ -768,20 +796,37 @@ if (galleryGrid) {
     const tileWidth = (width - gap * (count - 1)) / count;
     galleryGrid.style.setProperty("--gallery-tile-width", `${tileWidth}px`);
     galleryGrid.classList.add("is-masonry");
-    // A slight desktop offset gives the journal its asymmetric opening rhythm.
-    const heights = count === 3 ? [0, tileWidth * 0.16, tileWidth * 0.32] : [0, tileWidth * 0.18];
+    photos.forEach((photo) => {
+      photo.style.removeProperty("height");
+      photo.classList.remove("is-filled");
+    });
+    // Columns start level, as on the reference gallery; captions sit on the photos.
+    const heights: number[] = new Array(count).fill(0);
+    const lastInColumn: (HTMLElement | undefined)[] = [];
     const placements = figures.map((figure) => {
       const column = heights.indexOf(Math.min(...heights));
       const placement = { figure, left: column * (tileWidth + gap), top: heights[column] };
-      heights[column] += figure.offsetHeight + gap * 1.6;
+      heights[column] += figure.offsetHeight + gap;
+      lastInColumn[column] = figure;
       return { ...placement, column };
     });
+    // Let each column's final photo crop taller (up to 60%) so the grid ends on one line.
+    const bottom = Math.max(...heights);
+    lastInColumn.forEach((figure, column) => {
+      const photo = figure?.querySelector<HTMLElement>(".gallery-journal__photo");
+      if (!photo) return;
+      const extra = Math.min(bottom - heights[column], photo.offsetHeight * 0.6);
+      if (extra < 1) return;
+      photo.style.height = `${photo.offsetHeight + extra}px`;
+      photo.classList.add("is-filled");
+      heights[column] += extra;
+    });
     placements.forEach(({ figure, left, top, column }) => {
-      figure.style.setProperty("--gallery-delay", `${column * 60}ms`);
+      figure.style.setProperty("--gallery-delay", `${column * 80}ms`);
       figure.style.left = `${left}px`;
       figure.style.top = `${top}px`;
     });
-    galleryGrid.style.height = `${Math.max(...heights) - gap * 1.6}px`;
+    galleryGrid.style.height = `${Math.max(...heights) - gap}px`;
     lastWidth = width;
   };
 
@@ -796,22 +841,23 @@ if (galleryGrid) {
   void document.fonts.ready.then(scheduleLayout);
   images.forEach((image) => image.addEventListener("load", scheduleLayout, { once: true }));
 
+  // Tiles rise into place once 16% is in view; each photo then fades in as it finishes loading,
+  // so a slow photo never hides its tile or control.
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      const figure = entry.target as HTMLElement;
-      const image = figure.querySelector<HTMLImageElement>("img")!;
-      const reveal = async () => {
-        try { await image.decode(); } catch { /* A failed photo retains its alt text. */ }
-        figure.classList.add("is-visible");
-        revealObserver.unobserve(figure);
-      };
-      // Reveal the reserved frame immediately; a slow photo must not hide its control.
-      figure.classList.add("is-visible");
-      if (image.complete) void reveal();
-      else image.addEventListener("load", () => void reveal(), { once: true });
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
     });
-  }, { rootMargin: "0px 0px -36px 0px", threshold: 0.08 });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.16 });
+  images.forEach((image) => {
+    const markLoaded = () => image.classList.add("is-loaded");
+    if (image.complete) markLoaded();
+    else {
+      image.addEventListener("load", markLoaded, { once: true });
+      image.addEventListener("error", markLoaded, { once: true });
+    }
+  });
 
   if (!reducedMotion.matches) galleryGrid.classList.add("is-revealing");
   figures.forEach((figure) => revealObserver.observe(figure));
@@ -908,7 +954,23 @@ if (galleryGrid && galleryViewer) {
     swapAnimation?.cancel();
     document.body.classList.remove("gallery-viewer-open");
     returnFocus?.focus({ preventScroll: true });
+    // Closing a photo opened from the reel should not reopen it on reload or Back.
+    if (/^#photo-\d+$/.test(window.location.hash)) {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
   });
+  // A photo tapped in the homepage reel arrives as #photo-N and opens straight in the viewer.
+  const openFromHash = () => {
+    const match = /^#photo-(\d+)$/.exec(window.location.hash);
+    const target = match ? triggers[Number(match[1]) - 1] : undefined;
+    if (!target) return;
+    target.scrollIntoView({ block: "center", behavior: "instant" as ScrollBehavior });
+    target.click();
+  };
+  if (document.readyState === "complete") openFromHash();
+  else window.addEventListener("load", openFromHash, { once: true });
+  window.addEventListener("hashchange", openFromHash);
+
   bindHorizontalSwipe(viewerMedia, {
     start: () => {
       if (!galleryViewer.open) return false;
@@ -923,6 +985,77 @@ if (galleryGrid && galleryViewer) {
         void showPhoto(requestedIndex + (deltaX < 0 ? 1 : -1));
       }
     },
+  });
+}
+
+// Night sections share one drifting field of café lights.
+document.querySelectorAll<HTMLElement>("[data-ambient]").forEach((section) => mountAmbientLights(section, reducedMotion));
+
+// Homepage: just the photos moving; "View the full gallery" and each photo open gallery.html.
+document.querySelectorAll<HTMLElement>("[data-reel]").forEach((slider) => mountGalleryReel(slider, reducedMotion));
+
+// The gallery opener's photo moves slower than the page, like the reference page hero.
+const galleryOpener = document.querySelector<HTMLElement>("[data-gallery-opener]");
+const galleryBackdrop = document.querySelector<HTMLElement>("[data-gallery-backdrop]");
+if (galleryOpener && galleryBackdrop) {
+  gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
+    gsap.fromTo(galleryBackdrop, { yPercent: -8 }, {
+      yPercent: 8,
+      ease: "none",
+      scrollTrigger: { trigger: galleryOpener, start: "top bottom", end: "bottom top", scrub: true },
+    });
+  });
+}
+
+// Full-bleed photo bands drift slower than the page (reference "parallax bands").
+document.querySelectorAll<HTMLElement>("[data-parallax-media]").forEach((media) => {
+  const band = media.parentElement ?? media;
+  gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
+    gsap.fromTo(media, { yPercent: -9 }, {
+      yPercent: 9,
+      ease: "none",
+      scrollTrigger: { trigger: band, start: "top bottom", end: "bottom top", scrub: true },
+    });
+  });
+});
+
+// Signature dish cards tilt gently towards the pointer (reference "3D tilt on dish cards").
+const tiltPointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+document.querySelectorAll<HTMLElement>("[data-tilt]").forEach((card) => {
+  let bounds: DOMRect | null = null;
+  card.addEventListener("pointerenter", () => { bounds = card.getBoundingClientRect(); });
+  card.addEventListener("pointermove", (event) => {
+    if (!tiltPointer.matches || reducedMotion.matches || !bounds) return;
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+    card.style.setProperty("--tilt-x", `${(-y * 6).toFixed(2)}deg`);
+    card.style.setProperty("--tilt-y", `${(x * 6).toFixed(2)}deg`);
+  });
+  card.addEventListener("pointerleave", () => {
+    bounds = null;
+    card.style.removeProperty("--tilt-x");
+    card.style.removeProperty("--tilt-y");
+  });
+});
+
+// Section copy rises 34px and fades in once 16% of it is on screen.
+const revealTargets = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
+if (revealTargets.length && "IntersectionObserver" in window && !reducedMotion.matches) {
+  root.classList.add("js-reveal");
+  const revealIn = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-in");
+      revealIn.unobserve(entry.target);
+    });
+  }, { threshold: 0.16, rootMargin: "0px 0px -8% 0px" });
+  revealTargets.forEach((target) => revealIn.observe(target));
+  // Keyboard focus never lands inside copy that is still hidden.
+  document.addEventListener("focusin", (event) => {
+    (event.target as Element).closest?.(".reveal")?.classList.add("is-in");
+  });
+  reducedMotion.addEventListener?.("change", () => {
+    if (reducedMotion.matches) revealTargets.forEach((target) => target.classList.add("is-in"));
   });
 }
 

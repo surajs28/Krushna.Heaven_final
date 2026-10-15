@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "npm run typecheck && node build.cjs && tailwindcss -i src/gelato.css -o public/gelato.css --minify && tailwindcss -i src/krushna.css -o public/krushna.css --minify && tailwindcss -i src/site.css -o public/site.css --minify",
+    "build": "npm run typecheck && node build.cjs && tailwindcss -i src/site.css -o public/site.css --minify",
     "preview": "node preview-4190.cjs",
     "typecheck": "tsc --noEmit"
   },
