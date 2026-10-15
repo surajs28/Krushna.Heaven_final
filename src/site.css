@@ -49,6 +49,7 @@ html {
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
   scrollbar-color: var(--raspberry) var(--paper);
   scrollbar-width: thin;
 }
@@ -220,7 +221,7 @@ h3 {
   padding: max(0.55rem, env(safe-area-inset-top)) var(--gutter) 0.55rem;
   border-bottom: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
   background: color-mix(in srgb, var(--ivory) 94%, transparent);
-  transition: background-color 220ms ease, border-color 220ms ease, min-height 220ms var(--ease-out);
+  transition: background-color 180ms var(--ease-out), border-color 180ms var(--ease-out);
 }
 
 .page-home .site-header {
@@ -391,6 +392,9 @@ html.menu-is-open .page-home .site-header .brand {
   background: var(--wine);
   color: var(--ivory);
   pointer-events: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  max-height: 100dvh;
   transition: opacity 180ms ease, transform 240ms var(--ease-out), visibility 0s linear 240ms;
 }
 
@@ -897,7 +901,8 @@ html.menu-is-open .page-home .site-header .brand {
   inset: 0 0 8.5rem;
   transform: translateX(clamp(0rem, 5vw, 5rem));
   transform-style: preserve-3d;
-  pointer-events: none;
+  pointer-events: auto;
+  touch-action: pan-y pinch-zoom;
 }
 
 .dna-card {
@@ -916,6 +921,8 @@ html.menu-is-open .page-home .site-header .brand {
   text-decoration: none;
   transform-style: preserve-3d;
   -webkit-touch-callout: none;
+  touch-action: pan-y pinch-zoom;
+  -webkit-user-drag: none;
 }
 
 .dna-carousel.is-moving .dna-card,
@@ -936,6 +943,18 @@ html.menu-is-open .page-home .site-header .brand {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.dna-card__name {
+  position: absolute;
+  z-index: 2;
+  inset: auto 1.1rem 1rem;
+  color: var(--ivory);
+  font-family: var(--display);
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+  line-height: 1.1;
   pointer-events: none;
 }
 
@@ -1059,6 +1078,8 @@ html.menu-is-open .page-home .site-header .brand {
   letter-spacing: 0.08em;
   text-decoration: none;
   text-transform: uppercase;
+  min-height: 2.75rem;
+  touch-action: manipulation;
 }
 
 .dna-carousel__link svg {
@@ -1082,7 +1103,7 @@ html.menu-is-open .page-home .site-header .brand {
   border-radius: 0.35rem;
   background: transparent;
   color: #d9bec1;
-  font-size: 0.66rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1103,15 +1124,16 @@ html.menu-is-open .page-home .site-header .brand {
 .dna-carousel__steps button {
   position: relative;
   display: grid;
-  width: 2.2rem;
+  width: 2.75rem;
+  min-width: 2.75rem;
   height: 2.75rem;
   place-items: center;
   padding: 0;
   border: 0;
   background: transparent;
-  color: #9f777d;
+  color: #d2adb6;
   cursor: pointer;
-  font-size: 0.67rem;
+  font-size: 0.75rem;
   font-variant-numeric: tabular-nums;
   font-weight: 750;
   transition: color 180ms var(--ease-out);
@@ -1734,8 +1756,37 @@ body.gallery-viewer-open {
 
 .gallery-viewer__image {
   width: 100%;
-  height: min(65svh, 44rem);
+  height: 100%;
+  min-height: 0;
   object-fit: contain;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.gallery-viewer__media {
+  position: relative;
+  min-height: 0;
+  height: min(62svh, 42rem);
+  touch-action: pan-y pinch-zoom;
+  user-select: none;
+}
+
+.gallery-viewer__image:not([src]) { visibility: hidden; }
+
+.gallery-viewer__swipe {
+  display: none;
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  background: rgba(37, 12, 23, 0.88);
+  color: var(--ivory);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .gallery-viewer__bottom {
@@ -1865,7 +1916,7 @@ body.gallery-viewer-open {
 .visit-invitation p {
   max-width: 33rem;
   margin-bottom: 2rem;
-  color: #ffe1e8;
+  color: #fff8ed;
   font-size: 1.08rem;
 }
 
@@ -2483,7 +2534,7 @@ body.gallery-viewer-open {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    touch-action: pan-y;
+    touch-action: auto;
   }
 
   .experience-item {
@@ -2579,7 +2630,7 @@ body.gallery-viewer-open {
     padding-bottom: 0.75rem;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    touch-action: pan-y;
+    touch-action: auto;
   }
 
   .signature-card,
@@ -2811,7 +2862,7 @@ body.gallery-viewer-open {
     padding-right: var(--gutter);
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    touch-action: pan-y;
+    touch-action: auto;
   }
 
   .category-preview {
@@ -2825,7 +2876,7 @@ body.gallery-viewer-open {
     margin-right: calc(-1 * var(--gutter));
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    touch-action: pan-y;
+    touch-action: auto;
   }
 
   .story-gallery figure,
@@ -3038,4 +3089,84 @@ body.gallery-viewer-open {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+
+/* Shared interaction polish: motion follows the input, never delays the action. */
+.button svg { transition: transform 180ms var(--ease-out); }
+.button:active, .icon-button:active, .menu-trigger:active { transition-duration: 90ms; }
+.dna-carousel__link:active, .dna-carousel__steps button:active { opacity: 0.65; }
+.gallery-journal__photo:active .gallery-journal__expand { background: var(--raspberry); }
+.gallery-viewer button { transition: transform 120ms var(--ease-out), background-color 180ms var(--ease-out); }
+.dna-experience :focus-visible, .gallery-journal :focus-visible, .gallery-viewer :focus-visible,
+.site-menu :focus-visible, .hero :focus-visible { outline-color: #ffc4d5; }
+@media (hover: hover) and (pointer: fine) {
+  .button:hover svg { transform: translateX(3px); }
+  .gallery-viewer button:hover { background: var(--raspberry-deep); }
+}
+.page-home .site-header.is-scrolled { min-height: 4.5rem; }
+.page-home .site-header.is-scrolled .brand { flex-direction: row; gap: 0.5rem; }
+.page-home .site-header.is-scrolled .brand img { width: 2.4rem; height: 2.4rem; }
+.page-home .site-header.is-scrolled .brand::after { font-size: 1.05rem; }
+
+/* The underlying content remains browsable before JS and under reduced motion. */
+.dna-carousel:not(.is-ready) { min-height: 0; padding-block: 1rem 3rem; touch-action: auto; }
+.dna-carousel:not(.is-ready) .dna-carousel__orbit {
+  position: relative; inset: auto; display: flex; height: auto;
+  overflow-x: auto; gap: 1rem; padding-inline: var(--gutter);
+  scroll-snap-type: x mandatory; scrollbar-width: none;
+  transform: none; pointer-events: auto; touch-action: auto;
+}
+.dna-carousel:not(.is-ready) .dna-card {
+  position: relative; top: auto; left: auto; flex: 0 0 min(77vw, 21rem);
+  min-width: 0; transform: none !important; opacity: 1 !important;
+  scroll-snap-align: center; touch-action: auto;
+}
+.dna-carousel:not(.is-ready) .dna-carousel__meta,
+.dna-carousel:not(.is-ready) .dna-carousel__hint { display: none; }
+
+@media (max-width: 56.25rem) {
+  .dna-carousel { min-height: 0; padding-bottom: 1.5rem; }
+  .dna-carousel__orbit { position: relative; inset: auto; }
+  .dna-carousel__meta { position: relative; inset: auto; gap: 0.75rem; }
+  .dna-carousel__copy { width: 100%; }
+  .dna-carousel__meta { flex-direction: column; align-items: stretch; }
+  .dna-carousel__navigation { justify-content: space-between; }
+  .dna-carousel__navigation { gap: 0.35rem; }
+  .dna-carousel__motion { min-width: 3.5rem; padding-inline: 0.25rem; letter-spacing: 0.04em; }
+  .dna-carousel__steps { flex: 0 1 auto; justify-content: flex-start; gap: 0; }
+  .dna-carousel__steps button { width: 2.75rem; }
+  .dna-carousel__copy p { min-height: 2.85em; }
+  .dna-carousel__hint {
+    position: static; display: flex; justify-content: center; writing-mode: horizontal-tb;
+    padding: 0.8rem 1rem 0; font-size: 0.65rem; color: #d2adb6; letter-spacing: 0.08em;
+  }
+  .dna-carousel__hint span { width: 1.5rem; height: 1px; background: #b87a8a; }
+  .site-menu__nav { justify-content: start; padding-bottom: 1.5rem; }
+  .site-menu__aside { padding-bottom: max(2rem, env(safe-area-inset-bottom)); }
+}
+@media (max-width: 40rem) {
+  .page-home .site-header.is-scrolled { grid-template-columns: 2.75rem 1fr 2.75rem; }
+  .page-home .site-header.is-scrolled .brand::after { font-size: 0.95rem; }
+  .page-home .site-header.is-scrolled .brand img { width: 2rem; height: 2rem; }
+  .dna-carousel__copy h3 { font-size: clamp(1.9rem, 9vw, 2.65rem); }
+  .dna-card__name { inset-inline: 0.75rem; bottom: 0.8rem; font-size: 1rem; }
+  .gallery-viewer {
+    inset: 0; width: 100%; max-width: none; height: 100dvh; max-height: 100dvh;
+    border: 0; border-radius: 0; margin: 0;
+    padding: max(0.75rem, env(safe-area-inset-top)) 1rem max(0.75rem, env(safe-area-inset-bottom));
+  }
+  .gallery-viewer[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto; }
+  .gallery-viewer__media { height: 100%; }
+  .gallery-viewer__caption { font-size: 1.25rem; }
+  .gallery-viewer__bottom { align-items: start; }
+  .gallery-viewer__navigation { flex-shrink: 0; }
+  .gallery-viewer__swipe { display: block; }
+}
+@media (max-height: 600px) {
+  .site-menu__nav { padding-top: 5.5rem; }
+  .site-menu__nav a { font-size: 2rem; padding-block: 0.45rem; }
+  .site-menu__aside { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button, .button svg, .gallery-viewer button { transform: none !important; }
 }

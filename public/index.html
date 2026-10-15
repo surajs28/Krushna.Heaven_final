@@ -9,7 +9,7 @@
   <link rel="icon" href="assets/krushna/logo.png" />
   <link rel="preload" href="assets/krushna/hero-poster-desktop.webp" as="image" media="(min-width: 40.001rem)" fetchpriority="high" />
   <link rel="preload" href="assets/krushna/hero-poster-mobile.webp" as="image" media="(max-width: 40rem)" fetchpriority="high" />
-  <link rel="stylesheet" href="site.css?v=dna-swipe-8" />
+  <link rel="stylesheet" href="site.css?v=experience-9" />
 </head>
 <body class="page-home">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -21,7 +21,7 @@
     </div>
   </header>
   <div class="site-menu" id="site-menu" data-menu-overlay aria-hidden="true" inert>
-    <nav class="site-menu__nav" aria-label="Mobile navigation"><a href="index.html"><span>01</span>Home</a><a href="menu.html"><span>02</span>Menu</a><a href="story.html"><span>03</span>Our story</a><a href="visit.html"><span>04</span>Visit us</a></nav>
+    <nav class="site-menu__nav" aria-label="Mobile navigation"><a href="index.html"><span>01</span>Home</a><a href="menu.html"><span>02</span>Menu</a><a href="story.html"><span>03</span>Our story</a><a href="#gallery"><span>04</span>Gallery</a><a href="visit.html"><span>05</span>Visit us</a></nav>
     <div class="site-menu__aside"><strong>Five cravings. One address.</strong><p>Premium gelato, woodfire pizza, brews, waffles and savoury bites in Pune.</p></div>
   </div>
   <main id="main">
@@ -82,23 +82,23 @@
             <a class="dna-card dna-card--gelato" href="menu.html#gelato" data-dna-card data-title="Premium Gelatos" data-copy="Slow-churned scoops, vivid flavours and the world of Mr Gelato." data-link-label="Explore Gelatos" aria-label="Explore Premium Gelatos">
               <img src="assets/krushna/gelato.jpeg" alt="Three scoops of premium gelato" loading="lazy" />
               <span class="dna-card__index" aria-hidden="true">01</span>
-            </a>
+            <span class="dna-card__name">Premium Gelatos</span></a>
             <a class="dna-card dna-card--woodfire" href="menu.html#woodfire" data-dna-card data-title="Woodfire Pizza" data-copy="Hand-stretched dough, blistered crusts and fire-finished flavour." data-link-label="Explore Woodfire" aria-label="Explore Woodfire Pizza">
               <img src="assets/krushna/dna/woodfire-pizza.webp" srcset="assets/krushna/dna/woodfire-pizza-480.webp 480w, assets/krushna/dna/woodfire-pizza.webp 800w" sizes="(max-width: 40rem) 52vw, 344px" width="800" height="1200" alt="Woodfire pizza with a blistered crust, melted mozzarella and fresh basil" loading="lazy" decoding="async" />
               <span class="dna-card__index" aria-hidden="true">02</span>
-            </a>
+            <span class="dna-card__name">Woodfire Pizza</span></a>
             <a class="dna-card dna-card--brews" href="menu.html#brews" data-dna-card data-title="Brews" data-copy="Thoughtfully poured coffee made for slower conversations." data-link-label="Explore Brews" aria-label="Explore Brews">
               <img src="assets/krushna/gallery/08-signature-coffee.webp" alt="Signature coffee served on a wooden tray" loading="lazy" />
               <span class="dna-card__index" aria-hidden="true">03</span>
-            </a>
+            <span class="dna-card__name">Brews</span></a>
             <a class="dna-card dna-card--waffles" href="menu.html#waffles" data-dna-card data-title="Waffles" data-copy="Golden, crisp and finished with generous toppings." data-link-label="Explore Waffles" aria-label="Explore Waffles">
               <img src="assets/krushna/waffle-savoury-atlas.png" alt="Fresh waffle with fruit and cream" loading="lazy" />
               <span class="dna-card__index" aria-hidden="true">04</span>
-            </a>
+            <span class="dna-card__name">Waffles</span></a>
             <a class="dna-card dna-card--savoury" href="menu.html#savoury" data-dna-card data-title="Savoury Bites" data-copy="Comforting café favourites for every kind of craving." data-link-label="Explore Savoury" aria-label="Explore Savoury Bites">
               <img src="assets/krushna/dna/savoury-burger.webp" srcset="assets/krushna/dna/savoury-burger-480.webp 480w, assets/krushna/dna/savoury-burger.webp 800w" sizes="(max-width: 40rem) 52vw, 344px" width="800" height="1200" alt="Vegetarian café burger with melted cheese, fresh greens and golden fries" loading="lazy" decoding="async" />
               <span class="dna-card__index" aria-hidden="true">05</span>
-            </a>
+            <span class="dna-card__name">Savoury Bites</span></a>
           </div>
           <div class="dna-carousel__meta container">
             <div class="dna-carousel__copy">
@@ -118,7 +118,7 @@
               <button class="dna-carousel__motion" type="button" data-dna-motion aria-label="Pause automatic carousel rotation" aria-pressed="false"><span data-dna-motion-label>Pause</span></button>
             </div>
           </div>
-          <p class="dna-carousel__hint" aria-hidden="true"><span></span> Swipe or drag to explore</p>
+          <p class="dna-carousel__hint" aria-hidden="true"><span></span> Swipe to find your craving</p>
         </div>
       </div>
     </section>
@@ -207,7 +207,7 @@
   </main>
   <dialog class="gallery-viewer" data-gallery-viewer aria-label="Krushna's Heaven photo gallery">
     <div class="gallery-viewer__top"><span class="gallery-viewer__count" data-viewer-count></span><button type="button" data-viewer-close aria-label="Close photo gallery" autofocus><i data-lucide="x"></i></button></div>
-    <img class="gallery-viewer__image" data-viewer-image alt="" />
+    <div class="gallery-viewer__media" data-viewer-media><img class="gallery-viewer__image" data-viewer-image alt="" draggable="false" /><span class="gallery-viewer__swipe" aria-hidden="true">Swipe to explore</span></div>
     <div class="gallery-viewer__bottom"><p class="gallery-viewer__caption" data-viewer-caption aria-live="polite"></p><div class="gallery-viewer__navigation"><button type="button" data-viewer-prev aria-label="Previous photo"><i data-lucide="arrow-left"></i></button><button type="button" data-viewer-next aria-label="Next photo"><i data-lucide="arrow-right"></i></button></div></div>
     <p class="gallery-viewer__status" data-viewer-status role="status"></p>
   </dialog>
@@ -215,6 +215,6 @@
     <div class="site-footer__grid container"><div class="footer-brand"><img src="assets/krushna/logo.png" alt="Krushna's Heaven" /><p>Five cravings, one welcoming café.</p></div><div class="footer-column"><h2>Explore</h2><a href="menu.html">Menu</a><a href="story.html">Our story</a><a href="#gallery">Gallery</a><a href="visit.html">Visit us</a></div><div class="footer-column"><h2>Find us</h2><span>Wanwadi, Pune</span><span>Full address pending owner confirmation</span></div><div class="footer-column"><h2>Follow</h2><a href="https://www.instagram.com/krushnasheaven/" target="_blank" rel="noreferrer"><i data-lucide="camera"></i> Instagram</a></div></div>
     <div class="site-footer__base container"><span>© <span data-current-year></span> Krushna's Heaven</span><span>Good food brings people closer.</span></div>
   </footer>
-  <script src="site.js?v=dna-swipe-8" defer></script>
+  <script src="site.js?v=experience-9" defer></script>
 </body>
 </html>

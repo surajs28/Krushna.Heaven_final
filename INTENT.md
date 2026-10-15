@@ -4,6 +4,18 @@
 
 ## One approved target
 
+### Hero-to-gallery interaction audit — 15 October 2026
+
+- The user reports the swipe still fails in Chrome on Android and authorizes a complete interaction audit and design refinements from the hero through the gallery. Preserve the approved ivory, raspberry, dark wine and warm food imagery, centered cinematic hero, and five-category 3D carousel.
+- Use a dedicated Touch Events path for phone gestures on the stable carousel orbit, with mouse/pen Pointer Events handled separately. Explicitly allow native vertical scrolling and pinch zoom on every card. Horizontal intent interrupts autoplay, tracks the finger, settles onto a card, suppresses accidental navigation, and delays automatic rotation for eight seconds. Cancellation and leaving the page must release the gesture.
+- Observe the actual carousel container size after responsive layout settles; never retain desktop card spacing on a phone. Keep the mobile caption and controls in normal flow below the orbit. Use visible category names on the photos, 44px selection targets and readable Pause/Resume controls. Keep the approved 3D depth and side-card previews.
+- Hero poster stays visible until a video frame is playing; reduced motion, Data Saver and blocked autoplay retain the poster. Entrance motion must not delay the main actions. Compact the header after scrolling to give the food more room.
+- Navigation contains a Gallery shortcut on the homepage, traps keyboard focus while open, and restores the underlying page when closed. The close control stays usable on inner pages as well.
+- Gallery frames and controls reveal even while images load; keyboard focus also reveals a tile. Recalculate masonry after images/fonts load. The viewer fills a phone screen, supports horizontal swipe, keeps native pinch zoom, handles stalled image loads, and returns focus to the opening photograph when closed.
+- Button feedback uses short transform/colour changes with fine-pointer-only hover movement and a reduced-motion fallback. Native horizontal rails retain their native horizontal gestures.
+- Validation: TypeScript and production build pass; seven synthetic gesture regression cases pass (two directions, native vertical/pinch, duplicate-event prevention, cancellation, ghost-click prevention, mouse capture, teardown). All 133 local route/asset/anchor references across the four current pages resolve. Browser checks cover desktop, 391px and 320px layouts, carousel drag/keyboard selection, menu focus/close, gallery open/next/previous/drag/Escape/focus return, and video playback; no runtime warnings/errors appeared in that session.
+- **Verification limit:** simulated Touch Events and desktop browser dragging at phone width do not prove physical Android behavior. Confirm on the user's Chrome Android device after deployment before calling the phone issue fully verified. Retain this distinction in the handoff.
+
 ### Mobile DNA swipe correction — 15 October 2026
 
 - The user confirmed horizontal swiping across the photos fails on their phone. Manual touch exploration must work alongside automatic rotation.

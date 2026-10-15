@@ -12,7 +12,8 @@ import {
 } from "lucide";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { dnaGestureAxis, dnaSwipeTarget } from "./dna-gesture";
+import { dnaSwipeTarget } from "./dna-gesture";
+import { bindHorizontalSwipe } from "./swipe";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,6 +36,7 @@ const overlay = document.querySelector<HTMLElement>("[data-menu-overlay]");
 const firstMenuLink = overlay?.querySelector<HTMLAnchorElement>("a");
 const desktop = window.matchMedia("(min-width: 56.25rem)");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const menuBackground = Array.from(document.querySelectorAll<HTMLElement>("main, .site-footer, .skip-link, .site-header .brand, .site-header .primary-nav, .site-header .header-actions > :not([data-menu-trigger])"));
 
 const setMenu = (open: boolean, restoreFocus = false) => {
   if (!trigger || !overlay) return;
@@ -44,6 +46,7 @@ const setMenu = (open: boolean, restoreFocus = false) => {
   trigger.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
   overlay.setAttribute("aria-hidden", String(!open));
   overlay.toggleAttribute("inert", !open);
+  menuBackground.forEach((element) => { element.inert = open; });
   document.dispatchEvent(new CustomEvent("site-menu-toggle", { detail: { open } }));
 
   if (open) {
@@ -62,8 +65,18 @@ overlay?.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && trigger?.getAttribute("aria-expanded") === "true") {
+  if (trigger?.getAttribute("aria-expanded") !== "true") return;
+  if (event.key === "Escape") {
     setMenu(false, true);
+  }
+  if (event.key === "Tab" && overlay) {
+    const controls = [trigger, ...overlay.querySelectorAll<HTMLElement>('a[href], button:not([disabled])')];
+    const index = controls.indexOf(document.activeElement as HTMLElement);
+    if (event.shiftKey && index <= 0) {
+      event.preventDefault(); controls.at(-1)?.focus();
+    } else if (!event.shiftKey && (index === controls.length - 1 || index < 0)) {
+      event.preventDefault(); trigger.focus();
+    }
   }
 });
 
@@ -115,7 +128,7 @@ if (hero && heroVideo) {
   let webmFallbackUsed = false;
 
   const syncPlayback = async () => {
-    if (menuOpen || !heroVisible || document.hidden) {
+    if (menuOpen || !heroVisible || document.hidden || reducedMotion.matches || preserveData || !heroVideo.getAttribute("src")) {
       heroVideo.pause();
       return;
     }
@@ -144,8 +157,15 @@ if (hero && heroVideo) {
   };
 
   heroVideo.addEventListener("loadeddata", () => {
-    hero.classList.add("is-video-ready");
     void syncPlayback();
+  });
+  // A decoded poster is not proof of playback (Android battery saver may reject play).
+  heroVideo.addEventListener("playing", () => {
+    const reveal = () => {
+      if (!heroVideo.paused && !reducedMotion.matches) hero.classList.add("is-video-ready");
+    };
+    if ("requestVideoFrameCallback" in heroVideo) heroVideo.requestVideoFrameCallback(reveal);
+    else reveal();
   });
 
   heroVideo.addEventListener("error", () => {
@@ -187,7 +207,9 @@ if (hero && heroVideo) {
   loadFilm();
 }
 
-if (hero && !reducedMotion.matches) {
+const heroMotion = gsap.matchMedia();
+heroMotion.add("(prefers-reduced-motion: no-preference)", () => {
+  if (!hero) return;
   const lineInners = hero.querySelectorAll<HTMLElement>(".hero__line > span");
   const introEyebrow = hero.querySelector<HTMLElement>('[data-hero-intro="eyebrow"]');
   const introCopy = hero.querySelector<HTMLElement>('[data-hero-intro="copy"]');
@@ -199,11 +221,12 @@ if (hero && !reducedMotion.matches) {
   const introHeader = document.querySelector<HTMLElement>(".page-home .site-header");
   const intro = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-  if (introHeader) intro.from(introHeader, { autoAlpha: 0, y: -18, duration: 0.7 }, 0.05);
+  // Navigation and actions remain usable from the first frame.
+  if (introHeader) intro.from(introHeader, { opacity: 0.6, y: -8, duration: 0.4 }, 0);
   if (introEyebrow) intro.from(introEyebrow, { autoAlpha: 0, y: 12, duration: 0.72 }, 0.18);
   intro.from(lineInners, { yPercent: 108, duration: 1.08, stagger: 0.11 }, 0.3);
   if (introCopy) intro.from(introCopy, { autoAlpha: 0, y: 20, duration: 0.78 }, 0.76);
-  if (introActions) intro.from(introActions.children, { autoAlpha: 0, y: 16, duration: 0.72, stagger: 0.1 }, 0.9);
+  if (introActions) intro.from(introActions.children, { opacity: 0.75, y: 10, duration: 0.48, stagger: 0.06 }, 0.2);
   if (introCue) intro.from(introCue, { autoAlpha: 0, y: 10, duration: 0.7 }, 1.08);
   if (introSeal) intro.from(introSeal, { autoAlpha: 0, scale: 0.88, duration: 0.86 }, 1.02);
 
@@ -222,7 +245,7 @@ if (hero && !reducedMotion.matches) {
       scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: 0.6 },
     });
   }
-}
+});
 
 const dnaSection = document.querySelector<HTMLElement>("[data-dna-carousel]");
 const dnaPin = dnaSection?.querySelector<HTMLElement>("[data-dna-pin]");
@@ -275,17 +298,10 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
     let headerTween: ReturnType<typeof gsap.from> | null = null;
     let scrollPosition = 0;
     let manualOffset = 0;
-    let activePointer: number | null = null;
-    let startX = 0;
-    let startY = 0;
+    let interacting = false;
     let startPosition = 0;
-    let lastX = 0;
-    let lastTime = 0;
-    let stepVelocity = 0;
-    let clickResetTimer = 0;
     let manualUntil = 0;
     let dragging = false;
-    let suppressClick = false;
     let sectionVisible = false;
     let menuOpen = false;
     let autoTimer = 0;
@@ -307,7 +323,7 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
       dnaStage.classList.remove("is-moving");
     };
     const canRotate = () => sectionVisible && !rotationPaused && !document.hidden &&
-      !menuOpen && !dragging && activePointer === null && !scrolling && !keyboardFocus && !readingCopy;
+      !menuOpen && !dragging && !interacting && !scrolling && !keyboardFocus && !readingCopy;
     const scheduleAuto = () => {
       cancelAuto();
       if (!canRotate() || positionTween) return;
@@ -376,6 +392,7 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
       gsap.killTweensOf(metaNodes);
 
       if (!animate || metaNodes.length === 0) {
+        gsap.set(metaNodes, { clearProps: "transform,opacity,visibility" });
         setMetaContent(index);
         syncVideos();
         return;
@@ -406,8 +423,9 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
         .add(syncVideos, "<");
     };
 
+    let sceneWidthPx = dnaStage.clientWidth;
     const render = (animateMeta = true) => {
-      const width = dnaStage.clientWidth;
+      const width = sceneWidthPx;
       // Scale the desktop scene as one unit so phones retain its depth and tilt.
       const sceneScale = Math.min(1, width / 900);
       const sceneWidth = width / sceneScale;
@@ -442,12 +460,21 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
       updateActive(wrapIndex(Math.round(state.position)), animateMeta);
     };
 
-    const animateTo = (target: number, fromDirectInput = true, duration = 0.58, automatic = false) => {
+    const animateTo = (target: number, fromDirectInput = true, duration = 0.42, automatic = false) => {
       cancelAuto();
       positionTween?.kill();
       automaticTransition = automatic;
       if (!automatic) manualUntil = performance.now() + 8000;
       if (fromDirectInput) manualOffset = target - scrollPosition;
+      if (duration === 0) {
+        positionTween = null;
+        automaticTransition = false;
+        state.position = target;
+        render(false);
+        dnaStage.classList.remove("is-moving");
+        scheduleAuto();
+        return;
+      }
       dnaStage.classList.add("is-moving");
       positionTween = gsap.to(state, {
         position: target,
@@ -475,105 +502,44 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
       animateTo(rounded + delta);
     };
 
-    const finishDrag = (event?: PointerEvent, cancelled = false) => {
-      if (activePointer === null) return;
-      if (event && event.pointerId !== activePointer) return;
-      const pointerId = activePointer;
-      activePointer = null;
-      if (dnaStage.hasPointerCapture(pointerId)) dnaStage.releasePointerCapture(pointerId);
-      dnaStage.classList.remove("is-dragging");
-      if (!dragging) {
-        dnaStage.classList.remove("is-moving");
-        scheduleAuto();
-        return;
-      }
-
-      const deltaX = (cancelled ? lastX : event?.clientX ?? lastX) - startX;
-      const velocity = event && event.timeStamp - lastTime > 100 ? 0 : stepVelocity;
-      const target = dnaSwipeTarget(startPosition, state.position, deltaX, velocity, dnaStage.clientWidth, cancelled);
-      dragging = false;
-      animateTo(target, true, 0.54);
-      // Suppress the delayed click generated by a touch drag, without blocking a new tap.
-      clickResetTimer = window.setTimeout(() => {
-        suppressClick = false;
-      }, 650);
-    };
-
-    dnaStage.addEventListener(
-      "pointerdown",
-      (event) => {
-        if (event.button !== 0 || !event.isPrimary || activePointer !== null) return;
+    const orbit = dnaStage.querySelector<HTMLElement>("[data-dna-orbit]")!;
+    const unbindSwipe = bindHorizontalSwipe(orbit, {
+      start: () => {
+        if (menuOpen || document.hidden) return false;
         cancelAuto(true);
-        if ((event.target as Element).closest(".dna-carousel__navigation, .dna-carousel__copy")) return;
-        window.clearTimeout(clickResetTimer);
-        suppressClick = false;
-        manualUntil = performance.now() + 8000;
         positionTween?.kill();
         positionTween = null;
         automaticTransition = false;
-        dnaStage.classList.remove("is-moving");
-        activePointer = event.pointerId;
-        startX = event.clientX;
-        startY = event.clientY;
-        startPosition = state.position;
-        lastX = event.clientX;
-        lastTime = event.timeStamp;
-        stepVelocity = 0;
+        interacting = true;
         dragging = false;
+        keyboardFocus = false;
+        startPosition = state.position;
+        manualUntil = performance.now() + 8000;
+        dnaStage.classList.remove("is-moving");
       },
-      { signal },
-    );
-
-    dnaStage.addEventListener(
-      "pointermove",
-      (event) => {
-        if (event.pointerId !== activePointer) return;
-        const deltaX = event.clientX - startX;
-        const deltaY = event.clientY - startY;
-        if (!dragging) {
-          const axis = dnaGestureAxis(deltaX, deltaY);
-          if (axis === "pending") return;
-          if (event.pointerType === "touch" && axis === "vertical") {
-            activePointer = null;
-            scheduleAuto();
-            return;
-          }
-          dragging = true;
-          suppressClick = true;
-          dnaStage.classList.add("is-dragging", "is-moving");
-          dnaStage.setPointerCapture(event.pointerId);
-        }
-
-        event.preventDefault();
-        const sensitivity = dnaStage.clientWidth < 640
-          ? Math.max(160, Math.min(260, dnaStage.clientWidth * 0.52)) : 285;
-        const elapsed = Math.max(1, event.timeStamp - lastTime);
-        stepVelocity = (event.clientX - lastX) / elapsed;
+      move: (deltaX) => {
+        dragging = true;
+        dnaStage.classList.add("is-dragging", "is-moving");
+        const sensitivity = Math.max(160, Math.min(285, dnaStage.clientWidth * 0.52));
         state.position = startPosition - deltaX / sensitivity;
         manualOffset = state.position - scrollPosition;
-        lastX = event.clientX;
-        lastTime = event.timeStamp;
-        render(true);
+        render(false);
       },
-      { signal },
-    );
-
-    dnaStage.addEventListener("pointerup", (event) => finishDrag(event), { signal });
-    dnaStage.addEventListener("pointercancel", (event) => finishDrag(event, true), { signal });
-    dnaStage.addEventListener("lostpointercapture", () => {
-      if (activePointer !== null) finishDrag(undefined, true);
-    }, { signal });
-    dnaStage.addEventListener("dragstart", (event) => event.preventDefault(), { signal });
+      end: ({deltaX, velocity, dragged, cancelled}) => {
+        interacting = false;
+        dragging = false;
+        dnaStage.classList.remove("is-dragging", "is-moving");
+        if (dragged) {
+          const target = dnaSwipeTarget(startPosition, state.position, deltaX, velocity, dnaStage.clientWidth, cancelled);
+          animateTo(target, true, 0.42);
+        } else scheduleAuto();
+      },
+    });
 
     dnaCards.forEach((card, index) => {
       card.addEventListener(
         "click",
         (event) => {
-          if (suppressClick) {
-            event.preventDefault();
-            event.stopPropagation();
-            return;
-          }
           if (event.detail > 0 && index !== activeIndex) {
             event.preventDefault();
             moveToIndex(index);
@@ -709,6 +675,7 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
     }, { passive: true, signal });
 
     window.addEventListener("resize", () => {
+      sceneWidthPx = dnaStage.clientWidth;
       render(false);
       if (!dnaDesktop.matches || window.innerHeight === layoutHeight) return;
       window.cancelAnimationFrame(resizeFrame);
@@ -719,8 +686,19 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
       });
     }, { passive: true, signal });
     dnaStage.classList.add("is-ready");
+    sceneWidthPx = dnaStage.clientWidth;
     render(false);
     syncMotionLabel();
+
+    // Breakpoint/pin teardown and browser resizing can settle after the resize
+    // event. Measure the actual stage, so phone cards never keep a desktop orbit.
+    const sceneObserver = new ResizeObserver(() => {
+      const width = dnaStage.clientWidth;
+      if (width === sceneWidthPx) return;
+      sceneWidthPx = width;
+      render(false);
+    });
+    sceneObserver.observe(dnaStage);
 
     if (dnaHeader) {
       headerTween = gsap.from(dnaHeader.children, {
@@ -738,12 +716,13 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
     }
 
     return () => {
+      unbindSwipe();
       controller.abort();
       cancelAuto(true);
       window.clearTimeout(scrollIdleTimer);
-      window.clearTimeout(clickResetTimer);
       window.cancelAnimationFrame(resizeFrame);
       visibilityObserver.disconnect();
+      sceneObserver.disconnect();
       scrollTrigger?.kill();
       scrollTween?.kill();
       headerTween?.scrollTrigger?.kill();
@@ -794,11 +773,11 @@ if (galleryGrid) {
     const placements = figures.map((figure) => {
       const column = heights.indexOf(Math.min(...heights));
       const placement = { figure, left: column * (tileWidth + gap), top: heights[column] };
-      figure.style.setProperty("--gallery-delay", `${column * 60}ms`);
       heights[column] += figure.offsetHeight + gap * 1.6;
-      return placement;
+      return { ...placement, column };
     });
-    placements.forEach(({ figure, left, top }) => {
+    placements.forEach(({ figure, left, top, column }) => {
+      figure.style.setProperty("--gallery-delay", `${column * 60}ms`);
       figure.style.left = `${left}px`;
       figure.style.top = `${top}px`;
     });
@@ -815,6 +794,7 @@ if (galleryGrid) {
     if (galleryGrid.clientWidth !== lastWidth) scheduleLayout();
   }).observe(galleryGrid);
   void document.fonts.ready.then(scheduleLayout);
+  images.forEach((image) => image.addEventListener("load", scheduleLayout, { once: true }));
 
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -826,6 +806,8 @@ if (galleryGrid) {
         figure.classList.add("is-visible");
         revealObserver.unobserve(figure);
       };
+      // Reveal the reserved frame immediately; a slow photo must not hide its control.
+      figure.classList.add("is-visible");
       if (image.complete) void reveal();
       else image.addEventListener("load", () => void reveal(), { once: true });
     });
@@ -833,6 +815,9 @@ if (galleryGrid) {
 
   if (!reducedMotion.matches) galleryGrid.classList.add("is-revealing");
   figures.forEach((figure) => revealObserver.observe(figure));
+  galleryGrid.addEventListener("focusin", (event) => {
+    (event.target as HTMLElement).closest("[data-gallery-item]")?.classList.add("is-visible");
+  });
   images.forEach((image) => image.addEventListener("error", () => {
     image.closest<HTMLElement>("[data-gallery-item]")?.classList.add("is-visible");
   }, { once: true }));
@@ -852,6 +837,7 @@ if (galleryGrid && galleryViewer) {
   const viewerCaption = galleryViewer.querySelector<HTMLElement>("[data-viewer-caption]")!;
   const viewerCount = galleryViewer.querySelector<HTMLElement>("[data-viewer-count]")!;
   const viewerStatus = galleryViewer.querySelector<HTMLElement>("[data-viewer-status]")!;
+  const viewerMedia = galleryViewer.querySelector<HTMLElement>("[data-viewer-media]")!;
   let requestedIndex = 0;
   let requestVersion = 0;
   let returnFocus: HTMLElement | null = null;
@@ -867,17 +853,22 @@ if (galleryGrid && galleryViewer) {
     viewerStatus.textContent = "Loading photo…";
     const fullPhoto = new Image();
     fullPhoto.src = original.src;
+    let timeout = 0;
     try {
-      await fullPhoto.decode();
+      await Promise.race([
+        fullPhoto.decode(),
+        new Promise((_, reject) => { timeout = window.setTimeout(() => reject(new Error("Photo timeout")), 12000); }),
+      ]);
     } catch {
       if (version === requestVersion) {
         viewerStatus.textContent = "This photo could not load. Try the next photo.";
         galleryViewer.removeAttribute("aria-busy");
       }
       return;
-    }
+    } finally { window.clearTimeout(timeout); }
     if (version !== requestVersion || !galleryViewer.open) return;
     swapAnimation?.cancel();
+    viewerImage.style.transform = "";
     viewerImage.src = fullPhoto.src;
     viewerImage.alt = original.alt;
     viewerCaption.textContent = caption;
@@ -917,6 +908,21 @@ if (galleryGrid && galleryViewer) {
     swapAnimation?.cancel();
     document.body.classList.remove("gallery-viewer-open");
     returnFocus?.focus({ preventScroll: true });
+  });
+  bindHorizontalSwipe(viewerMedia, {
+    start: () => {
+      if (!galleryViewer.open) return false;
+      swapAnimation?.cancel();
+    },
+    move: (deltaX) => {
+      if (!reducedMotion.matches) viewerImage.style.transform = `translateX(${Math.max(-28, Math.min(28, deltaX * 0.2))}px)`;
+    },
+    end: ({deltaX, dragged, cancelled}) => {
+      viewerImage.style.transform = "";
+      if (galleryViewer.open && dragged && !cancelled && Math.abs(deltaX) >= 30) {
+        void showPhoto(requestedIndex + (deltaX < 0 ? 1 : -1));
+      }
+    },
   });
 }
 
