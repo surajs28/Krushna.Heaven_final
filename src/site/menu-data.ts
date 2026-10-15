@@ -4,6 +4,8 @@ export type PriceSize = 'single' | 'double' | 'family' | 'large';
 export type MenuItem = {
   id: string; name: string; description: string; price?: number;
   sizes?: Record<PriceSize, number | null>; badge?: string;
+  /** Gelato only: the printed menu's "Classics", "Most Loved" or "Premium Picks" band. */
+  tier?: string;
   sources: { page: number; name: string }[];
 };
 export type MenuGroup = { id: string; title: string; note?: string; items: MenuItem[] };
@@ -16,6 +18,10 @@ const names: Record<string, string> = {
   'Browine Frappe': 'Brownie Frappe', 'Pisatchio Kulfi Sundae': 'Pistachio Kulfi Sundae',
   'Yohgurt Wild Berry': 'Yoghurt Wild Berry', 'Dry Fruit falooda': 'Dry Fruit Falooda',
   'Caffe latte': 'Caffe Latte', 'Hot chocolate': 'Hot Chocolate', 'The Gourd-Gee Tiramisu': 'The Gourd-Gée Tiramisu',
+  // Round 4 (M15): one spelling across the boards; the printed PDF mixes these.
+  'Black Current': 'Black Currant', 'Black Current Smoothie': 'Black Currant Smoothie', 'Black Current Waffle': 'Black Currant Waffle',
+  'Orange Cheese Cake': 'Orange Cheesecake', 'Strawberry Cheese Cake': 'Strawberry Cheesecake',
+  'New York Cheese Cake': 'New York Cheesecake', 'Black Forest Cheese Cake': 'Black Forest Cheesecake',
 };
 // Recommendation image supplies badges only. Its prices never enter this model.
 const badges: Record<string, string> = {
@@ -23,6 +29,13 @@ const badges: Record<string, string> = {
   'Kesar Pista Falooda': 'Must try', 'Dry Fruit Falooda': 'Bestseller', 'Mango Falooda': "Chef’s special",
   'Sitaphal Mastani': 'Bestseller', 'Choco Brownie Sundae': 'Must try',
   'Cookie Madness Sundae': 'Must try', 'Belgian Choco Sundae': 'Bestseller', 'Pistachio Kulfi Sundae': "Chef’s special",
+  // Gelato tier sheet (supplied by the café, 15 Oct 2026): its recommendation tags only.
+  // Its purchase costs, margins and older prices never enter this model.
+  'Chikoo': 'Bestseller', 'Pink Guava': 'Must try', 'Sitafal': 'Bestseller',
+  'Vanilla Oreo Twist': "Chef’s special", 'Mint After 9': 'Must try', 'Blue Sky': "Kids’ special",
+  'Blueberry Cheesecake': 'Must try', 'Royal Kulfi': "Chef’s special", 'Vanilla Madagascar': 'Bestseller',
+  'Yoghurt Wild Berry': "Chef’s special", 'Mango Alphonso': 'Must try', 'Belgian Chocolate': 'Bestseller',
+  'Whisky N Cream': "Chef’s special", 'Pistachio': 'Must try',
 };
 const cleanDescription = (value = '') => value.replace(/^\(|\)$/g, '').replace(/Geltos|Gelto/g, 'Gelato').replace(/Browine/g, 'Brownie').trim();
 // Page 11 has fuller descriptions than the historical website extraction.
@@ -56,6 +69,7 @@ for (const [key, title, page] of [
     if (existing) { existing.sources.push({ page, name: raw.name }); continue; }
     const row = item({ ...raw, name: canonical }, page, 'gelato');
     row.sources = [{ page, name: raw.name }];
+    row.tier = (tier as SourceGroup).category;
     row.sizes = { single: Number(raw.single), double: Number(raw.double),
       family: raw.family === '100' ? null : Number(raw.family), large: Number(raw.large) };
     seen.set(canonical, row); group.items.push(row);
@@ -72,10 +86,10 @@ const cones = regular({ items: [
 ] }, 12, 'Cones & baskets');
 const drinks = [...groups.brews.map(g=>regular(g,6)), ...groups.mocktails.map(g=>regular(g,7)),
   ...groups.proteinJuiceTea.map(g=>regular(g,8)), regular({ items: evidence.groups.addons },6,'Brew add-ons')];
-drinks.find(g=>g.id==='signature-protein-smoothies')!.note = 'Protein bar: 6:30–10:30 am, as listed in the menu.';
-drinks.find(g=>g.id==='fresh-juices')!.note = 'Protein bar: 6:30–10:30 am, as listed in the menu.';
+// Round 4 (M15): no Protein bar hours. The final PDF keeps "Available from 6.30am - 10.30 am" only as
+// hidden text; the printed page doesn't show it, so the site waits for the café to confirm the hours.
 export const menuChapters: MenuChapter[] = [
-  {id:'gelato',title:'Premium Gelatos',short:'Gelatos',description:'Discover Mr Gelato at Krushna’s Heaven. Scoops, shakes and sweet finishes, all in one place.',image:'assets/krushna/gelato.jpeg',groups:[...flavourGroups,...scoops,cones]},
+  {id:'gelato',title:'Premium Gelatos',short:'Gelatos',description:'Slow-churned gelato in four families of flavour, then shakes, falooda, mastani and sundaes to finish.',image:'assets/krushna/gelato.jpeg',groups:[...flavourGroups,...scoops,cones]},
   {id:'woodfire',title:'Woodfire Pizza',short:'Woodfire Pizza',description:'Explore our sourdough pizzas, calzones and artisanal panuozzo.',image:'assets/krushna/dna/woodfire-pizza-480.webp',groups:groups.savoury.slice(5).map((g,i)=>regular(g,i===0?4:5))},
   {id:'brews',title:'Brews',short:'Brews',description:'From a first espresso to a long conversation. Coffee, tea and something refreshing.',image:'assets/krushna/gallery/responsive/08-signature-coffee-800.webp',groups:drinks},
   {id:'waffles',title:'Waffles & sweet plates',short:'Waffles',description:'Waffles, mini pancakes and artisanal desserts. Leave room for something sweet.',image:'assets/krushna/gallery/responsive/01-brownie-gelato-480.webp',groups:groups.desserts.map((g,i)=>({...regular(g,i===4?11:10),id:i===4?'desserts':i===0?'waffle-selection':slug(g.title!)}))},

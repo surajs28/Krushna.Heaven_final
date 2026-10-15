@@ -25,7 +25,9 @@ test('Disputed family packs stay unpriced and unconfirmed additions stay out',()
   for(const i of items) for(const p of i.sizes?Object.values(i.sizes):[i.price]) assert.ok(p===null || (Number.isFinite(p)&&p>0),i.name);
 });
 test('Only client-supplied recommendations are displayed',()=>{
-  assert.equal(items.filter(i=>i.badge).length,10);
+  // 10 tags from the treats recommendation sheet + 14 from the gelato tier sheet (15 Oct 2026).
+  assert.equal(items.filter(i=>i.badge).length,24);
+  assert.equal(items.find(i=>i.name==='Blue Sky').badge,'Kids’ special');
   assert.equal(items.find(i=>i.name==='Pasta Alfredo').badge,undefined);
   assert.equal(items.find(i=>i.name==='Pistachio Kulfi Sundae').badge,'Chef’s special');
 });
