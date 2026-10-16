@@ -3727,7 +3727,7 @@ html.menu-is-open .site-header .header-actions > :not([data-menu-trigger]) {
   /* clip, unlike hidden, can never be scrolled by focus, so the reel's maths stays true. */
   overflow: clip;
   cursor: grab;
-  touch-action: pan-y;
+  touch-action: pan-y pinch-zoom;
   user-select: none;
   -webkit-user-select: none;
 }

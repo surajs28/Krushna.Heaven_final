@@ -1,6 +1,8 @@
 // Homepage photo reel: one photo takes centre stage at a time and the rest step past,
 // after the reference site's "signature plates" slider. Tapping a photo opens it on the gallery page.
 
+import { bindHorizontalSwipe } from "./swipe";
+
 const STEP_MS = 2600;
 const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
 
@@ -87,58 +89,38 @@ export const mountGalleryReel = (slider: HTMLElement, reducedMotion: MediaQueryL
   });
 
   // Drag or swipe one photo at a time; a real drag never also counts as a tap.
-  let pointerId: number | null = null;
-  let startX = 0;
-  let deltaX = 0;
   let baseX = 0;
-  let moved = false;
-  let suppressClick = false;
 
-  slider.addEventListener("pointerdown", (event) => {
-    if (event.button !== 0 || pointerId !== null) return;
-    pointerId = event.pointerId;
-    startX = event.clientX;
-    deltaX = 0;
-    moved = false;
-    dragging = true;
-    window.clearTimeout(rewindTimer);
-    baseX = offsetFor(index);
-    sync();
-  });
-
-  slider.addEventListener("pointermove", (event) => {
-    if (event.pointerId !== pointerId) return;
-    deltaX = event.clientX - startX;
-    if (!moved && Math.abs(deltaX) > 8) {
-      moved = true;
-      slider.setPointerCapture?.(event.pointerId);
+  bindHorizontalSwipe(slider, {
+    start: () => {
+      dragging = true;
+      window.clearTimeout(rewindTimer);
+      // A new gesture can interrupt the loop rewind. Keep the same photograph
+      // in the middle set so repeated swipes never run beyond the cloned items.
+      if (index < count || index >= count * 2) {
+        index = count + ((index % count) + count) % count;
+        paint(false);
+      }
+      baseX = offsetFor(index);
+      sync();
+    },
+    move: (deltaX) => {
       slider.classList.add("is-dragging");
       row.style.transition = "none";
-    }
-    if (moved) row.style.transform = `translate3d(${baseX + deltaX}px, 0, 0)`;
+      row.style.transform = `translate3d(${baseX + deltaX}px, 0, 0)`;
+    },
+    end: ({ deltaX, dragged, cancelled }) => {
+      dragging = false;
+      slider.classList.remove("is-dragging");
+      // Browser-owned scroll, pinch, blur and cancellation must never select
+      // another photograph. Restore the current one without a competing glide.
+      if (cancelled) paint(false);
+      else if (dragged && deltaX <= -50) goTo(index + 1);
+      else if (dragged && deltaX >= 50) goTo(index - 1);
+      else if (dragged) paint(true);
+      sync();
+    },
   });
-
-  const endDrag = (event: PointerEvent) => {
-    if (event.pointerId !== pointerId) return;
-    pointerId = null;
-    dragging = false;
-    slider.classList.remove("is-dragging");
-    if (moved) {
-      suppressClick = true;
-      window.setTimeout(() => { suppressClick = false; }, 0);
-      if (deltaX <= -50) goTo(index + 1);
-      else if (deltaX >= 50) goTo(index - 1);
-      else paint(true);
-    }
-    sync();
-  };
-  slider.addEventListener("pointerup", endDrag);
-  slider.addEventListener("pointercancel", endDrag);
-  slider.addEventListener("click", (event) => {
-    if (!suppressClick) return;
-    event.preventDefault();
-    event.stopPropagation();
-  }, true);
 
   // Keyboard: the focused photo slides to the centre and the reel waits.
   slider.addEventListener("focusin", (event) => {
