@@ -6689,3 +6689,87 @@ body.page-visit {
       linear-gradient(180deg, var(--night) 0%, rgba(26, 10, 16, 0.1) 18%, rgba(26, 10, 16, 0.55) 60%, var(--night) 100%);
   }
 }
+
+/* S12, 17 Oct 2026: real Google reviews. One star after the score (4.7 is not five stars), the listing's
+   date, a short summary, and long reviews folded behind "Read more" so cards stay even. */
+.reviews__star {
+  color: #efc28a;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.reviews__asof {
+  color: rgba(255, 248, 237, 0.5);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.reviews__intro {
+  max-width: 26rem;
+  margin: 0 0 0.4rem;
+  color: rgba(255, 248, 237, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.reviews__track {
+  align-items: start;
+}
+
+.review-card blockquote {
+  font-family: var(--display);
+  font-size: 1.14rem;
+  line-height: 1.5;
+}
+
+.review-card blockquote p {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.review-card blockquote p + p {
+  margin-top: 0.7em;
+}
+
+.review-card.is-clamped:not(.is-open) blockquote {
+  max-height: calc(1.5em * 8);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent);
+  mask-image: linear-gradient(180deg, #000 72%, transparent);
+}
+
+.review-card__more {
+  justify-self: start;
+  margin-top: -0.4rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #ffc6d6;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(240, 116, 157, 0.6);
+  text-underline-offset: 0.25em;
+}
+
+.review-card__more[hidden] {
+  display: none;
+}
+
+.review-card {
+  grid-template-rows: auto auto auto auto;
+}
+
+/* S13, 17 Oct 2026: the night-exterior photos are retired; our own interior and food photos replace them. */
+.gallery-journal--page .gallery-journal__backdrop img {
+  object-position: center 58%;
+}
+
+.home-visit__media img {
+  object-position: center 62%;
+}
+
+.page-opener--visit .page-opener__backdrop img {
+  object-position: center 50%;
+}

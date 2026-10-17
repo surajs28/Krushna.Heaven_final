@@ -1188,9 +1188,31 @@ document.querySelectorAll<HTMLElement>("[data-reviews]").forEach((section) => {
     const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
     return card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
   };
+  // Long reviews fold to eight lines behind "Read more"; short ones never show the button.
+  const cards = Array.from(track.querySelectorAll<HTMLElement>(".review-card"));
+  const fold = () => {
+    cards.forEach((card) => {
+      const quote = card.querySelector<HTMLElement>("blockquote");
+      const more = card.querySelector<HTMLButtonElement>(".review-card__more");
+      if (!quote || !more || card.classList.contains("is-open")) return;
+      card.classList.add("is-clamped");
+      const overflows = quote.scrollHeight > quote.clientHeight + 2;
+      card.classList.toggle("is-clamped", overflows);
+      more.hidden = !overflows;
+    });
+  };
+  cards.forEach((card) => {
+    const more = card.querySelector<HTMLButtonElement>(".review-card__more");
+    more?.addEventListener("click", () => {
+      const open = card.classList.toggle("is-open");
+      more.setAttribute("aria-expanded", String(open));
+      more.textContent = open ? "Show less" : "Read more";
+    });
+  });
   let frame = 0;
   const sync = () => {
     frame = 0;
+    fold();
     const max = track.scrollWidth - track.clientWidth - 2;
     controls.hidden = max <= 0;
     prev.disabled = track.scrollLeft <= 2;

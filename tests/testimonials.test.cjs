@@ -24,11 +24,30 @@ test('Live reviews show the Google rating and no sample labels', () => {
   };
   const html = render(live);
   assert.doesNotMatch(html, /Sample|reviews__note|reviews--sample/);
-  assert.match(html, /<span class="reviews__score">4\.7<\/span>/);
+  assert.match(html, /<span class="reviews__score">4\.7<\/span><span class="reviews__star" aria-hidden="true">★<\/span>/);
   assert.match(html, /212 Google reviews/);
+  assert.doesNotMatch(html, /reviews__stars/, 'no row of five stars that would round 4.7 up');
   assert.match(html, /aria-label="4 out of 5 stars">★★★★<span class="is-empty">★<\/span>/);
   assert.match(html, /Lovely &lt;b&gt;gelato&lt;\/b&gt; &amp; pizza\./, 'review text is escaped');
   assert.match(html, /Family dinner · October 2026/);
+});
+
+test('Live reviews keep the reviewer\'s words, paragraphs and line breaks', () => {
+  const html = render({ ...data, status: 'live', reviews: [{ name: 'Niji T.', rating: 5, text: 'Line one.\nLine two.\n\nNew paragraph 🫶' }] });
+  assert.match(html, /<blockquote><p>Line one\.<br \/>Line two\.<\/p><p>New paragraph 🫶<\/p><\/blockquote>/);
+  assert.match(html, /class="review-card__more" type="button" aria-expanded="false" hidden>Read more/);
+});
+
+test('The published reviews match the Google listing details', () => {
+  if (data.status !== 'live') return;
+  assert.equal(data.rating, 4.7);
+  assert.equal(data.count, 106);
+  assert.ok(data.reviews.length >= 3);
+  data.reviews.forEach((review) => {
+    assert.ok(review.text.trim().length > 20, 'review text present');
+    assert.ok(review.rating >= 1 && review.rating <= 5);
+    assert.doesNotMatch(review.name, /sample/i, 'no sample names in live data');
+  });
 });
 
 test('Hidden status leaves the review section out entirely', () => {

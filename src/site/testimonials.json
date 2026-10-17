@@ -1,52 +1,54 @@
 {
-  "_readme": "Guest reviews shown on the Story and Visit pages. status: \"sample\" shows these placeholders with visible Sample tags (for preview only, never publish them as genuine); \"hidden\" leaves the section out entirely, so the pages can go live before real reviews arrive; \"live\" shows real reviews. To go live: paste real Google reviews (name as shown on Google, rating, text, month), set rating/count from the Google listing, set status to \"live\", then run npm run build.",
-  "status": "hidden",
+  "_readme": "Guest reviews shown on the Story and Visit pages. status: \"live\" shows the reviews below; \"hidden\" leaves the section out; \"sample\" renders placeholders with visible Sample tags (preview only). Reviews are copied word for word from the café's Google listing; names are shortened to first name + last initial, and \"Google reviewer\" is used where the screenshot did not show a name. rating/count/asOf come from the Google listing; update them together. Run npm run build after editing.",
+  "status": "live",
   "source": "Google",
   "profileUrl": "https://maps.app.goo.gl/JEWK9di5hMymi1ks9",
-  "rating": null,
-  "count": null,
+  "rating": 4.7,
+  "count": 106,
   "reviews": [
     {
-      "name": "Sample guest",
-      "context": "Dessert night",
+      "name": "Anaya K.",
+      "context": "",
       "rating": 5,
       "date": "",
-      "text": "The Gourd-Gée tiramisu is worth the trip on its own. Watching the espresso poured at the table made it feel like an occasion."
+      "text": "The ambience here is really amazing, and I absolutely love this place. I tried the Alfredo Pasta, Aglio Olio Pasta, Burrata Caprese, Croissant Sandwich, Cappuccino, Ice Cream, Kesar Pista Faluda, and Hazelnut Shake. Every dish was delicious and well-prepared.\n\nA special mention to Anaya and Avijit for their excellent service. They are very polite, friendly, and make guests feel welcome. Their hospitality made the experience even better. Highly recommended! ⭐⭐⭐⭐⭐"
     },
     {
-      "name": "Sample guest",
-      "context": "Family evening",
+      "name": "Niji T.",
+      "context": "Local Guide",
       "rating": 5,
       "date": "",
-      "text": "We came for gelato and stayed for pizza. Everyone ordered something different and we still shared one table. The kids loved the sundaes."
+      "text": "Recently i have celebrated my birthday in this cafe.The ambiance was so good . Children love this place so much. The hotel was so clean ,staff were so polite .\nFoods were so so tasty.\nOverall perfect\nHighlyyyyy  recommended. 🫶🫶🫶"
     },
     {
-      "name": "Sample guest",
-      "context": "Catch-up with friends",
+      "name": "Shruti K.",
+      "context": "",
       "rating": 5,
       "date": "",
-      "text": "Pink Guava gelato and a cold coffee on a warm evening was exactly what we needed. Friendly team and a really beautiful space."
+      "text": "New Gelato place in town. Awesome flavours really liked tiramisu and a tangy refreshing limecello. Nice Insta worthy place do visit!"
     },
     {
-      "name": "Sample guest",
-      "context": "Weekend lunch",
-      "rating": 4,
-      "date": "",
-      "text": "Lovely crust on the sourdough pizza and generous fries. It gets busy in the evening, so come a little early."
-    },
-    {
-      "name": "Sample guest",
-      "context": "Birthday treat",
+      "name": "Anil K.",
+      "context": "",
       "rating": 5,
       "date": "",
-      "text": "The brownie with ice-cream arrives sizzling and the whole table turned to look. A great spot for a small celebration."
+      "text": "This joint is newly opened in wanorie, Pune n its speciality is Italian cuisine.  The staff has been very polite n helpful, additional marks to Avijit for helping us with menu selection n everything. Best wishes to entire Krishna Heaven team!!"
     },
     {
-      "name": "Sample guest",
-      "context": "Coffee break",
+      "name": "Google reviewer",
+      "context": "",
       "rating": 5,
       "date": "",
-      "text": "Good coffee, quick service and plenty of choice. The evening lighting and the gold-edged tables make it easy to stay a while."
+      "text": "Excellent place with a wonderful ambiance and a wide variety of delicious food options. The taste is outstanding, and the overall atmosphere makes the experience even more enjoyable. The staff is extremely helpful, friendly, and supportive. Highly recommended for anyone looking for great food and excellent service."
+    },
+    {
+      "name": "Google reviewer",
+      "context": "",
+      "rating": 5,
+      "date": "",
+      "text": "Very nice staff and very nice service, they immediately changed my watermelon juice wen it was not good, and quality and service matters for them... Keep up the good work going"
     }
-  ]
+  ],
+  "asOf": "October 2026",
+  "summary": "Guests on Google mention the fresh gelato and unusual flavours, vegetarian food from pizzas to pasta, a clean and welcoming space that suits families (and photos), and polite, helpful staff."
 }

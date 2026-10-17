@@ -22,16 +22,20 @@ function render(data) {
   const sample = data.status !== 'live';
   const reviews = Array.isArray(data.reviews) ? data.reviews : [];
   const hasScore = !sample && typeof data.rating === 'number';
+  // One star after the score: five drawn stars would round 4.7 up to a perfect 5.
   const summary = hasScore
-    ? `<span class="reviews__score">${esc(data.rating.toFixed(1))}</span><span class="reviews__stars" aria-hidden="true">${stars(data.rating)}</span><span>${data.count ? `${esc(data.count)} ` : ''}${esc(data.source)} reviews</span>`
+    ? `<span class="reviews__score">${esc(data.rating.toFixed(1))}</span><span class="reviews__star" aria-hidden="true">★</span><span class="sr-only">out of 5,</span><span>${data.count ? `${esc(data.count)} ` : ''}${esc(data.source)} reviews</span>${data.asOf ? `<span class="reviews__asof">(${esc(data.asOf)})</span>` : ''}`
     : `<span class="reviews__stars" aria-hidden="true">${stars(5)}</span><span>${esc(data.source)} reviews</span>${sample ? '<span class="reviews__badge">Sample</span>' : ''}`;
   const cards = reviews.map((review) => {
     const initial = esc((String(review.name || '?').trim()[0] || '?').toUpperCase());
     const meta = [review.context, review.date].filter(Boolean).map(esc).join(' · ');
+    // Word for word: blank lines become paragraphs, single line breaks stay line breaks.
+    const text = String(review.text || '').split(/\n{2,}/).map((part) => `<p>${esc(part).replace(/\n/g, '<br />')}</p>`).join('');
     return `
           <figure class="review-card">
             <div class="review-card__top"><span class="review-card__stars" role="img" aria-label="${esc(review.rating)} out of 5 stars">${stars(review.rating)}</span><span class="review-card__source">${esc(data.source)}</span>${sample ? '<span class="review-card__sample">Sample</span>' : ''}</div>
-            <blockquote><p>${esc(review.text)}</p></blockquote>
+            <blockquote>${text}</blockquote>
+            <button class="review-card__more" type="button" aria-expanded="false" hidden>Read more</button>
             <figcaption><span class="review-card__avatar" aria-hidden="true">${initial}</span><span class="review-card__who"><strong>${esc(review.name)}</strong>${meta ? `<span>${meta}</span>` : ''}</span></figcaption>
           </figure>`;
   }).join('');
@@ -41,7 +45,8 @@ function render(data) {
         <header class="reviews__head">
           <p class="eyebrow-line reveal">Guest reviews</p>
           <h2 id="reviews-title" class="reveal d1">Loved at <em class="glow-text">our tables.</em></h2>
-          <p class="reviews__summary reveal d2">${summary}</p>${sample ? `
+          <p class="reviews__summary reveal d2">${summary}</p>${data.summary ? `
+          <p class="reviews__intro reveal d2">${esc(data.summary)}</p>` : ''}${sample ? `
           <p class="reviews__note reveal d2">Sample reviews for layout only. Real ${esc(data.source)} reviews will replace them before this goes live.</p>` : ''}
           <div class="reviews__actions reveal d3">
             <a class="button button--ghost" href="${esc(data.profileUrl)}" target="_blank" rel="noopener">Read reviews on ${esc(data.source)} <i data-lucide="arrow-right"></i></a>
