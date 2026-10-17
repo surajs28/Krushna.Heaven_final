@@ -6373,3 +6373,319 @@ body.page-visit {
     transition: none;
   }
 }
+
+/* Round 5b, 17 Oct 2026: the homepage's closing sections and the footer join the night (S09–S11). */
+
+/* S09: "Our story" teaser: the café in the menu's gold ogee arch, with the five chapters as links. */
+.home-story,
+.home-visit {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--night);
+  color: var(--ivory);
+}
+
+.home-story > :not(.ambient-lights) {
+  position: relative;
+  z-index: 1;
+}
+
+.home-story {
+  padding-block: var(--section-space);
+}
+
+.home-story__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(3rem, 8vw, 7rem);
+}
+
+.home-story__media {
+  position: relative;
+  width: min(100%, 26rem);
+  margin: 0;
+  justify-self: center;
+  aspect-ratio: 2 / 3;
+}
+
+.home-story__arch {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #2b111a;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 300' preserveAspectRatio='none'%3E%3Cpath d='M0 300V118C0 70 40 46 70 30C86 21 96 12 100 0C104 12 114 21 130 30C160 46 200 70 200 118V300Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 300' preserveAspectRatio='none'%3E%3Cpath d='M0 300V118C0 70 40 46 70 30C86 21 96 12 100 0C104 12 114 21 130 30C160 46 200 70 200 118V300Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+
+.home-story__arch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-story__outline {
+  position: absolute;
+  inset: -0.85rem;
+  width: calc(100% + 1.7rem);
+  height: calc(100% + 0.85rem);
+  color: rgba(239, 194, 138, 0.7);
+  pointer-events: none;
+}
+
+.home-story__note {
+  position: absolute;
+  right: -1.6rem;
+  bottom: 2.6rem;
+  padding: 0.6rem 1.15rem;
+  border: 1px solid rgba(239, 194, 138, 0.38);
+  border-radius: 999px;
+  background: rgba(26, 10, 16, 0.84);
+  color: #ffc6d6;
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-style: italic;
+  transform: rotate(-4deg);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.home-story h2,
+.home-visit h2 {
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+}
+
+.home-story__copy h2 {
+  max-width: 12ch;
+  margin: 1rem 0 1.3rem;
+  font-size: clamp(2.8rem, 5.6vw, 5.2rem);
+  font-weight: 520;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+
+.home-story__copy > p:not(.eyebrow-line) {
+  max-width: 34rem;
+  margin: 0;
+  color: rgba(255, 248, 237, 0.76);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.home-story__chapters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0 2.2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.home-story__chapters a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid rgba(255, 248, 237, 0.14);
+  border-radius: 999px;
+  color: rgba(255, 248, 237, 0.84);
+  font-size: 0.86rem;
+  text-decoration: none;
+  transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.home-story__chapters span {
+  color: #efc28a;
+  font-family: var(--display);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+/* S10: "Come hungry. Leave happier.": the lit entrance drifts behind a glass visit card. */
+.home-visit {
+  display: grid;
+  min-height: clamp(34rem, 92vh, 50rem);
+  align-items: center;
+  overflow: clip;
+}
+
+.home-visit__media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.home-visit__media img {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center 38%;
+  filter: saturate(0.95) brightness(0.64);
+}
+
+.home-visit__media::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, var(--night) 0%, rgba(26, 10, 16, 0.12) 20%, rgba(26, 10, 16, 0.2) 72%, var(--night) 100%),
+    linear-gradient(90deg, rgba(26, 10, 16, 0.05) 30%, rgba(26, 10, 16, 0.72) 100%);
+  content: "";
+}
+
+.home-visit__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.home-visit__card {
+  width: min(100%, 33rem);
+  padding: clamp(1.8rem, 3.5vw, 2.8rem);
+  border: 1px solid rgba(255, 248, 237, 0.16);
+  border-radius: var(--radius-lg);
+  background: rgba(26, 10, 16, 0.74);
+  box-shadow: 0 2.5rem 5rem -2rem rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(16px) saturate(1.1);
+  backdrop-filter: blur(16px) saturate(1.1);
+}
+
+.home-visit__card h2 {
+  margin: 1rem 0 1.2rem;
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  font-weight: 520;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+
+.home-visit__address {
+  display: flex;
+  gap: 0.6rem;
+  margin: 0;
+  color: rgba(255, 248, 237, 0.86);
+  line-height: 1.6;
+}
+
+.home-visit__address svg,
+.home-visit__facts svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: none;
+}
+
+.home-visit__address svg {
+  margin-top: 0.3rem;
+  color: #f0749d;
+}
+
+.home-visit__facts {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1.3rem 0 1.8rem;
+  padding: 1.2rem 0 0;
+  border-top: 1px solid rgba(255, 248, 237, 0.12);
+  list-style: none;
+}
+
+.home-visit__facts li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.6rem;
+  color: rgba(255, 248, 237, 0.78);
+  font-size: 0.95rem;
+}
+
+.home-visit__facts svg {
+  color: #efc28a;
+}
+
+.home-visit__facts a {
+  color: var(--ivory);
+  text-decoration-color: rgba(240, 116, 157, 0.7);
+  text-underline-offset: 0.25em;
+  overflow-wrap: anywhere;
+}
+
+.home-visit__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* S11: the footer on every page moves to the night palette with gold headings. */
+.site-footer {
+  border-top: 1px solid rgba(239, 194, 138, 0.16);
+  background:
+    radial-gradient(60% 120% at 50% 0%, rgba(207, 21, 84, 0.1), transparent 70%),
+    #12060b;
+  color: rgba(255, 248, 237, 0.78);
+}
+
+.footer-brand p {
+  color: rgba(255, 248, 237, 0.62);
+}
+
+.footer-column h2 {
+  color: #efc28a;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.footer-column a,
+.footer-column span {
+  color: rgba(255, 248, 237, 0.74);
+  transition: color 0.3s ease;
+}
+
+.site-footer__base {
+  border-top-color: rgba(255, 248, 237, 0.1);
+  color: rgba(255, 248, 237, 0.5);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-story__chapters a:hover {
+    border-color: rgba(240, 116, 157, 0.55);
+    background: rgba(240, 116, 157, 0.08);
+    color: #ffc6d6;
+  }
+
+  .footer-column a:hover {
+    color: #ffc6d6;
+  }
+}
+
+@media (max-width: 56.25rem) {
+  .home-story__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .home-story__media {
+    width: min(78%, 20rem);
+    margin-bottom: 1rem;
+  }
+
+  .home-story__note {
+    right: -0.6rem;
+    bottom: 1.6rem;
+    font-size: 0.95rem;
+  }
+
+  .home-visit {
+    align-items: end;
+  }
+
+  .home-visit__inner {
+    justify-content: center;
+  }
+
+  .home-visit__media::after {
+    background:
+      linear-gradient(180deg, var(--night) 0%, rgba(26, 10, 16, 0.1) 18%, rgba(26, 10, 16, 0.55) 60%, var(--night) 100%);
+  }
+}
