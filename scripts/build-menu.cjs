@@ -21,7 +21,7 @@ const searchText = (item, group) => esc(`${item.name} ${item.description} ${item
 
 // Chapter dressing: accent from the printed menu, a banner photo and a short marginal note.
 const chapterArt = {
-  gelato: {accent: '#f0749d', note: 'slow-churned, scooped to order', mark: 'scoop-fruit',
+  gelato: {accent: '#f0749d', note: 'indulge in happiness, scoop by scoop', mark: 'scoop-fruit',
     banner: {src: `${G}11-gelato-counter.webp`, srcset: `${G}responsive/11-gelato-counter-800.webp 800w, ${G}11-gelato-counter.webp 1360w`, w: 1360, h: 1020, alt: 'The pastel gelato counter at Krushna’s Heaven', caption: 'The gelato counter', position: 'center 58%'}},
   woodfire: {accent: '#ef7a5d', note: 'sourdough, straight from the oven', mark: 'pizza-sourdough', markPhoto: true,
     banner: {src: 'assets/krushna/dna/woodfire-pizza.webp', srcset: 'assets/krushna/dna/woodfire-pizza-480.webp 480w, assets/krushna/dna/woodfire-pizza.webp 800w', w: 800, h: 1200, alt: 'Sourdough pizza with a blistered crust, mozzarella and basil', caption: 'Sourdough pizza', position: 'center 42%'}},
