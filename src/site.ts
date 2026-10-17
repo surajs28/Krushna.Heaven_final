@@ -18,7 +18,14 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { mountAmbientLights } from "./ambient-lights";
 import { mountGalleryReel } from "./gallery-reel";
-import { dnaSwipeTarget } from "./dna-gesture";
+import {
+  dnaCardScrollTop,
+  dnaProgressToPosition,
+  dnaScrollSpan,
+  dnaShouldPin,
+  dnaSnapPoints,
+  dnaSwipeTarget,
+} from "./dna-gesture";
 import { bindHorizontalSwipe } from "./swipe";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -259,6 +266,11 @@ heroMotion.add("(prefers-reduced-motion: no-preference)", () => {
   }
 });
 
+// Laptop/desktop orbit: each card holds the page for this share of a screen's scrolling,
+// and the last card rests briefly before the section lets the page move on.
+const DNA_STEP_SCREENS = 0.85;
+const DNA_END_REST = 0.35;
+
 const dnaSection = document.querySelector<HTMLElement>("[data-dna-carousel]");
 const dnaPin = dnaSection?.querySelector<HTMLElement>("[data-dna-pin]");
 const dnaStage = dnaSection?.querySelector<HTMLElement>("[data-dna-stage]");
@@ -328,6 +340,10 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
     let readingCopy = false;
     let automaticTransition = false;
     let resizeFrame = 0;
+    // Held laptop/desktop section: page scroll alone picks the card (set up below).
+    let pinnedSteps = false;
+    let scrollToCard: ((card: number) => void) | null = null;
+    let follow: ReturnType<typeof gsap.quickTo> | null = null;
     const layoutHeight = window.innerHeight;
     const cancelAuto = (interrupt = false) => {
       window.clearTimeout(autoTimer);
@@ -356,8 +372,9 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
       scrollIdleTimer = window.setTimeout(() => {
         scrolling = false;
         // Without auto-play, settle on the nearest card so the orbit never rests mid-turn.
+        // A held section already comes to rest on a card through its scroll snapping.
         const nearest = Math.round(state.position);
-        if (scrollDriven && !dragging && !positionTween && Math.abs(nearest - state.position) > 0.001) {
+        if (scrollDriven && !pinnedSteps && !dragging && !positionTween && Math.abs(nearest - state.position) > 0.001) {
           animateTo(nearest, true, 0.45);
           return;
         }
@@ -517,6 +534,10 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
     };
 
     const moveToIndex = (index: number) => {
+      if (scrollToCard) {
+        scrollToCard(index);
+        return;
+      }
       const rounded = Math.round(state.position);
       const current = wrapIndex(rounded);
       let delta = index - current;
@@ -532,6 +553,8 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
         cancelAuto(true);
         positionTween?.kill();
         positionTween = null;
+        // The pointer owns the orbit until release; the scroll-follow glide waits.
+        follow?.tween.pause();
         automaticTransition = false;
         interacting = true;
         dragging = false;
@@ -554,7 +577,8 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
         dnaStage.classList.remove("is-dragging", "is-moving");
         if (dragged) {
           const target = dnaSwipeTarget(startPosition, state.position, deltaX, velocity, dnaStage.clientWidth, cancelled);
-          animateTo(target, true, 0.42);
+          if (scrollToCard) scrollToCard(target);
+          else animateTo(target, true, 0.42);
         } else scheduleAuto();
       },
     });
@@ -591,6 +615,20 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
       (event) => {
         keyboardFocus = true;
         cancelAuto(true);
+        if (scrollToCard) {
+          // Held section: keys move the page to the card, so scroll and orbit stay in step.
+          const targets: Record<string, number> = {
+            ArrowLeft: activeIndex - 1,
+            ArrowRight: activeIndex + 1,
+            Home: 0,
+            End: total - 1,
+          };
+          if (event.key in targets) {
+            event.preventDefault();
+            scrollToCard(targets[event.key]);
+          }
+          return;
+        }
         if (event.key === "ArrowLeft") {
           event.preventDefault();
           animateTo(Math.round(state.position) - 1, true, 0);
@@ -664,33 +702,91 @@ if (dnaSection && dnaPin && dnaStage && dnaCards.length > 1) {
 
     if (dnaDesktop.matches) {
       const scrollState = { position: 0 };
-      // Numeric scrub smooths an attached animation, not raw onUpdate writes.
-      // Keep shorter laptop windows in document flow so every control is reachable.
-      const pinFits = dnaDesktop.matches && dnaPin.scrollHeight <= window.innerHeight + 1;
-      scrollTween = gsap.to(scrollState, {
-        position: total - 1,
-        ease: "none",
-        onUpdate: () => {
-          if (Math.abs(scrollState.position - scrollPosition) < 0.0001) return;
-          deferAutoAfterScroll();
-          scrollPosition = scrollState.position;
-          if (dragging || positionTween) return;
-          state.position = scrollPosition + manualOffset;
-          render(true);
-        },
-        scrollTrigger: {
-          trigger: pinFits ? dnaSection : dnaStage,
-          start: pinFits ? "top top" : "top 75%",
-          end: pinFits ? () => `+=${Math.round(window.innerHeight * 1.3)}` : "bottom 25%",
-          pin: pinFits ? dnaPin : false,
-          pinSpacing: pinFits,
-          scrub: 0.65,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-      scrollTrigger = scrollTween.scrollTrigger ?? null;
-      window.addEventListener("wheel", takeScrollControl, { passive: true, signal });
+      pinnedSteps = dnaShouldPin(true, window.innerHeight);
+      if (pinnedSteps) {
+        // Laptops and desktops: the section holds the page while scrolling turns cards
+        // 1 → 5, comes to rest on a card whenever scrolling stops, and lets the page move
+        // on only after the last card has rested. Pinning no longer depends on measuring
+        // the scene before its cards are laid out, which left 749px-tall laptops unpinned.
+        const span = dnaScrollSpan(total, DNA_END_REST);
+        const glide = gsap.quickTo(state, "position", {
+          duration: 0.55,
+          ease: "power3.out",
+          onUpdate: () => render(true),
+        });
+        follow = glide;
+        scrollTween = gsap.to(scrollState, {
+          position: 1,
+          ease: "none",
+          onUpdate: () => {
+            const next = dnaProgressToPosition(scrollState.position, total, DNA_END_REST);
+            if (Math.abs(next - scrollPosition) < 0.0001) return;
+            scrollPosition = next;
+            if (!dragging) glide(scrollPosition, state.position);
+          },
+          scrollTrigger: {
+            trigger: dnaSection,
+            start: "top top",
+            end: () => `+=${Math.round(window.innerHeight * DNA_STEP_SCREENS * span)}`,
+            pin: dnaPin,
+            pinSpacing: true,
+            scrub: true,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+            // Snap from where scrolling actually stopped, in its direction: next card, not a
+            // velocity guess (inertia turned a short nudge into a jump of several cards).
+            snap: {
+              snapTo: dnaSnapPoints(total, DNA_END_REST),
+              inertia: false,
+              directional: true,
+              duration: { min: 0.25, max: 0.6 },
+              delay: 0.1,
+              ease: "power2.inOut",
+            },
+          },
+        });
+        scrollTrigger = scrollTween.scrollTrigger ?? null;
+        // Card clicks, step dots, arrow keys and drags move the page to that card, so the
+        // section still lets go after card 5 however the visitor got there.
+        scrollToCard = (card) => {
+          const trigger = scrollTrigger;
+          if (!trigger) return;
+          const target = Math.max(0, Math.min(total - 1, Math.round(card)));
+          const top = dnaCardScrollTop(trigger.start, trigger.end, target, total, DNA_END_REST);
+          if (trigger.isActive) {
+            // While held, the page doesn't visibly move: only the orbit turns.
+            window.scrollTo({ top, behavior: "instant" });
+            glide(target, state.position);
+          } else {
+            window.scrollTo({ top, behavior: "smooth" });
+          }
+        };
+      } else {
+        // Windows too short for the one-screen scene stay in document flow so every
+        // control is reachable; the orbit turns as the section passes.
+        // Numeric scrub smooths an attached animation, not raw onUpdate writes.
+        scrollTween = gsap.to(scrollState, {
+          position: total - 1,
+          ease: "none",
+          onUpdate: () => {
+            if (Math.abs(scrollState.position - scrollPosition) < 0.0001) return;
+            deferAutoAfterScroll();
+            scrollPosition = scrollState.position;
+            if (dragging || positionTween) return;
+            state.position = scrollPosition + manualOffset;
+            render(true);
+          },
+          scrollTrigger: {
+            trigger: dnaStage,
+            start: "top 75%",
+            end: "bottom 25%",
+            scrub: 0.65,
+            invalidateOnRefresh: true,
+          },
+        });
+        scrollTrigger = scrollTween.scrollTrigger ?? null;
+        window.addEventListener("wheel", takeScrollControl, { passive: true, signal });
+      }
     }
     // Phone page scroll never overwrites the card selected by a horizontal swipe.
     window.addEventListener("scroll", () => {
