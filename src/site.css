@@ -5375,3 +5375,1001 @@ body.page-menu {
 .is-menu-searching .flavour-board__head p {
   display: none;
 }
+
+/* Round 5, 17 Oct 2026: Our Story and Visit Us after the reference story/contact flow (S-series in INTENT.md). */
+
+body.page-story,
+body.page-visit {
+  background: var(--night);
+}
+
+.story-page,
+.visit-page {
+  background: var(--night);
+  color: var(--ivory);
+}
+
+.page-opener h1,
+.chapter h2,
+.story-stats h2,
+.reviews h2,
+.visit-info h2,
+.arrive h2,
+.roof h2,
+.hello h2 {
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+}
+
+/* Night sections carry the drifting café lights behind their content. */
+:is(.page-opener, .story-chapters, .story-stats, .reviews, .visit-info, .arrive, .roof, .hello, .story-close) {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--night);
+  color: var(--ivory);
+}
+
+:is(.story-chapters, .story-stats, .reviews, .visit-info, .arrive, .roof, .hello) > :not(.ambient-lights) {
+  position: relative;
+  z-index: 1;
+}
+
+/* S01: photo opener, as on the reference's inner pages: the room fades into the night. */
+.page-opener {
+  display: flex;
+  min-height: clamp(34rem, 86vh, 52rem);
+  align-items: flex-end;
+  overflow: clip;
+}
+
+.page-opener__backdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 70%, transparent 98%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 70%, transparent 98%);
+}
+
+.page-opener__backdrop img {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center 45%;
+  filter: saturate(0.95) brightness(0.66);
+}
+
+.page-opener__backdrop::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, var(--night) 0%, rgba(26, 10, 16, 0.3) 24%, rgba(26, 10, 16, 0.28) 46%, rgba(26, 10, 16, 0.88) 82%, var(--night) 96%),
+    radial-gradient(70% 60% at 18% 82%, rgba(26, 10, 16, 0.6), transparent 70%);
+  content: "";
+}
+
+.page-opener__intro {
+  position: relative;
+  z-index: 2;
+  padding-block: 9rem clamp(3rem, 8vh, 5.5rem);
+}
+
+.page-opener h1 {
+  max-width: 12ch;
+  margin: 1.1rem 0 1.4rem;
+  font-size: clamp(3.6rem, 8vw, 7.4rem);
+  font-weight: 520;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+  text-shadow: 0 0.4rem 2.4rem rgba(14, 4, 8, 0.45);
+}
+
+.page-opener__lede {
+  max-width: 40rem;
+  margin: 0;
+  color: rgba(255, 248, 237, 0.84);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.page-opener__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.page-opener__cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 2.4rem;
+  color: #efc28a;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.page-opener__cue svg {
+  width: 1rem;
+  height: 1rem;
+  animation: opener-cue 2.4s ease-in-out infinite;
+}
+
+@keyframes opener-cue {
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+/* S02: the story in five chapters, alternating sides, joined by a thread that draws as you read. */
+.story-chapters {
+  padding-block: clamp(3.5rem, 7vw, 6rem) clamp(4.5rem, 9vw, 8rem);
+}
+
+.story-chapters__inner {
+  display: grid;
+  gap: clamp(5rem, 11vw, 9rem);
+}
+
+.story-chapters__thread {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(239, 194, 138, 0.6) 6%, rgba(240, 116, 157, 0.6) 94%, transparent);
+  transform-origin: top;
+}
+
+.chapter {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(3rem, 8vw, 8rem);
+  scroll-margin-top: 6rem;
+}
+
+.chapter::before {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #efc28a;
+  box-shadow: 0 0 0 0.4rem rgba(239, 194, 138, 0.14), 0 0 1.4rem rgba(239, 194, 138, 0.65);
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+.chapter:nth-of-type(even) .chapter__media {
+  order: 2;
+}
+
+.chapter__media {
+  position: relative;
+  width: min(100%, 32rem);
+  margin: 0;
+  justify-self: center;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid rgba(255, 248, 237, 0.12);
+  border-radius: var(--radius-lg);
+  background: #2b111a;
+  box-shadow: 0 2.5rem 4.5rem -2.5rem rgba(0, 0, 0, 0.75);
+}
+
+.chapter__media--wide {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+}
+
+.chapter__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.6s var(--ease-gallery);
+}
+
+.chapter__media::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(18, 5, 10, 0.7));
+  content: "";
+  pointer-events: none;
+}
+
+.chapter__media figcaption {
+  position: absolute;
+  z-index: 1;
+  bottom: 1rem;
+  left: 1.2rem;
+  font-family: var(--display);
+  font-size: 1rem;
+  font-style: italic;
+  text-shadow: 0 2px 12px rgba(10, 3, 6, 0.75);
+}
+
+/* The photo opens from a smaller frame and settles as it reveals. */
+.js-reveal .chapter__media.reveal {
+  opacity: 1;
+  clip-path: inset(12% 9% 12% 9% round var(--radius-lg));
+  transform: none;
+  transition: clip-path 1.3s var(--ease-cinema);
+}
+
+.js-reveal .chapter__media.reveal.is-in {
+  clip-path: inset(0 0 0 0 round var(--radius-lg));
+}
+
+.js-reveal .chapter__media.reveal:not(.is-in) img {
+  transform: scale(1.14);
+}
+
+.chapter__copy {
+  position: relative;
+}
+
+.chapter__no {
+  position: absolute;
+  z-index: -1;
+  top: -0.42em;
+  right: 0;
+  color: transparent;
+  font-family: var(--display);
+  font-size: clamp(7rem, 14vw, 12rem);
+  font-weight: 400;
+  line-height: 1;
+  pointer-events: none;
+  -webkit-text-stroke: 1px rgba(239, 194, 138, 0.24);
+}
+
+.chapter__tag {
+  margin: 0 0 0.9rem;
+  color: #efc28a;
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.chapter h2 {
+  max-width: 13ch;
+  margin: 0 0 1.4rem;
+  font-size: clamp(2.4rem, 4.6vw, 4.2rem);
+  font-weight: 520;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+}
+
+.chapter__copy p:not(.chapter__tag) {
+  max-width: 34rem;
+  margin: 0 0 1rem;
+  color: rgba(255, 248, 237, 0.76);
+  font-size: 1.06rem;
+  line-height: 1.7;
+}
+
+.chapter__copy p em {
+  color: #ffc6d6;
+  font-family: var(--display);
+}
+
+/* S03: the reference's "story worth telling" numbers, from our final menu. */
+.story-stats {
+  padding-block: clamp(4rem, 8vw, 7rem);
+  background:
+    radial-gradient(60% 80% at 50% 0%, rgba(207, 21, 84, 0.16), transparent 70%),
+    var(--night);
+  text-align: center;
+}
+
+.story-stats h2 {
+  margin: 1rem 0 0;
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  font-weight: 520;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+}
+
+.story-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.story-stats__grid li {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+}
+
+.story-stats__grid li + li {
+  border-left: 1px solid rgba(255, 248, 237, 0.1);
+}
+
+.story-stats__num {
+  background: linear-gradient(110deg, #f0749d 0%, #ffc6d6 55%, #ecb67a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: var(--display);
+  font-size: clamp(3.4rem, 7vw, 6rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.story-stats__label {
+  color: rgba(255, 248, 237, 0.66);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.story-close {
+  padding-block: clamp(1rem, 3vw, 2rem) var(--section-space);
+}
+
+/* S04: guest reviews (shared by both pages). Sample data renders with visible Sample tags. */
+.reviews {
+  padding-block: clamp(4.5rem, 9vw, 8rem);
+  overflow: clip;
+  background:
+    radial-gradient(70% 70% at 100% 0%, rgba(240, 116, 157, 0.12), transparent 65%),
+    var(--night);
+}
+
+.reviews__inner {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.78fr) minmax(0, 2fr);
+  align-items: start;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.reviews h2 {
+  margin: 1rem 0 0;
+  font-size: clamp(2.6rem, 4.6vw, 4.2rem);
+  font-weight: 520;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+}
+
+.reviews__summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1.3rem 0 0.8rem;
+  color: rgba(255, 248, 237, 0.84);
+  font-weight: 700;
+}
+
+.reviews__score {
+  color: #ffc6d6;
+  font-family: var(--display);
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.reviews__stars,
+.review-card__stars {
+  color: #efc28a;
+  letter-spacing: 0.12em;
+}
+
+.reviews__stars .is-empty,
+.review-card__stars .is-empty {
+  color: rgba(255, 248, 237, 0.2);
+}
+
+.reviews__badge,
+.review-card__sample {
+  padding: 0.16rem 0.55rem;
+  border: 1px dashed rgba(239, 194, 138, 0.75);
+  border-radius: 999px;
+  color: #efc28a;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.reviews__note {
+  max-width: 24rem;
+  margin: 0 0 1.4rem;
+  color: rgba(255, 248, 237, 0.58);
+  font-size: 0.85rem;
+}
+
+.reviews__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem 1.2rem;
+  margin-top: 1.4rem;
+}
+
+.reviews__controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.reviews__controls[hidden] {
+  display: none;
+}
+
+.reviews__control {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 1px solid rgba(255, 248, 237, 0.24);
+  border-radius: 50%;
+  background: rgba(255, 248, 237, 0.05);
+  color: var(--ivory);
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.reviews__control:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.reviews__control svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.reviews__track {
+  display: grid;
+  grid-auto-columns: minmax(17rem, 25rem);
+  grid-auto-flow: column;
+  gap: 1.25rem;
+  padding: 0.25rem 0 0.75rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(90deg, #000 82%, transparent);
+  mask-image: linear-gradient(90deg, #000 82%, transparent);
+}
+
+.reviews__track::-webkit-scrollbar {
+  display: none;
+}
+
+.reviews__track:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 0.35rem;
+}
+
+.review-card {
+  position: relative;
+  display: grid;
+  min-height: 19rem;
+  grid-template-rows: auto 1fr auto;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 1.6rem;
+  border: 1px solid rgba(255, 248, 237, 0.12);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, rgba(255, 248, 237, 0.08), rgba(255, 248, 237, 0.025));
+  scroll-snap-align: start;
+  transition: border-color 0.4s ease, transform 0.6s var(--ease-gallery);
+}
+
+.review-card::before {
+  position: absolute;
+  top: 0.4rem;
+  right: 1.3rem;
+  color: rgba(240, 116, 157, 0.28);
+  content: "\201C";
+  font-family: var(--display);
+  font-size: 5.5rem;
+  line-height: 1;
+}
+
+.review-card__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.review-card__source {
+  color: rgba(255, 248, 237, 0.56);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.review-card blockquote {
+  margin: 0;
+}
+
+.review-card blockquote p {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1.14rem;
+  line-height: 1.5;
+}
+
+.review-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.review-card__avatar {
+  display: grid;
+  width: 2.6rem;
+  height: 2.6rem;
+  flex: none;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f0749d, #ecb67a);
+  color: #2a0f19;
+  font-weight: 800;
+}
+
+.review-card__who {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.review-card__who strong {
+  font-size: 0.95rem;
+}
+
+.review-card__who span {
+  color: rgba(255, 248, 237, 0.56);
+  font-size: 0.8rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .review-card:hover {
+    border-color: rgba(240, 116, 157, 0.45);
+    transform: translateY(-4px);
+  }
+
+  .reviews__control:not(:disabled):hover {
+    border-color: #f0749d;
+    background: rgba(240, 116, 157, 0.14);
+  }
+}
+
+/* S05: visit details beside the map, as on the reference's contact page. */
+.visit-info {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.visit-info__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: stretch;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.visit-info h2,
+.arrive h2,
+.roof h2,
+.hello h2 {
+  margin: 1rem 0 0;
+  font-size: clamp(2.4rem, 4.4vw, 4rem);
+  font-weight: 520;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+}
+
+.visit-rows {
+  display: grid;
+  margin: 2.2rem 0 0;
+}
+
+.visit-row {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.15rem 0;
+  border-top: 1px solid rgba(255, 248, 237, 0.1);
+}
+
+.visit-row__icon {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(240, 116, 157, 0.12);
+  color: #f0749d;
+}
+
+.visit-row__icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.visit-row dt {
+  margin-bottom: 0.35rem;
+  color: #efc28a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.visit-row dd {
+  margin: 0;
+  color: rgba(255, 248, 237, 0.86);
+  line-height: 1.6;
+}
+
+.visit-row address {
+  font-style: normal;
+}
+
+.visit-row a,
+.visit-map a {
+  color: var(--ivory);
+  text-decoration-color: rgba(240, 116, 157, 0.7);
+  text-underline-offset: 0.25em;
+}
+
+.visit-map {
+  position: relative;
+  min-height: 30rem;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 248, 237, 0.14);
+  border-radius: var(--radius-lg);
+  background: #2b111a;
+  box-shadow: 0 2.5rem 4.5rem -2.5rem rgba(0, 0, 0, 0.75);
+}
+
+.visit-map iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: saturate(0.9);
+}
+
+.visit-map figcaption {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem 1.1rem;
+  border-radius: 1.2rem;
+  background: rgba(26, 10, 16, 0.86);
+  font-size: 0.86rem;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.visit-map figcaption span,
+.visit-map figcaption a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.visit-map figcaption a {
+  color: #ffc6d6;
+  font-weight: 700;
+}
+
+.visit-map figcaption svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* S06: how to find us, with the entrance photo for recognition on arrival. */
+.arrive {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.arrive__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 6rem);
+}
+
+.arrive__photo {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid rgba(255, 248, 237, 0.12);
+  border-radius: var(--radius-lg);
+}
+
+.arrive__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.arrive__photo figcaption {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.2rem;
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-style: italic;
+  text-shadow: 0 2px 12px rgba(10, 3, 6, 0.8);
+}
+
+.arrive__steps {
+  display: grid;
+  margin: 2rem 0 2.2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.arrive__steps li {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.3rem 0;
+  border-top: 1px solid rgba(255, 248, 237, 0.1);
+}
+
+.arrive__no {
+  color: transparent;
+  font-family: var(--display);
+  font-size: 2.3rem;
+  line-height: 1;
+  -webkit-text-stroke: 1px #efc28a;
+}
+
+.arrive__steps h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.35rem;
+}
+
+.arrive__steps p {
+  margin: 0;
+  color: rgba(255, 248, 237, 0.74);
+}
+
+/* S07: what's under one roof (services printed on the final menu). */
+.roof {
+  padding-block: clamp(4rem, 8vw, 7rem);
+  background:
+    radial-gradient(60% 70% at 0% 100%, rgba(236, 182, 122, 0.1), transparent 65%),
+    var(--night);
+}
+
+.roof__head,
+.hello__head {
+  max-width: 46rem;
+  margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+  text-align: center;
+}
+
+.roof__grid,
+.hello__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.roof-card {
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+  padding: 2rem 1.7rem;
+  border: 1px solid rgba(255, 248, 237, 0.12);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, rgba(255, 248, 237, 0.07), rgba(255, 248, 237, 0.02));
+  transition: border-color 0.4s ease, transform 0.6s var(--ease-gallery);
+}
+
+.roof-card__icon,
+.hello-tile__icon {
+  display: grid;
+  width: 3.4rem;
+  height: 3.4rem;
+  place-items: center;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(240, 116, 157, 0.22), rgba(236, 182, 122, 0.18));
+  color: #ffc6d6;
+}
+
+.roof-card__icon svg,
+.hello-tile__icon svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.roof-card h3 {
+  margin: 0.5rem 0 0;
+  font-size: 1.5rem;
+}
+
+.roof-card p {
+  margin: 0;
+  color: rgba(255, 248, 237, 0.74);
+}
+
+.roof-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  color: #ffc6d6;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.roof-card__link svg {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.4s var(--ease-gallery);
+}
+
+/* S08: say hello: call, write or message (no contact form until there's somewhere to send it). */
+.hello {
+  padding-block: clamp(4rem, 8vw, 7rem) var(--section-space);
+}
+
+.hello__head p {
+  margin: 1.2rem auto 0;
+  color: rgba(255, 248, 237, 0.74);
+  font-size: 1.05rem;
+}
+
+.hello-tile {
+  display: grid;
+  justify-items: start;
+  gap: 0.55rem;
+  padding: 1.8rem;
+  border: 1px solid rgba(255, 248, 237, 0.12);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 248, 237, 0.04);
+  color: var(--ivory);
+  text-decoration: none;
+  transition: border-color 0.4s ease, background-color 0.4s ease, transform 0.6s var(--ease-gallery);
+}
+
+.hello-tile__icon {
+  margin-bottom: 0.5rem;
+}
+
+.hello-tile__label {
+  color: #efc28a;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hello-tile__value {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  overflow-wrap: anywhere;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .roof-card:hover,
+  .hello-tile:hover {
+    border-color: rgba(240, 116, 157, 0.5);
+    transform: translateY(-5px);
+  }
+
+  .roof-card:hover .roof-card__link svg {
+    transform: translateX(4px);
+  }
+
+  .hello-tile:hover {
+    background: rgba(240, 116, 157, 0.08);
+  }
+}
+
+@media (max-width: 56.25rem) {
+  .page-opener {
+    min-height: clamp(30rem, 80vh, 40rem);
+  }
+
+  .page-opener__intro {
+    padding-top: 7.5rem;
+  }
+
+  .story-chapters__thread,
+  .chapter::before {
+    display: none;
+  }
+
+  .chapter,
+  .reviews__inner,
+  .visit-info__inner,
+  .arrive__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter {
+    gap: 2rem;
+  }
+
+  .chapter:nth-of-type(even) .chapter__media {
+    order: 0;
+  }
+
+  .chapter__no {
+    top: -0.6em;
+    font-size: 6rem;
+  }
+
+  .story-stats__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .story-stats__grid li + li {
+    border-left: 0;
+  }
+
+  .story-stats__grid li:nth-child(even) {
+    border-left: 1px solid rgba(255, 248, 237, 0.1);
+  }
+
+  .visit-map {
+    min-height: 22rem;
+  }
+
+  .arrive__photo {
+    aspect-ratio: 4 / 3;
+  }
+
+  .roof__grid,
+  .hello__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews__track {
+    grid-auto-columns: minmax(16rem, 84%);
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+@media (max-width: 40rem) {
+  .page-opener__actions .button {
+    flex: 1 1 100%;
+  }
+
+  .visit-row address br {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-opener__cue svg {
+    animation: none;
+  }
+
+  .review-card,
+  .roof-card,
+  .hello-tile {
+    transition: none;
+  }
+}

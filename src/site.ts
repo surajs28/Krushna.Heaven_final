@@ -9,6 +9,9 @@ import {
   Menu,
   Phone,
   Expand,
+  IceCreamCone,
+  PartyPopper,
+  UtensilsCrossed,
   Search,
   Store,
   X,
@@ -41,6 +44,9 @@ const iconSet = {
   Menu,
   Phone,
   Expand,
+  IceCreamCone,
+  PartyPopper,
+  UtensilsCrossed,
   Search,
   Store,
   X,
@@ -1132,6 +1138,74 @@ document.querySelectorAll<HTMLElement>("[data-tilt]").forEach((card) => {
     card.style.removeProperty("--tilt-x");
     card.style.removeProperty("--tilt-y");
   });
+});
+
+// Our Story: a thin gold thread draws down the chapters as they are read.
+const storyThread = document.querySelector<HTMLElement>("[data-story-thread]");
+if (storyThread) {
+  gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
+    gsap.fromTo(storyThread, { scaleY: 0 }, {
+      scaleY: 1,
+      ease: "none",
+      scrollTrigger: { trigger: storyThread.parentElement ?? storyThread, start: "top 65%", end: "bottom 65%", scrub: 0.4 },
+    });
+  });
+}
+
+// Story numbers count up once, as they come into view. The real figures are in the HTML.
+const counters = Array.from(document.querySelectorAll<HTMLElement>("[data-count]"));
+if (counters.length && "IntersectionObserver" in window && !reducedMotion.matches) {
+  const countIn = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      countIn.unobserve(entry.target);
+      const node = entry.target as HTMLElement;
+      const target = Number(node.dataset.count) || 0;
+      const counter = { value: 0 };
+      gsap.to(counter, {
+        value: target,
+        duration: Math.min(1.6, 0.6 + target / 150),
+        ease: "power2.out",
+        onUpdate: () => { node.textContent = String(Math.round(counter.value)); },
+      });
+    });
+  }, { threshold: 0.6 });
+  counters.forEach((node) => {
+    node.textContent = "0";
+    countIn.observe(node);
+  });
+}
+
+// Guest reviews: arrows step one card; touch, trackpads and keys scroll the row natively.
+document.querySelectorAll<HTMLElement>("[data-reviews]").forEach((section) => {
+  const track = section.querySelector<HTMLElement>("[data-reviews-track]");
+  const controls = section.querySelector<HTMLElement>("[data-reviews-controls]");
+  const prev = section.querySelector<HTMLButtonElement>("[data-reviews-prev]");
+  const next = section.querySelector<HTMLButtonElement>("[data-reviews-next]");
+  if (!track || !controls || !prev || !next) return;
+  const step = () => {
+    const card = track.querySelector<HTMLElement>(".review-card");
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    return card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+  };
+  let frame = 0;
+  const sync = () => {
+    frame = 0;
+    const max = track.scrollWidth - track.clientWidth - 2;
+    controls.hidden = max <= 0;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max;
+  };
+  const go = (direction: number) => {
+    track.scrollBy({ left: direction * step(), behavior: reducedMotion.matches ? "auto" : "smooth" });
+  };
+  prev.addEventListener("click", () => go(-1));
+  next.addEventListener("click", () => go(1));
+  track.addEventListener("scroll", () => {
+    if (!frame) frame = window.requestAnimationFrame(sync);
+  }, { passive: true });
+  new ResizeObserver(sync).observe(track);
+  sync();
 });
 
 // Section copy rises 34px and fades in once 16% of it is on screen.

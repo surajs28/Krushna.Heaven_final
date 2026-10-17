@@ -1,0 +1,52 @@
+{
+  "_readme": "Guest reviews shown on the Story and Visit pages. status: \"sample\" shows these placeholders with visible Sample tags (for preview only, never publish them as genuine); \"hidden\" leaves the section out entirely, so the pages can go live before real reviews arrive; \"live\" shows real reviews. To go live: paste real Google reviews (name as shown on Google, rating, text, month), set rating/count from the Google listing, set status to \"live\", then run npm run build.",
+  "status": "hidden",
+  "source": "Google",
+  "profileUrl": "https://maps.app.goo.gl/JEWK9di5hMymi1ks9",
+  "rating": null,
+  "count": null,
+  "reviews": [
+    {
+      "name": "Sample guest",
+      "context": "Dessert night",
+      "rating": 5,
+      "date": "",
+      "text": "The Gourd-Gée tiramisu is worth the trip on its own. Watching the espresso poured at the table made it feel like an occasion."
+    },
+    {
+      "name": "Sample guest",
+      "context": "Family evening",
+      "rating": 5,
+      "date": "",
+      "text": "We came for gelato and stayed for pizza. Everyone ordered something different and we still shared one table. The kids loved the sundaes."
+    },
+    {
+      "name": "Sample guest",
+      "context": "Catch-up with friends",
+      "rating": 5,
+      "date": "",
+      "text": "Pink Guava gelato and a cold coffee on a warm evening was exactly what we needed. Friendly team and a really beautiful space."
+    },
+    {
+      "name": "Sample guest",
+      "context": "Weekend lunch",
+      "rating": 4,
+      "date": "",
+      "text": "Lovely crust on the sourdough pizza and generous fries. It gets busy in the evening, so come a little early."
+    },
+    {
+      "name": "Sample guest",
+      "context": "Birthday treat",
+      "rating": 5,
+      "date": "",
+      "text": "The brownie with ice-cream arrives sizzling and the whole table turned to look. A great spot for a small celebration."
+    },
+    {
+      "name": "Sample guest",
+      "context": "Coffee break",
+      "rating": 5,
+      "date": "",
+      "text": "Good coffee, quick service and plenty of choice. The evening lighting and the gold-edged tables make it easy to stay a while."
+    }
+  ]
+}

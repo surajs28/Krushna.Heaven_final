@@ -35,6 +35,14 @@ This section is the current implementation record and takes precedence over the 
 - Photo-backed editorial opener, Home/Gallery breadcrumb, all eleven photographs in masonry, Follow line and a closing visit/menu invitation. Three columns on desktop and two on smaller screens; images reveal with 1-second fade/rise and desktop hover captions/zoom. Touch captions remain readable without hover.
 - Preserve loading-safe frames, responsive reflow and the full-size viewer's next/previous, swipe, Escape and focus return. Deep-linked `#photo-N` opens the matching photograph; closing removes that hash so reload does not reopen it.
 
+### Our Story and Visit Us — 17 October 2026 (S-series)
+
+Both pages now follow the reference's inner-page flow on the night field (`body.page-home`, home header, café lights), as static HTML in `public/story.html` and `public/visit.html`, styled in the "Round 5" block of `src/site.css`.
+
+- **Our Story:** photo opener ("Five cravings. One home.", gelato counter fading into the night) → five alternating chapters (the idea, the gelato, the kitchen, pour & linger, together) joined by a gold thread that draws as you read → menu numbers that count up once (5 cravings, 188 dishes, 45 flavours, 1 address) → guest reviews → "Your table is waiting" invitation. Copy uses only the final menu, approved positioning and the approved Mr Gelato franchise wording with its "taste of Italy" line; no founding date or origin story is claimed.
+- **Visit Us:** exterior opener ("Come say hello.", directions and call actions) → details beside an embedded Google map of the listing the café's QR code opens → "How to find us" in three landmark steps with the entrance photo → "Under one roof" (Italian & continental café, gelato manufacturer, banquet hall, as printed on the menu) → guest reviews → "Say hello" (call, email, Instagram; no form until there is somewhere to send it). The road name, Vitthal Rao Shivarkar Road, comes from that Google listing. Opening hours remain "Coming soon".
+- **Guest reviews** render from `src/site/testimonials.json` via `scripts/build-testimonials.cjs`. `"sample"` shows placeholders with visible Sample tags and a note (preview only, never publish as genuine); `"hidden"` omits the section so the pages can be published before real reviews arrive; `"live"` shows real Google reviews and the listing's rating. No review structured data is emitted. Tests: `tests/testimonials.test.cjs`.
+
 ### Current complete menu and business facts
 
 - Keep all **188 entries** across five chapters: Gelatos 80 (45 flavours, 31 treats and 4 cone/basket options), Woodfire 12, Brews 56, Waffles/sweet plates 17, Savoury 23. `src/site/menu-source.json` remains the immutable historical extraction; `src/site/menu-data.ts` is the normalized menu model; `scripts/build-menu.cjs` generates `public/menu.html` from the template and data.
